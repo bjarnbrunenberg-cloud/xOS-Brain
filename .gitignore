@@ -1,0 +1,22 @@
+# Environment
+.env*
+.env.local
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code memory (auto-generated, local)
+.claude/memory/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build
+.next/
+out/
+dist/

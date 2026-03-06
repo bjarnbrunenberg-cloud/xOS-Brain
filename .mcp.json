@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "airtable": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://airtable-mcp.business-automated.com/mcp-server/z2QiuB8kBaMOynM4m-aiUfCQV1YZ1d/mcp"]
+    }
+  }
+}

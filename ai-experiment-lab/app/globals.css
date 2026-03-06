@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-dark: #022147;
+  --color-brand-blue: #135BB4;
+  --color-brand-cyan: #4DE2FE;
+  --color-brand-silver: #D9D9D9;
+  --color-brand-light: #EBF4FF;
+  --color-brand-card: rgba(255, 255, 255, 0.04);
+  --color-brand-card-border: rgba(255, 255, 255, 0.1);
+
+  --font-sans: "DM Sans", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-dark);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Stage mode — larger text for projector readability */
+.stage-mode {
+  font-size: 20px;
+}
+
+.stage-mode h1 {
+  font-size: 3rem;
+}
+
+.stage-mode h2 {
+  font-size: 1.75rem;
+}
+
+/* Section card animation */
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-card {
+  animation: section-reveal 0.5s ease-out forwards;
+}
+
+/* Blur effect for lead gen gated sections */
+.gated-blur {
+  filter: blur(6px);
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Generating pulse on the cyan accent */
+@keyframes pulse-cyan {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.pulse-generating {
+  animation: pulse-cyan 1.5s ease-in-out infinite;
+}
+
+/* Streaming text cursor */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.streaming-cursor::after {
+  content: "▋";
+  color: var(--color-brand-cyan);
+  animation: blink-cursor 0.8s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
