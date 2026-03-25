@@ -23,7 +23,7 @@ body {
    ============================================= */
 .cover {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a2540 0%, #1a4a7a 50%, #0d6e4f 100%);
+  background: linear-gradient(135deg, #0f3c6c 0%, #0064b0 50%, #007f4e 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +38,7 @@ body {
   right: -20%;
   width: 60%;
   height: 200%;
-  background: radial-gradient(ellipse, rgba(13,110,79,0.2) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(0,127,78,0.2) 0%, transparent 70%);
 }
 .cover .logo {
   position: relative;
@@ -66,7 +66,7 @@ body {
 .cover .divider {
   width: 80px;
   height: 4px;
-  background: #0d6e4f;
+  background: #007f4e;
   margin-bottom: 30px;
   position: relative;
   border-radius: 2px;
@@ -95,12 +95,12 @@ body {
   border-radius: 16px;
   padding: 50px 60px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-  border-left: 4px solid #0d6e4f;
+  border-left: 4px solid #0064b0;
 }
 .tldr-section .section-label {
   font-size: 11px;
   font-weight: 700;
-  color: #0d6e4f;
+  color: #007f4e;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -108,7 +108,7 @@ body {
 .tldr-section h2 {
   font-size: 28px;
   font-weight: 700;
-  color: #0a2540;
+  color: #0f3c6c;
   margin-bottom: 24px;
 }
 .tldr-section p {
@@ -128,7 +128,7 @@ body {
 .tldr-section .data-point .label {
   font-size: 10px;
   font-weight: 700;
-  color: #0d6e4f;
+  color: #007f4e;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin-bottom: 4px;
@@ -136,7 +136,7 @@ body {
 .tldr-section .data-point .value {
   font-size: 15px;
   font-weight: 600;
-  color: #0a2540;
+  color: #0f3c6c;
 }
 
 /* =============================================
@@ -201,7 +201,7 @@ body {
 .theme-header {
   max-width: 1100px;
   margin: 60px auto 20px;
-  background: #0a2540;
+  background: #0f3c6c;
   border-radius: 16px;
   padding: 50px 60px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.12);
@@ -278,7 +278,7 @@ body {
   flex: 1;
   font-size: 20px;
   font-weight: 600;
-  color: #0a2540;
+  color: #0f3c6c;
 }
 .location-tag {
   padding: 6px 14px;
@@ -503,48 +503,126 @@ body {
   </div>
   <div class="screenshot-area">
     <div class="mockup-wrapper">
-      <div class="browser-chrome">
+      <div class="browser-chrome" style="max-width: 750px;">
         <div class="chrome-bar">
           <div class="chrome-dot" style="background: #ff5f56;"></div>
           <div class="chrome-dot" style="background: #ffbd2e;"></div>
           <div class="chrome-dot" style="background: #27c93f;"></div>
           <div class="chrome-url">boltpharmacy.co.uk/weight-loss-plans-30</div>
         </div>
-        <div class="chrome-content">
-          <div class="proposed-badge">PROPOSED</div>
-          <div style="text-align: center; margin-bottom: 16px;">
-            <div style="font-size: 11px; color: #888; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 4px;">Your recommended plan</div>
-            <div style="font-size: 22px; font-weight: 700; color: #0a2540;">Start Your Weight Loss Journey</div>
+        <div class="chrome-content" style="padding: 28px 20px; background: #fafffe; font-family: Gilroy, Arial, sans-serif;">
+          <div class="proposed-badge">PROPOSED VARIANT</div>
+
+          <!-- Page heading -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 24px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Weight care that works</div>
+            <div style="font-size: 14px; color: #3f6389;">Based on your consultation, we recommend starting with Wegovy</div>
           </div>
-          <!-- Wegovy card - prominent -->
-          <div style="border: 2px solid #0d6e4f; border-radius: 12px; padding: 20px; margin-bottom: 12px; position: relative;">
-            <div style="position: absolute; top: -10px; right: 16px; background: #0d6e4f; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px;">RECOMMENDED</div>
+
+          <!-- Wegovy — primary card (RECOMMENDED) — mirrors exact Bolt prod-card_n structure -->
+          <div style="background: white; border-radius: 23px; padding: 0; box-shadow: 0 2px 16px rgba(15,60,108,0.08); border: 2px solid #007f4e; position: relative; overflow: hidden; margin-bottom: 14px;">
+            <!-- RECOMMENDED badge -->
+            <div style="position: absolute; top: 14px; right: 14px; background: #007f4e; color: white; font-size: 10px; font-weight: 700; padding: 5px 14px; border-radius: 1000px; letter-spacing: 0.5px; z-index: 2;">RECOMMENDED</div>
+
+            <!-- prod-card-image — real product image from Bolt CDN -->
+            <div style="background: #e5edf0; padding: 16px 24px; text-align: center; position: relative; min-height: 160px; display: flex; align-items: center; justify-content: center;">
+              <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/680f12d9b2453bbf1342a59b_Image%20(41).webp" alt="Wegovy injection pen" style="max-height: 140px; width: auto; object-fit: contain;" />
+            </div>
+
+            <!-- prod-content-n -->
+            <div style="padding: 20px 24px 24px;">
+              <!-- prod-pills — promo badge -->
+              <div style="margin-bottom: 10px;">
+                <span style="display: inline-block; font-size: 13px; font-weight: 600; color: #0f3c6c; font-family: Gilroy, Arial, sans-serif;">1st month promo &pound;29 off</span>
+              </div>
+
+              <!-- heading-32 -->
+              <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 8px; font-family: Gilroy, Arial, sans-serif;">Wegovy&reg; for Weight Loss</div>
+
+              <!-- prod-price-start -->
+              <div style="margin-bottom: 6px;">
+                <span style="font-size: 13px; color: #3f6389;">From</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                <div style="display: inline-flex; align-items: baseline; gap: 2px;">
+                  <span style="font-size: 14px; font-weight: 600; color: #007f4e; text-decoration: line-through;">&pound;29.75</span>
+                  <span style="font-size: 14px; font-weight: 600; color: #007f4e; text-decoration: line-through;">/week</span>
+                </div>
+                <div style="display: inline-flex; align-items: baseline; gap: 2px;">
+                  <span style="font-size: 22px; font-weight: 700; color: #ff0000;">&pound;22.25</span>
+                  <span style="font-size: 22px; font-weight: 700; color: #ff0000;">/week</span>
+                </div>
+              </div>
+
+              <!-- prod-divider -->
+              <div style="height: 1px; background: rgba(15,60,108,0.1); margin-bottom: 16px;"></div>
+
+              <!-- prod-descr_n -->
+              <p style="font-size: 14px; color: #3f6389; line-height: 1.65; margin-bottom: 18px; margin-top: 0;">Wegovy is a once-weekly injection approved for long-term weight management &mdash; backed by real-world results and robust clinical evidence.</p>
+
+              <!-- prod-benefits -->
+              <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; margin-bottom: 10px;">Benefits:</div>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">~20.7% average body weight loss</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">Does not affect oral contraceptive effectiveness</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">Boost metabolic and cardiovascular health</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">Proven, long-established safety profile</span>
+                </div>
+              </div>
+
+              <!-- prod-btns — CTA with arrow SVG -->
+              <a style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #0064b0; color: white; text-align: center; padding: 14px 24px; border-radius: 1000px; font-weight: 600; font-size: 15px; cursor: pointer; font-family: Gilroy, Arial, sans-serif; text-decoration: none;">
+                <span>Start my Journey</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" viewBox="0 0 20 21" fill="none"><path d="M12.0254 5.44141L17.0837 10.4997L12.0254 15.5581" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.91602 10.5H16.941" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mounjaro — collapsed accordion (de-emphasised) -->
+          <div style="background: white; border-radius: 23px; padding: 18px 24px; box-shadow: 0 1px 8px rgba(15,60,108,0.05); border: 1px solid rgba(15,60,108,0.12); opacity: 0.50;">
             <div style="display: flex; justify-content: space-between; align-items: center;">
               <div>
-                <div style="font-size: 18px; font-weight: 700; color: #0a2540;">Wegovy (Semaglutide)</div>
-                <div style="font-size: 13px; color: #666; margin-top: 4px;">Clinically proven &bull; Better retention &bull; Gentler start</div>
+                <div style="font-size: 16px; font-weight: 600; color: #3f6389; font-family: Gilroy, Arial, sans-serif;">Mounjaro&reg; for Weight Loss</div>
+                <div style="font-size: 12px; color: #3f6389; opacity: 0.7; margin-top: 4px;">
+                  From
+                  <span style="text-decoration: line-through; color: #007f4e; margin-left: 4px;">&pound;44.75/week</span>
+                  <span style="color: #ff0000; font-weight: 600; margin-left: 4px;">&pound;37.25/week</span>
+                </div>
               </div>
-              <div style="text-align: right;">
-                <div style="font-size: 22px; font-weight: 700; color: #0d6e4f;">&pound;149<span style="font-size: 13px; font-weight: 400; color: #888;">/month</span></div>
-              </div>
+              <div style="font-size: 13px; color: #0064b0; font-weight: 600; cursor: pointer; white-space: nowrap;">View alternative &darr;</div>
             </div>
-            <div style="margin-top: 14px; background: #0d6e4f; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 15px;">Start My Journey &rarr;</div>
           </div>
-          <!-- Mounjaro collapsed -->
-          <div style="text-align: center; padding: 10px; color: #888; font-size: 13px; cursor: pointer;">
-            <span style="border-bottom: 1px dashed #bbb;">See alternative treatment (Mounjaro) &darr;</span>
-          </div>
+
         </div>
       </div>
     </div>
     <div class="notes-sidebar">
       <div class="sticky-note observation-note">
         <div class="note-label">Observation</div>
-        Plans page shows both treatments side-by-side, causing 50% drop-off. PostHog test (YourPlanRD) is already showing positive signals for leading with a single recommendation. Wegovy has better long-term retention data.
+        Plans page shows both treatments side-by-side with equal visual weight, causing 50% drop-off. PostHog test (YourPlanRD) is already showing positive signals for leading with a single recommendation. Wegovy has better long-term retention data.
       </div>
       <div class="sticky-note idea-note">
         <div class="note-label">Idea</div>
-        Lead with Wegovy as the default recommended treatment. Collapse Mounjaro behind a secondary "See alternative treatment" link. Reduce decision paralysis at the most critical page in the funnel.
+        Lead with Wegovy as the default recommended treatment in a fully expanded card. Collapse Mounjaro into a greyed-out accordion below. Reduce decision paralysis at the most critical page in the funnel.
       </div>
     </div>
   </div>
@@ -563,35 +641,125 @@ body {
   </div>
   <div class="screenshot-area">
     <div class="mockup-wrapper">
-      <div style="width: 100%; max-width: 650px; padding: 20px;">
-        <div class="proposed-badge">PROPOSED</div>
-        <div style="border: 2px solid #0d6e4f; border-radius: 12px; padding: 24px; background: white;">
-          <div style="font-size: 18px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">What to Expect</div>
-          <div style="font-size: 12px; color: #888; margin-bottom: 16px;">Honest comparison so you can choose with confidence</div>
-          <div style="display: flex; gap: 16px;">
-            <!-- Wegovy column -->
-            <div style="flex: 1; background: #f0faf6; border-radius: 8px; padding: 16px;">
-              <div style="font-size: 14px; font-weight: 700; color: #0d6e4f; margin-bottom: 8px;">Wegovy (Semaglutide)</div>
-              <div style="font-size: 12px; color: #555; line-height: 1.6;">
-                <div style="margin-bottom: 6px;">&bull; Single receptor (GLP-1)</div>
-                <div style="margin-bottom: 6px;">&bull; Gentler start, fewer initial side effects</div>
-                <div style="margin-bottom: 6px;">&bull; Gradual dose escalation over 16 weeks</div>
-                <div>&bull; Most common: mild nausea (first 2-4 weeks)</div>
+      <div class="browser-chrome" style="max-width: 750px;">
+        <div class="chrome-bar">
+          <div class="chrome-dot" style="background: #ff5f56;"></div>
+          <div class="chrome-dot" style="background: #ffbd2e;"></div>
+          <div class="chrome-dot" style="background: #27c93f;"></div>
+          <div class="chrome-url">boltpharmacy.co.uk/weight-loss-plans-30</div>
+        </div>
+        <div class="chrome-content" style="padding: 28px 20px; background: #fafffe; font-family: Gilroy, Arial, sans-serif;">
+          <div class="proposed-badge">PROPOSED — NEW SECTION</div>
+
+          <!-- Context: sits below the product cards on the plans page -->
+          <div style="font-size: 10px; color: #3f6389; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; text-align: center;">&#x2193; Below the product cards &#x2193;</div>
+
+          <!-- What to Expect section — Bolt prod-card_n style container -->
+          <div style="background: white; border-radius: 23px; padding: 28px 24px; box-shadow: 0 2px 16px rgba(15,60,108,0.08); border: 1px solid rgba(15,60,108,0.12);">
+
+            <div style="text-align: center; margin-bottom: 22px;">
+              <div style="font-size: 22px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px; font-family: Gilroy, Arial, sans-serif;">What to Expect</div>
+              <div style="font-size: 14px; color: #3f6389;">Honest comparison so you can choose with confidence</div>
+            </div>
+
+            <!-- Two-column comparison — Bolt card structure -->
+            <div style="display: flex; gap: 14px; margin-bottom: 18px;">
+
+              <!-- Wegovy column -->
+              <div style="flex: 1; background: #e5edf0; border-radius: 18px; overflow: hidden;">
+                <!-- Product image header -->
+                <div style="padding: 16px 16px 12px; text-align: center;">
+                  <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/680f12d9b2453bbf1342a59b_Image%20(41).webp" alt="Wegovy pen" style="max-height: 60px; width: auto; object-fit: contain; margin-bottom: 6px;" />
+                  <div style="font-size: 12px; font-weight: 700; color: #007f4e; letter-spacing: 0.5px;">WEGOVY&reg;</div>
+                </div>
+                <!-- Side effects content -->
+                <div style="background: white; margin: 0 10px 10px; border-radius: 14px; padding: 16px;">
+                  <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">Side Effects Profile</div>
+                  <div style="display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px;">
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Gentler start &mdash; gradual dose over 16 weeks</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Mild nausea in first 2&ndash;4 weeks (most common)</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Single receptor (GLP-1) &mdash; well-studied</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Side effects typically resolve within weeks</span>
+                    </div>
+                  </div>
+                  <div style="background: rgba(0,127,78,0.08); border-radius: 1000px; padding: 8px 12px; font-size: 11px; color: #007f4e; font-weight: 600; text-align: center;">Easier adjustment period</div>
+                </div>
+              </div>
+
+              <!-- Mounjaro column -->
+              <div style="flex: 1; background: #e5edf0; border-radius: 18px; overflow: hidden;">
+                <!-- Product image header -->
+                <div style="padding: 16px 16px 12px; text-align: center;">
+                  <div style="width: 50px; height: 50px; margin: 0 auto 6px; background: rgba(15,60,108,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 10px; font-weight: 700; color: #0f3c6c;">M</span>
+                  </div>
+                  <div style="font-size: 12px; font-weight: 700; color: #0f3c6c; letter-spacing: 0.5px;">MOUNJARO&reg;</div>
+                </div>
+                <!-- Side effects content -->
+                <div style="background: white; margin: 0 10px 10px; border-radius: 14px; padding: 16px;">
+                  <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">Side Effects Profile</div>
+                  <div style="display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px;">
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Dual receptor (GLP-1 + GIP) &mdash; stronger effect</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Nausea + reduced appetite in first 4&ndash;6 weeks</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">More pronounced initial adjustment period</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Higher average weight loss (~22.5%)</span>
+                    </div>
+                  </div>
+                  <div style="background: rgba(0,100,176,0.08); border-radius: 1000px; padding: 8px 12px; font-size: 11px; color: #0064b0; font-weight: 600; text-align: center;">Stronger results, bolder start</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Clinician reassurance strip — Bolt trust pattern -->
+            <div style="background: rgba(0,127,78,0.05); border: 1px solid rgba(0,127,78,0.15); border-radius: 14px; padding: 16px 18px; display: flex; align-items: center; gap: 14px;">
+              <div style="width: 40px; height: 40px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 14px; font-weight: 600; color: #0f3c6c;">Your clinician will monitor you throughout</div>
+                <div style="font-size: 13px; color: #3f6389; margin-top: 3px; line-height: 1.4;">Dose adjustments are made based on your individual response. You&rsquo;re never on your own.</div>
               </div>
             </div>
-            <!-- Mounjaro column -->
-            <div style="flex: 1; background: #f5f0fa; border-radius: 8px; padding: 16px;">
-              <div style="font-size: 14px; font-weight: 700; color: #6a1b9a; margin-bottom: 8px;">Mounjaro (Tirzepatide)</div>
-              <div style="font-size: 12px; color: #555; line-height: 1.6;">
-                <div style="margin-bottom: 6px;">&bull; Dual receptor (GLP-1 + GIP)</div>
-                <div style="margin-bottom: 6px;">&bull; Stronger effect, higher average weight loss</div>
-                <div style="margin-bottom: 6px;">&bull; More pronounced initial adjustment period</div>
-                <div>&bull; Most common: nausea, reduced appetite (first 4-6 weeks)</div>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top: 14px; padding: 12px; background: #e8f5e9; border-radius: 8px; font-size: 12px; color: #2e7d32; text-align: center;">
-            <strong>Your clinician will monitor you throughout</strong> &mdash; dose adjustments are made based on your individual response
+
           </div>
         </div>
       </div>
@@ -603,7 +771,7 @@ body {
       </div>
       <div class="sticky-note idea-note">
         <div class="note-label">Idea</div>
-        Add a "What to Expect" section that honestly compares both treatments&rsquo; side effects, positioning transparency as a trust signal rather than a deterrent. Include clinician monitoring reassurance.
+        Add a "What to Expect" section below the product cards that honestly compares both treatments&rsquo; side effects, matching the existing card visual style. Position transparency as a trust signal with clinician reassurance.
       </div>
     </div>
   </div>
@@ -628,9 +796,9 @@ body {
           <div class="mockup-label-current">CURRENT &mdash; 19 QUESTIONS</div>
           <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white;">
             <div style="display: flex; gap: 2px; margin-bottom: 12px;">
-              <div style="flex:1; height:4px; background:#0d6e4f; border-radius:2px;"></div>
-              <div style="flex:1; height:4px; background:#0d6e4f; border-radius:2px;"></div>
-              <div style="flex:1; height:4px; background:#0d6e4f; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
@@ -649,7 +817,7 @@ body {
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
             </div>
             <div style="font-size: 11px; color: #999; text-align: center;">Question 3 of 19</div>
-            <div style="font-size: 14px; font-weight: 600; color: #0a2540; text-align: center; margin: 12px 0;">What is your date of birth?</div>
+            <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; text-align: center; margin: 12px 0;">What is your date of birth?</div>
             <div style="font-size: 11px; color: #e53935; text-align: center;">(Age asked again at Q7)</div>
             <div style="margin-top: 12px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 12px; color: #888; text-align: center;">dd / mm / yyyy</div>
           </div>
@@ -659,9 +827,9 @@ body {
           <div class="mockup-label-proposed">PROPOSED &mdash; 10 QUESTIONS</div>
           <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
             <div style="display: flex; gap: 3px; margin-bottom: 12px;">
-              <div style="flex:1; height:4px; background:#0d6e4f; border-radius:2px;"></div>
-              <div style="flex:1; height:4px; background:#0d6e4f; border-radius:2px;"></div>
-              <div style="flex:1; height:4px; background:#0d6e4f; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
@@ -671,7 +839,7 @@ body {
               <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
             </div>
             <div style="font-size: 11px; color: #43a047; text-align: center; font-weight: 600;">Question 3 of 10</div>
-            <div style="font-size: 14px; font-weight: 600; color: #0a2540; text-align: center; margin: 12px 0;">What is your date of birth?</div>
+            <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; text-align: center; margin: 12px 0;">What is your date of birth?</div>
             <div style="margin-top: 12px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 12px; color: #888; text-align: center;">dd / mm / yyyy</div>
             <div style="margin-top: 14px; padding: 10px; background: #f0faf6; border-radius: 6px; font-size: 11px; color: #2e7d32; text-align: center;">
               We&rsquo;ll ask the rest after you&rsquo;re approved &mdash; only essential questions for now
@@ -708,16 +876,16 @@ body {
     <div class="mockup-wrapper">
       <div style="width: 100%; max-width: 500px; padding: 20px;">
         <div class="proposed-badge">PROPOSED</div>
-        <div style="background: white; border: 2px solid #0d6e4f; border-radius: 12px; padding: 28px; text-align: center;">
+        <div style="background: white; border: 2px solid #007f4e; border-radius: 12px; padding: 28px; text-align: center;">
           <div style="font-size: 28px; margin-bottom: 6px;">&#10003;</div>
-          <div style="font-size: 20px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">Payment Confirmed</div>
+          <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Payment Confirmed</div>
           <div style="font-size: 13px; color: #888; margin-bottom: 20px;">Now let&rsquo;s get your medication on the way</div>
           <!-- Progress indicator -->
           <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px;">
-            <div style="width: 28px; height: 28px; border-radius: 50%; background: #0d6e4f; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">&#10003;</div>
-            <div style="width: 40px; height: 2px; background: #0d6e4f;"></div>
-            <div style="width: 28px; height: 28px; border-radius: 50%; background: #0d6e4f; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">&#10003;</div>
-            <div style="width: 40px; height: 2px; background: #0d6e4f;"></div>
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: #007f4e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">&#10003;</div>
+            <div style="width: 40px; height: 2px; background: #007f4e;"></div>
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: #007f4e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">&#10003;</div>
+            <div style="width: 40px; height: 2px; background: #007f4e;"></div>
             <div style="width: 28px; height: 28px; border-radius: 50%; background: #ff9800; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</div>
             <div style="width: 40px; height: 2px; background: #e0e0e0;"></div>
             <div style="width: 28px; height: 28px; border-radius: 50%; background: #e0e0e0; color: #888; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">4</div>
@@ -733,7 +901,7 @@ body {
             <div style="font-size: 14px; font-weight: 700; color: #e65100;">Complete now to receive in 1-2 days</div>
             <div style="font-size: 12px; color: #888; margin-top: 4px;">Finishing enrolment takes less than 2 minutes</div>
           </div>
-          <div style="background: #0d6e4f; color: white; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px;">Complete Enrolment in Bolt Hub &rarr;</div>
+          <div style="background: #007f4e; color: white; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px;">Complete Enrolment in Bolt Hub &rarr;</div>
           <!-- Reminder preview -->
           <div style="margin-top: 16px; border: 1px dashed #ddd; border-radius: 8px; padding: 10px; font-size: 11px; color: #888;">
             <div style="font-weight: 600; color: #555; margin-bottom: 4px;">&#128233; Reminder set</div>
@@ -788,18 +956,18 @@ body {
         <div class="chrome-content">
           <!-- Nav bar -->
           <div style="display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; margin-bottom: 16px;">
-            <div style="font-weight: 700; color: #0a2540; font-size: 14px;">Bolt Pharmacy</div>
+            <div style="font-weight: 700; color: #0f3c6c; font-size: 14px;">Bolt Pharmacy</div>
             <div style="margin-left: auto; font-size: 11px; color: #888;">Weight Loss &bull; Treatments &bull; About</div>
           </div>
           <!-- Hero -->
           <div style="background: linear-gradient(135deg, #f0faf6, #e8f5e9); border-radius: 10px; padding: 24px;">
-            <div style="font-size: 20px; font-weight: 700; color: #0a2540; margin-bottom: 6px;">Start your clinically-proven weight loss journey</div>
+            <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Start your clinically-proven weight loss journey</div>
             <div style="font-size: 12px; color: #666; margin-bottom: 16px;">Prescribed by UK clinicians. Delivered to your door.</div>
             <!-- Trust bar — PROPOSED -->
-            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px; border: 2px dashed #0d6e4f; border-radius: 8px; padding: 10px; position: relative;">
-              <div style="position: absolute; top: -8px; left: 10px; background: #0d6e4f; color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 1px;">PROPOSED</div>
+            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 16px; border: 2px dashed #007f4e; border-radius: 8px; padding: 10px; position: relative;">
+              <div style="position: absolute; top: -8px; left: 10px; background: #007f4e; color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 1px;">PROPOSED</div>
               <div style="display: flex; align-items: center; gap: 4px;">
-                <div style="background: #0d6e4f; color: white; font-size: 9px; font-weight: 700; padding: 3px 6px; border-radius: 3px;">&#9733; 4.7</div>
+                <div style="background: #007f4e; color: white; font-size: 9px; font-weight: 700; padding: 3px 6px; border-radius: 3px;">&#9733; 4.7</div>
                 <span style="font-size: 11px; color: #555;">Trustpilot</span>
               </div>
               <div style="width: 1px; height: 18px; background: #ddd;"></div>
@@ -808,7 +976,7 @@ body {
                 <span style="font-size: 11px; color: #1565c0; text-decoration: underline; cursor: pointer;">Verify on GPhC register &rarr;</span>
               </div>
             </div>
-            <div style="background: #0d6e4f; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check Eligibility</div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check Eligibility</div>
           </div>
         </div>
       </div>
@@ -841,8 +1009,8 @@ body {
     <div class="mockup-wrapper">
       <div style="width: 100%; max-width: 550px; padding: 20px;">
         <div class="proposed-badge">PROPOSED</div>
-        <div style="background: white; border: 2px solid #0d6e4f; border-radius: 12px; padding: 24px;">
-          <div style="font-size: 16px; font-weight: 700; color: #0a2540; margin-bottom: 16px;">Why Mounjaro Works</div>
+        <div style="background: white; border: 2px solid #007f4e; border-radius: 12px; padding: 24px;">
+          <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-bottom: 16px;">Why Mounjaro Works</div>
           <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
             <div style="font-size: 14px; color: #333; font-weight: 600;">Up to 22.5% body weight reduction</div>
             <div style="font-size: 11px; color: #1565c0; margin-top: 4px; cursor: pointer;">
@@ -861,7 +1029,7 @@ body {
               <span style="text-decoration: underline;">Source: European Medicines Agency Assessment</span> &rarr;
             </div>
           </div>
-          <div style="margin-top: 16px; background: #0d6e4f; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px;">Get Started</div>
+          <div style="margin-top: 16px; background: #007f4e; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px;">Get Started</div>
         </div>
       </div>
     </div>
@@ -901,13 +1069,13 @@ body {
         <div class="chrome-content" style="padding: 0;">
           <!-- Nav -->
           <div style="display: flex; align-items: center; padding: 10px 16px; border-bottom: 1px solid #eee;">
-            <div style="font-weight: 700; color: #0a2540; font-size: 13px;">Bolt Pharmacy</div>
+            <div style="font-weight: 700; color: #0f3c6c; font-size: 13px;">Bolt Pharmacy</div>
             <div style="margin-left: auto; font-size: 11px; color: #888;">Weight Loss &bull; Treatments &bull; About</div>
           </div>
           <!-- Trust strip — PROPOSED -->
-          <div style="border: 2px dashed #0d6e4f; position: relative;">
-            <div style="position: absolute; top: -8px; left: 10px; background: #0d6e4f; color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 1px;">PROPOSED</div>
-            <div style="background: #0d6e4f; padding: 8px 16px; display: flex; justify-content: center; gap: 24px; align-items: center;">
+          <div style="border: 2px dashed #007f4e; position: relative;">
+            <div style="position: absolute; top: -8px; left: 10px; background: #007f4e; color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 1px;">PROPOSED</div>
+            <div style="background: #007f4e; padding: 8px 16px; display: flex; justify-content: center; gap: 24px; align-items: center;">
               <div style="display: flex; align-items: center; gap: 5px;">
                 <div style="width: 16px; height: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white;">&#10003;</div>
                 <span style="color: white; font-size: 11px; font-weight: 500;">GPhC Registered</span>
@@ -982,7 +1150,7 @@ body {
           <!-- Quiz module -->
           <div style="border: 2px solid #1565c0; border-radius: 12px; padding: 20px; margin-bottom: 16px; background: linear-gradient(135deg, #f5f9ff, #e3f2fd);">
             <div style="text-align: center;">
-              <div style="font-size: 16px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">Not sure which treatment is right for you?</div>
+              <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Not sure which treatment is right for you?</div>
               <div style="font-size: 12px; color: #666; margin-bottom: 14px;">Answer 3 quick questions and we&rsquo;ll recommend the best option</div>
               <div style="display: flex; gap: 10px; justify-content: center;">
                 <div style="background: #1565c0; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 13px;">Help Me Choose</div>
@@ -993,11 +1161,11 @@ body {
           <!-- Product cards below (faded to show hierarchy) -->
           <div style="opacity: 0.5; display: flex; gap: 12px;">
             <div style="flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 14px; background: white;">
-              <div style="font-size: 13px; font-weight: 600; color: #0a2540;">Wegovy</div>
+              <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Wegovy</div>
               <div style="font-size: 11px; color: #888; margin-top: 4px;">From &pound;149/month</div>
             </div>
             <div style="flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 14px; background: white;">
-              <div style="font-size: 13px; font-weight: 600; color: #0a2540;">Mounjaro</div>
+              <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Mounjaro</div>
               <div style="font-size: 11px; color: #888; margin-top: 4px;">From &pound;149/month</div>
             </div>
           </div>
@@ -1033,7 +1201,7 @@ body {
       <div style="width: 100%; max-width: 600px; padding: 20px;">
         <div class="proposed-badge">PROPOSED</div>
         <div style="background: white; border: 2px solid #1565c0; border-radius: 12px; padding: 24px;">
-          <div style="font-size: 16px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">Your Treatment Journey</div>
+          <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Your Treatment Journey</div>
           <div style="font-size: 12px; color: #888; margin-bottom: 20px;">Your clinician adjusts your dose based on how you respond</div>
           <!-- Dose selector pills -->
           <div style="display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;">
@@ -1109,7 +1277,7 @@ body {
           <!-- Mounjaro card -->
           <div style="flex: 1; border: 2px solid #6a1b9a; border-radius: 12px; padding: 18px; background: white; position: relative;">
             <div style="position: absolute; top: -10px; left: 14px; background: #6a1b9a; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px;">BEST FOR: MAXIMUM RESULTS</div>
-            <div style="font-size: 16px; font-weight: 700; color: #0a2540; margin-top: 8px;">Mounjaro</div>
+            <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-top: 8px;">Mounjaro</div>
             <div style="font-size: 12px; color: #666; margin: 6px 0 12px;">(Tirzepatide)</div>
             <div style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 12px;">
               &bull; Dual receptor mechanism<br>
@@ -1123,9 +1291,9 @@ body {
             <div style="background: #6a1b9a; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start My Journey</div>
           </div>
           <!-- Wegovy card -->
-          <div style="flex: 1; border: 2px solid #0d6e4f; border-radius: 12px; padding: 18px; background: white; position: relative;">
-            <div style="position: absolute; top: -10px; left: 14px; background: #0d6e4f; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px;">BEST FOR: STEADY MANAGEMENT</div>
-            <div style="font-size: 16px; font-weight: 700; color: #0a2540; margin-top: 8px;">Wegovy</div>
+          <div style="flex: 1; border: 2px solid #007f4e; border-radius: 12px; padding: 18px; background: white; position: relative;">
+            <div style="position: absolute; top: -10px; left: 14px; background: #007f4e; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px;">BEST FOR: STEADY MANAGEMENT</div>
+            <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-top: 8px;">Wegovy</div>
             <div style="font-size: 12px; color: #666; margin: 6px 0 12px;">(Semaglutide)</div>
             <div style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 12px;">
               &bull; Single receptor mechanism<br>
@@ -1136,7 +1304,7 @@ body {
               <div style="font-size: 10px; font-weight: 700; color: #2e7d32; letter-spacing: 1px; margin-bottom: 4px;">BEST IF YOU&hellip;</div>
               <div style="font-size: 12px; color: #555; line-height: 1.5;">Prefer a gentler approach and value long-term sustainability over rapid results</div>
             </div>
-            <div style="background: #0d6e4f; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start My Journey</div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start My Journey</div>
           </div>
         </div>
       </div>
@@ -1183,26 +1351,26 @@ body {
           <div class="mockup-label-current">CURRENT</div>
           <div style="border: 1px solid #eee; border-radius: 8px; padding: 14px; opacity: 0.7; background: white; position: relative;">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-8deg); background: rgba(229,57,53,0.9); color: white; font-size: 10px; font-weight: 700; padding: 6px 14px; border-radius: 4px; letter-spacing: 1px; white-space: nowrap; z-index: 1;">TRIGGERS SCEPTICISM</div>
-            <div style="font-size: 13px; font-weight: 700; color: #0a2540; margin-bottom: 10px;">Bolt vs Others</div>
+            <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">Bolt vs Others</div>
             <table style="width: 100%; font-size: 10px; border-collapse: collapse;">
               <tr style="border-bottom: 1px solid #f0f0f0;">
                 <td style="padding: 6px 4px; color: #888;"></td>
-                <td style="padding: 6px 4px; font-weight: 600; color: #0d6e4f;">Bolt</td>
+                <td style="padding: 6px 4px; font-weight: 600; color: #007f4e;">Bolt</td>
                 <td style="padding: 6px 4px; color: #888;">Others</td>
               </tr>
               <tr style="border-bottom: 1px solid #f0f0f0;">
                 <td style="padding: 6px 4px; color: #555;">UK Prescribers</td>
-                <td style="padding: 6px 4px; color: #0d6e4f;">&#10003;</td>
+                <td style="padding: 6px 4px; color: #007f4e;">&#10003;</td>
                 <td style="padding: 6px 4px; color: #e53935;">&#10007;</td>
               </tr>
               <tr style="border-bottom: 1px solid #f0f0f0;">
                 <td style="padding: 6px 4px; color: #555;">Free Delivery</td>
-                <td style="padding: 6px 4px; color: #0d6e4f;">&#10003;</td>
+                <td style="padding: 6px 4px; color: #007f4e;">&#10003;</td>
                 <td style="padding: 6px 4px; color: #e53935;">&#10007;</td>
               </tr>
               <tr>
                 <td style="padding: 6px 4px; color: #555;">Clinician Support</td>
-                <td style="padding: 6px 4px; color: #0d6e4f;">&#10003;</td>
+                <td style="padding: 6px 4px; color: #007f4e;">&#10003;</td>
                 <td style="padding: 6px 4px; color: #e53935;">&#10007;</td>
               </tr>
             </table>
@@ -1212,23 +1380,23 @@ body {
         <div style="flex: 1;">
           <div class="mockup-label-proposed">PROPOSED</div>
           <div style="border: 2px solid #43a047; border-radius: 8px; padding: 14px; background: white;">
-            <div style="font-size: 13px; font-weight: 700; color: #0a2540; margin-bottom: 10px;">How We Keep Prices Low</div>
+            <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">How We Keep Prices Low</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
               <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
                 <div style="font-size: 16px; margin-bottom: 4px;">&#127973;</div>
-                <div style="font-size: 10px; font-weight: 600; color: #0a2540;">Direct from manufacturers</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">Direct from manufacturers</div>
               </div>
               <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
                 <div style="font-size: 16px; margin-bottom: 4px;">&#128187;</div>
-                <div style="font-size: 10px; font-weight: 600; color: #0a2540;">No high-street overheads</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">No high-street overheads</div>
               </div>
               <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
                 <div style="font-size: 16px; margin-bottom: 4px;">&#128666;</div>
-                <div style="font-size: 10px; font-weight: 600; color: #0a2540;">Delivery included</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">Delivery included</div>
               </div>
               <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
                 <div style="font-size: 16px; margin-bottom: 4px;">&#129657;</div>
-                <div style="font-size: 10px; font-weight: 600; color: #0a2540;">Consultation included</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">Consultation included</div>
               </div>
             </div>
           </div>
@@ -1265,8 +1433,8 @@ body {
         <div class="proposed-badge">PROPOSED</div>
         <div style="background: white; border: 2px solid #e65100; border-radius: 12px; padding: 24px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-            <div style="font-size: 16px; font-weight: 700; color: #0a2540;">Wegovy Monthly Plan</div>
-            <div style="font-size: 22px; font-weight: 700; color: #0a2540;">&pound;149</div>
+            <div style="font-size: 16px; font-weight: 700; color: #0f3c6c;">Wegovy Monthly Plan</div>
+            <div style="font-size: 22px; font-weight: 700; color: #0f3c6c;">&pound;149</div>
           </div>
           <!-- Expandable breakdown -->
           <div style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
@@ -1274,26 +1442,26 @@ body {
             <div style="padding: 10px 14px;">
               <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5;">
                 <span style="font-size: 13px; color: #555;">Medication (Wegovy 2.5mg)</span>
-                <span style="font-size: 13px; font-weight: 600; color: #0a2540;">&pound;129</span>
+                <span style="font-size: 13px; font-weight: 600; color: #0f3c6c;">&pound;129</span>
               </div>
               <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5;">
                 <span style="font-size: 13px; color: #555;">Clinical consultation</span>
-                <span style="font-size: 13px; font-weight: 600; color: #0a2540;">&pound;15</span>
+                <span style="font-size: 13px; font-weight: 600; color: #0f3c6c;">&pound;15</span>
               </div>
               <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5;">
                 <span style="font-size: 13px; color: #555;">Next-day delivery</span>
-                <span style="font-size: 13px; font-weight: 600; color: #0a2540;">&pound;5</span>
+                <span style="font-size: 13px; font-weight: 600; color: #0f3c6c;">&pound;5</span>
               </div>
               <div style="display: flex; justify-content: space-between; padding: 8px 0; font-weight: 700;">
-                <span style="font-size: 13px; color: #0a2540;">Total</span>
-                <span style="font-size: 13px; color: #0a2540;">&pound;149</span>
+                <span style="font-size: 13px; color: #0f3c6c;">Total</span>
+                <span style="font-size: 13px; color: #0f3c6c;">&pound;149</span>
               </div>
             </div>
           </div>
           <div style="margin-top: 12px; padding: 10px; background: #e8f5e9; border-radius: 6px; font-size: 11px; color: #2e7d32; text-align: center;">
             No hidden fees &bull; No subscription lock-in &bull; Cancel anytime
           </div>
-          <div style="margin-top: 14px; background: #0d6e4f; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px;">Get Started</div>
+          <div style="margin-top: 14px; background: #007f4e; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px;">Get Started</div>
         </div>
       </div>
     </div>
@@ -1329,7 +1497,7 @@ body {
           <div class="mockup-label-current">CURRENT</div>
           <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white; position: relative;">
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); background: rgba(229,57,53,0.9); color: white; font-size: 9px; font-weight: 700; padding: 5px 12px; border-radius: 4px; letter-spacing: 1px; white-space: nowrap; z-index: 1;">COLD, TEXT-HEAVY</div>
-            <div style="font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 8px;">Consultation</div>
+            <div style="font-size: 14px; font-weight: 700; color: #0f3c6c; margin-bottom: 8px;">Consultation</div>
             <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 90%;"></div>
             <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 100%;"></div>
             <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 85%;"></div>
@@ -1343,7 +1511,7 @@ body {
         <div style="flex: 1;">
           <div class="mockup-label-proposed">PROPOSED</div>
           <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
-            <div style="font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 4px;">Your Free Clinical Assessment</div>
+            <div style="font-size: 14px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Your Free Clinical Assessment</div>
             <div style="font-size: 11px; color: #888; margin-bottom: 12px;">Takes 3-5 minutes &bull; No payment required</div>
             <!-- Trust badges -->
             <div style="display: flex; gap: 8px; margin-bottom: 12px;">
@@ -1357,7 +1525,7 @@ body {
               <div style="margin-bottom: 4px;">&#10003; Reviewed by a UK prescriber</div>
               <div>&#10003; No obligation to proceed</div>
             </div>
-            <div style="background: #0d6e4f; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 12px;">Start My Free Assessment &rarr;</div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 12px;">Start My Free Assessment &rarr;</div>
           </div>
         </div>
       </div>
@@ -1403,7 +1571,7 @@ body {
         <div style="flex: 1;">
           <div class="mockup-label-current">CURRENT</div>
           <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white;">
-            <div style="font-size: 15px; font-weight: 700; color: #0a2540; margin-bottom: 8px;">Lose Weight With Clinically-Proven Treatments</div>
+            <div style="font-size: 15px; font-weight: 700; color: #0f3c6c; margin-bottom: 8px;">Lose Weight With Clinically-Proven Treatments</div>
             <div style="height: 6px; background: #f0f0f0; border-radius: 4px; margin-bottom: 4px; width: 90%;"></div>
             <div style="height: 6px; background: #f0f0f0; border-radius: 4px; margin-bottom: 4px; width: 100%;"></div>
             <div style="height: 6px; background: #f0f0f0; border-radius: 4px; margin-bottom: 12px; width: 75%;"></div>
@@ -1414,25 +1582,25 @@ body {
         <div style="flex: 1;">
           <div class="mockup-label-proposed">PROPOSED</div>
           <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
-            <div style="font-size: 15px; font-weight: 700; color: #0a2540; margin-bottom: 6px;">Wegovy &amp; Mounjaro from &pound;149/month</div>
+            <div style="font-size: 15px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Wegovy &amp; Mounjaro from &pound;149/month</div>
             <div style="font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 12px;">
               Prescribed by UK clinicians. Delivered next-day to your door. Includes ongoing clinical support.
             </div>
             <div style="display: flex; gap: 8px; margin-bottom: 12px;">
               <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 8px; text-align: center;">
-                <div style="font-size: 18px; font-weight: 700; color: #0d6e4f;">22.5%</div>
+                <div style="font-size: 18px; font-weight: 700; color: #007f4e;">22.5%</div>
                 <div style="font-size: 9px; color: #888;">avg. weight loss</div>
               </div>
               <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 8px; text-align: center;">
-                <div style="font-size: 18px; font-weight: 700; color: #0d6e4f;">&pound;149</div>
+                <div style="font-size: 18px; font-weight: 700; color: #007f4e;">&pound;149</div>
                 <div style="font-size: 9px; color: #888;">per month, all-in</div>
               </div>
               <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 8px; text-align: center;">
-                <div style="font-size: 18px; font-weight: 700; color: #0d6e4f;">48hr</div>
+                <div style="font-size: 18px; font-weight: 700; color: #007f4e;">48hr</div>
                 <div style="font-size: 9px; color: #888;">delivery</div>
               </div>
             </div>
-            <div style="background: #0d6e4f; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check My Eligibility &rarr;</div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check My Eligibility &rarr;</div>
           </div>
         </div>
       </div>
@@ -1486,12 +1654,12 @@ body {
           <div class="mockup-label-proposed">PROPOSED &mdash; SINGLE COLUMN</div>
           <div style="border: 2px solid #43a047; border-radius: 8px; padding: 14px; background: white;">
             <div style="text-align: center;">
-              <div style="font-size: 15px; font-weight: 700; color: #0a2540; margin-bottom: 6px;">Your Weight Loss Journey Starts Here</div>
+              <div style="font-size: 15px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Your Weight Loss Journey Starts Here</div>
               <div style="font-size: 11px; color: #666; margin-bottom: 12px;">One clear message. One clear action.</div>
               <div style="background: #f5f5f5; border-radius: 8px; padding: 14px; margin-bottom: 12px;">
                 <div style="font-size: 12px; color: #555; line-height: 1.6;">UK-prescribed Wegovy &amp; Mounjaro<br>From &pound;149/month &bull; Next-day delivery</div>
               </div>
-              <div style="background: #0d6e4f; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check My Eligibility</div>
+              <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check My Eligibility</div>
             </div>
           </div>
         </div>
@@ -1530,10 +1698,10 @@ body {
           <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white; position: relative;">
             <div style="font-size: 12px; color: #888; margin-bottom: 8px;">Before you continue...</div>
             <div style="border: 2px solid #e53935; border-radius: 8px; padding: 14px; text-align: center;">
-              <div style="font-size: 14px; font-weight: 600; color: #0a2540; margin-bottom: 8px;">Are you over 18?</div>
+              <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; margin-bottom: 8px;">Are you over 18?</div>
               <div style="font-size: 11px; color: #888; margin-bottom: 10px;">Redundant text about age requirements that adds friction</div>
               <div style="display: flex; gap: 8px; justify-content: center;">
-                <div style="background: #0d6e4f; color: white; padding: 8px 20px; border-radius: 6px; font-size: 12px; font-weight: 600;">I'm over 18</div>
+                <div style="background: #007f4e; color: white; padding: 8px 20px; border-radius: 6px; font-size: 12px; font-weight: 600;">I'm over 18</div>
                 <div style="background: #f5f5f5; color: #888; padding: 8px 20px; border-radius: 6px; font-size: 12px;">I'm under 18</div>
               </div>
             </div>
@@ -1544,9 +1712,9 @@ body {
         <div style="flex: 1;">
           <div class="mockup-label-proposed">PROPOSED</div>
           <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
-            <div style="font-size: 14px; font-weight: 700; color: #0a2540; margin-bottom: 6px;">Start your weight loss journey</div>
+            <div style="font-size: 14px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Start your weight loss journey</div>
             <div style="font-size: 12px; color: #555; margin-bottom: 14px;">UK-prescribed treatments, delivered to your door</div>
-            <div style="background: #0d6e4f; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px; margin-bottom: 10px;">Check My Eligibility &rarr;</div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px; margin-bottom: 10px;">Check My Eligibility &rarr;</div>
             <div style="font-size: 10px; color: #888; text-align: center;">
               By continuing, you confirm you are 18 or over
             </div>
@@ -1648,28 +1816,28 @@ body {
         <div class="proposed-badge">PROPOSED &mdash; NEW INTRO SCREEN</div>
         <div style="background: white; border: 2px solid #00695c; border-radius: 12px; padding: 28px; text-align: center;">
           <div style="font-size: 28px; margin-bottom: 8px;">&#128139;</div>
-          <div style="font-size: 20px; font-weight: 700; color: #0a2540; margin-bottom: 6px;">Your Clinical Assessment</div>
+          <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Your Clinical Assessment</div>
           <div style="font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6;">We need to ask you some health questions so our clinicians can prescribe safely. Here&rsquo;s what to expect:</div>
           <!-- What to expect -->
           <div style="text-align: left; margin-bottom: 20px;">
             <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
               <div style="width: 24px; height: 24px; border-radius: 50%; background: #e0f2f1; color: #00695c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">1</div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: #0a2540;">10 quick health questions</div>
+                <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">10 quick health questions</div>
                 <div style="font-size: 11px; color: #888;">Takes 3-5 minutes</div>
               </div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
               <div style="width: 24px; height: 24px; border-radius: 50%; background: #e0f2f1; color: #00695c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">2</div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: #0a2540;">Clinician reviews your answers</div>
+                <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Clinician reviews your answers</div>
                 <div style="font-size: 11px; color: #888;">Usually within 24 hours</div>
               </div>
             </div>
             <div style="display: flex; align-items: flex-start; gap: 10px;">
               <div style="width: 24px; height: 24px; border-radius: 50%; background: #e0f2f1; color: #00695c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">3</div>
               <div>
-                <div style="font-size: 13px; font-weight: 600; color: #0a2540;">Get your personalised treatment plan</div>
+                <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Get your personalised treatment plan</div>
                 <div style="font-size: 11px; color: #888;">No obligation to proceed</div>
               </div>
             </div>
