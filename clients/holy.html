@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HOLY — Strategic Experimentation Ideas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   RESET & BASE
+   ============================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =============================================
+   COVER SECTION
+   ============================================= */
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2A1810 0%, #3D1F12 50%, #FF7748 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(255,237,40,0.12) 0%, transparent 70%);
+}
+.cover h1 {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 72px;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.cover .subtitle {
+  font-size: 22px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 40px;
+  position: relative;
+  line-height: 1.6;
+}
+.cover .divider {
+  width: 80px;
+  height: 4px;
+  background: #FFED28;
+  margin-bottom: 30px;
+  position: relative;
+}
+.cover .meta {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  position: relative;
+}
+.cover .meta span { margin: 0 12px; }
+.cover .prepared-for {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+}
+.cover .logo-area {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+}
+.cover .logo-area img {
+  height: 40px;
+  opacity: 0.6;
+}
+
+/* =============================================
+   TL;DR SECTION
+   ============================================= */
+.tldr-section {
+  max-width: 1100px;
+  margin: 60px auto 40px;
+  background: white;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-left: 4px solid #FF7748;
+}
+.tldr-section .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FF7748;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.tldr-section h2 {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2A1810;
+  margin-bottom: 24px;
+}
+.tldr-section p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+.tldr-section .data-points {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+.tldr-section .data-point .label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #FF7748;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.tldr-section .data-point .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2A1810;
+}
+
+/* =============================================
+   BIG SWINGS HEADER
+   ============================================= */
+.big-swings-header {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: linear-gradient(135deg, #1a0e08 0%, #8B3A10 100%);
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.big-swings-header::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 40%;
+  height: 160%;
+  background: radial-gradient(ellipse, rgba(255,237,40,0.12) 0%, transparent 70%);
+}
+.big-swing-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  color: white;
+}
+.big-swings-header h2 {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  position: relative;
+}
+.big-swings-header .insight {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 800px;
+  position: relative;
+}
+.big-swings-header .idea-count {
+  margin-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  position: relative;
+}
+
+/* =============================================
+   THEME HEADER
+   ============================================= */
+.theme-header {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: #2A1810;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.theme-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.theme-badge.green { background: #e8f5e9; color: #2e7d32; }
+.theme-badge.blue { background: #e3f2fd; color: #1565c0; }
+.theme-badge.orange { background: #fff3e0; color: #e65100; }
+
+.theme-header h2 {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.theme-header .insight {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 800px;
+}
+.theme-header .idea-count {
+  margin-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* =============================================
+   IDEA CARD
+   ============================================= */
+.idea-card {
+  max-width: 1100px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.idea-card.big-swing {
+  box-shadow: 0 4px 24px rgba(139,58,16,0.15), 0 0 0 2px rgba(200,50,120,0.12);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+  border-bottom: 1px solid #eee;
+  gap: 14px;
+}
+.idea-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.idea-number.bs {
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+.card-header h3 {
+  flex: 1;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2A1810;
+}
+.location-tag {
+  padding: 6px 14px;
+  background: #f0f2f5;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* =============================================
+   SCREENSHOT AREA — CRITICAL FLEX LAYOUT
+   ============================================= */
+.screenshot-area {
+  display: flex;
+  min-height: 350px;
+  background: #fafbfc;
+  border-bottom: 1px solid #e8e8e8;
+}
+.mockup-wrapper {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.notes-sidebar {
+  width: 270px;
+  min-width: 270px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8f9fa;
+  border-left: 1px solid #e8e8e8;
+}
+.sticky-note {
+  position: static;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.sticky-note .note-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.observation-note {
+  background: #fff9c4;
+  border-left: 3px solid #f9a825;
+}
+.observation-note .note-label { color: #f57f17; }
+.idea-note {
+  background: #c8e6c9;
+  border-left: 3px solid #43a047;
+}
+.idea-note .note-label { color: #2e7d32; }
+
+/* =============================================
+   HYPOTHESIS BAR
+   ============================================= */
+.hypothesis-bar {
+  padding: 20px 30px;
+  background: #FFF8E1;
+  border-left: 4px solid #FF7748;
+}
+.hypothesis-bar .hyp-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #FF7748;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hypothesis-bar p {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* =============================================
+   MOCKUP REUSABLE STYLES
+   ============================================= */
+.holy-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid #000;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0;
+}
+.holy-btn-yellow { background: #FFED28; color: #000; }
+.holy-btn-green { background: #B3DBC4; color: #000; }
+.holy-btn-pink { background: #FCB4D9; color: #000; }
+.holy-heading { font-family: 'Epilogue', sans-serif; font-weight: 700; color: #000; }
+.proposed-badge {
+  position: absolute;
+  top: -10px;
+  left: 12px;
+  background: #FF7748;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+.browser-chrome {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+}
+.browser-bar {
+  background: #f1f3f4;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.browser-dot { width: 10px; height: 10px; border-radius: 50%; }
+.browser-url {
+  flex: 1;
+  margin-left: 10px;
+  background: white;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #888;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 900px) {
+  .screenshot-area { flex-direction: column; }
+  .notes-sidebar { width: 100%; min-width: unset; border-left: none; border-top: 1px solid #e8e8e8; }
+  .cover { padding: 40px 30px; }
+  .cover h1 { font-size: 48px; }
+  .tldr-section, .theme-header, .idea-card, .big-swings-header { margin-left: 15px; margin-right: 15px; }
+  .tldr-section, .big-swings-header { padding: 30px; }
+  .theme-header { padding: 30px; }
+  .data-points { flex-direction: column; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- =============================================
+     COVER
+     ============================================= -->
+<div class="cover">
+  <div class="logo-area">
+    <img src="https://de.holy.com/cdn/shop/files/HOLY_Logo_1_280x.png?v=1758636226" alt="HOLY Logo">
+  </div>
+  <h1>HOLY</h1>
+  <div class="subtitle">de.holy.com &mdash; Homepage, PDP, Collection &amp; Mix&nbsp;&amp;&nbsp;Match<br>Strategic Experimentation Ideas</div>
+  <div class="divider"></div>
+  <div class="meta">
+    <strong>11 Experiment Ideas</strong>
+    <span>&bull;</span>
+    <strong>3 Research Themes</strong>
+    <span>&bull;</span>
+    <strong>2 Big Swings</strong>
+    <span>&bull;</span>
+    <strong>March 2026</strong>
+  </div>
+  <div class="prepared-for">Prepared for the HOLY GmbH CMO &mdash; by Bjarn Brunenberg | The Initial</div>
+</div>
+
+<!-- =============================================
+     TL;DR / RESEARCH CONTEXT
+     ============================================= -->
+<div class="tldr-section">
+  <div class="section-label">Research Context</div>
+  <h2>What This Report Is Based On</h2>
+  <p>This document presents <strong>11 experiment ideas</strong> for de.holy.com, derived from a strategic analysis that included a hands-on website audit, KPI tree decomposition, competitive benchmarking against 5 direct DTC competitors (AG1, Huel, MyProtein, NOCCO, Foodspring), and a test bandwidth analysis across HOLY's 4 highest-traffic pages. The analysis identified <strong>Conversion Rate</strong> and <strong>Subscription Rate</strong> as the two highest-leverage metrics in HOLY's revenue KPI tree.</p>
+  <p>Two <strong>big strategic swings</strong> emerged &mdash; launching a subscription model (HOLY's single biggest untapped revenue stream) and redesigning the Mix&nbsp;&amp;&nbsp;Match experience (HOLY's unique proposition that currently underperforms). Beyond these, three themes of tactical experiment ideas target the product page value story, first-time visitor understanding, and small friction points that are silently leaking revenue across the funnel.</p>
+  <div class="data-points">
+    <div class="data-point">
+      <div class="label">Data Source</div>
+      <div class="value">Website Audit + Competitive Analysis</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Focus</div>
+      <div class="value">Conversion Rate + Subscription Rate</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Scope</div>
+      <div class="value">4 Key Pages (132K&ndash;44K weekly visitors)</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Potential</div>
+      <div class="value">68 Tests/Year &bull; &euro;5.6M Impact</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     BIG SWINGS
+     ============================================= -->
+<div class="big-swings-header">
+  <div class="big-swing-badge">Big Swings</div>
+  <h2>Strategic Bets That Change the Revenue Model</h2>
+  <div class="insight">These aren't incremental optimisations &mdash; they're structural changes to HOLY's business. A subscription model unlocks predictable recurring revenue in a category where every competitor already leads with subscriptions. A Mix&nbsp;&amp;&nbsp;Match redesign turns HOLY's unique proposition from a confusing page into a conversion engine that drives higher AOV. These two initiatives have the potential to add <strong>&euro;4.3M+ in annual recurring revenue</strong> and measurably increase average order value.</div>
+  <div class="idea-count">2 experiment ideas</div>
+</div>
+
+<!-- BS1: Subscription Model Launch -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number bs">BS1</div>
+    <h3>Launch a subscription model &mdash; HOLY's biggest revenue opportunity</h3>
+    <div class="location-tag">PDP + Thank-you page + Post-purchase</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 650px; padding: 20px;">
+        <div style="border: 2px dashed #e91e63; border-radius: 10px; padding: 28px; position: relative; background: #F3EDE1;">
+          <div style="position: absolute; top: -10px; left: 12px; background: linear-gradient(135deg, #c2185b, #e91e63); color: white; font-size: 9px; font-weight: 700; padding: 3px 10px; border-radius: 3px; letter-spacing: 1.5px; text-transform: uppercase; z-index: 2;">3-PHASE EXECUTION PLAN</div>
+          <!-- Revenue callout -->
+          <div style="background: #2A1810; border-radius: 8px; padding: 14px 20px; margin-bottom: 20px; text-align: center;">
+            <div style="color: rgba(255,255,255,0.6); font-size: 12px; margin-bottom: 2px;">Potential bei 15% Adoption von 200K+ Kunden</div>
+            <div style="color: #FFED28; font-family: 'Epilogue', sans-serif; font-weight: 900; font-size: 28px;">&euro;4,3M ARR</div>
+          </div>
+          <!-- 3 Phase Timeline -->
+          <div style="display: flex; gap: 12px;">
+            <!-- Phase 1 -->
+            <div style="flex: 1; background: white; border-radius: 8px; padding: 14px; border-top: 3px solid #FF7748;">
+              <div style="font-size: 9px; font-weight: 700; color: #FF7748; letter-spacing: 1px; margin-bottom: 4px;">MONAT 1</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 6px;">Demand Signal</div>
+              <div style="font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 8px;">&ldquo;Spar-Abo &mdash; 20% sparen&rdquo; Toggle auf PDP &rarr; Waitlist</div>
+              <div style="background: #FFF8E1; padding: 6px 8px; border-radius: 4px; font-size: 10px; color: #e65100;">Kein Backend n&ouml;tig &mdash; nur Interesse messen</div>
+            </div>
+            <!-- Phase 2 -->
+            <div style="flex: 1; background: white; border-radius: 8px; padding: 14px; border-top: 3px solid #FFED28;">
+              <div style="font-size: 9px; font-weight: 700; color: #e65100; letter-spacing: 1px; margin-bottom: 4px;">MONAT 2</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 6px;">MVP Launch</div>
+              <div style="font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 8px;">Echtes Abo mit Frequenz-Auswahl + &ldquo;jederzeit k&uuml;ndbar&rdquo;</div>
+              <div style="background: #e8f5e9; padding: 6px 8px; border-radius: 4px; font-size: 10px; color: #2e7d32;">Shopify / ReCharge Integration</div>
+            </div>
+            <!-- Phase 3 -->
+            <div style="flex: 1; background: white; border-radius: 8px; padding: 14px; border-top: 3px solid #2E9E7B;">
+              <div style="font-size: 9px; font-weight: 700; color: #2E9E7B; letter-spacing: 1px; margin-bottom: 4px;">MONAT 3+</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 6px;">Optimise &amp; Scale</div>
+              <div style="font-size: 11px; color: #666; line-height: 1.5; margin-bottom: 8px;">Post-Purchase Upsell, QR-Codes auf Produkten, WhatsApp Reorder</div>
+              <div style="background: #e3f2fd; padding: 6px 8px; border-radius: 4px; font-size: 10px; color: #1565c0;">Retention-Flywheel aufbauen</div>
+            </div>
+          </div>
+          <!-- Competitor comparison -->
+          <div style="margin-top: 16px; background: white; border-radius: 8px; padding: 14px; border: 1px solid #e0d9cf;">
+            <div style="font-size: 10px; font-weight: 700; color: #FF7748; letter-spacing: 1px; margin-bottom: 8px;">WETTBEWERBER-VERGLEICH</div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <div style="padding: 4px 10px; background: #f0f0f0; border-radius: 4px; font-size: 11px;">AG1: 20&ndash;30% Abo-Rabatt</div>
+              <div style="padding: 4px 10px; background: #f0f0f0; border-radius: 4px; font-size: 11px;">Huel: 10% Standard</div>
+              <div style="padding: 4px 10px; background: #f0f0f0; border-radius: 4px; font-size: 11px;">MyProtein: 5&ndash;15%</div>
+              <div style="padding: 4px 10px; background: #f0f0f0; border-radius: 4px; font-size: 11px;">NOCCO: 10&ndash;15%</div>
+              <div style="padding: 4px 10px; background: #FFE0E0; border-radius: 4px; font-size: 11px; font-weight: 600; color: #c62828;">HOLY: Nicht vorhanden</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        HOLY has no visible subscription model on de.holy.com. Every major competitor (AG1, Huel, MyProtein, NOCCO, Foodspring) leads with subscriptions. Subscription customers have 2&ndash;3&times; higher LTV and 70&ndash;80% lower CAC. For a consumable product that runs out every 2&ndash;4 weeks, this is the single biggest structural gap.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Launch a phased subscription model: Month 1 validates demand with a painted door test (zero backend investment). Month 2 ships an MVP with &ldquo;cancel anytime&rdquo; messaging. Month 3+ builds the retention flywheel with post-purchase upsells and reorder nudges.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we validate and launch a phased subscription model starting with a painted door test, then we will unlock a new recurring revenue stream worth up to &euro;4.3M ARR, because HOLY's consumable product with 2&ndash;4 week replenishment cycles is the textbook subscription use case &mdash; and every competitor has already proven the model works in this category.</p>
+  </div>
+</div>
+
+<!-- BS2: Mix & Match Redesign -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number bs">BS2</div>
+    <h3>Redesign Mix&nbsp;&amp;&nbsp;Match &mdash; HOLY's unique proposition deserves better UX</h3>
+    <div class="location-tag">Mix&nbsp;&amp;&nbsp;Match page + PDPs</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 650px; padding: 20px;">
+        <div style="display: flex; gap: 16px; width: 100%;">
+          <!-- Current -->
+          <div style="flex: 1;">
+            <div style="font-size: 10px; font-weight: 700; color: #e53935; letter-spacing: 1px; margin-bottom: 6px;">AKTUELL</div>
+            <div style="border: 1px solid #eee; border-radius: 8px; padding: 12px; opacity: 0.7; background: white;">
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 8px;">Mix &amp; Match</div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+                <div style="background: #FFEA23; border-radius: 4px; height: 36px;"></div>
+              </div>
+              <div style="text-align: center; font-size: 10px; color: #999; margin-top: 6px;">Viele Produkte, keine visuelle Orientierung</div>
+            </div>
+          </div>
+          <!-- Proposed -->
+          <div style="flex: 1;">
+            <div style="font-size: 10px; font-weight: 700; color: #43a047; letter-spacing: 1px; margin-bottom: 6px;">VORGESCHLAGEN</div>
+            <div style="border: 2px solid #43a047; border-radius: 8px; padding: 12px; background: white;">
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 10px;">Mix &amp; Match</div>
+              <!-- Carousel categories -->
+              <div style="margin-bottom: 8px;">
+                <div style="font-size: 9px; font-weight: 700; color: #FF7748; letter-spacing: 1px; margin-bottom: 4px;">ENERGY</div>
+                <div style="display: flex; gap: 4px; overflow: hidden;">
+                  <div style="background: #FFED28; border-radius: 4px; height: 30px; width: 50px; flex-shrink: 0;"></div>
+                  <div style="background: #FFED28; border-radius: 4px; height: 30px; width: 50px; flex-shrink: 0;"></div>
+                  <div style="background: #FFED28; border-radius: 4px; height: 30px; width: 50px; flex-shrink: 0;"></div>
+                  <div style="color: #ccc; font-size: 14px; display: flex; align-items: center; padding-left: 4px;">&#8250;</div>
+                </div>
+              </div>
+              <div style="margin-bottom: 8px;">
+                <div style="font-size: 9px; font-weight: 700; color: #1565c0; letter-spacing: 1px; margin-bottom: 4px;">ICED TEA</div>
+                <div style="display: flex; gap: 4px;">
+                  <div style="background: #e3f2fd; border-radius: 4px; height: 30px; width: 50px;"></div>
+                  <div style="background: #e3f2fd; border-radius: 4px; height: 30px; width: 50px;"></div>
+                  <div style="background: #e3f2fd; border-radius: 4px; height: 30px; width: 50px;"></div>
+                  <div style="color: #ccc; font-size: 14px; display: flex; align-items: center; padding-left: 4px;">&#8250;</div>
+                </div>
+              </div>
+              <div>
+                <div style="font-size: 9px; font-weight: 700; color: #2E9E7B; letter-spacing: 1px; margin-bottom: 4px;">HYDRATION</div>
+                <div style="display: flex; gap: 4px;">
+                  <div style="background: #e8f5e9; border-radius: 4px; height: 30px; width: 50px;"></div>
+                  <div style="background: #e8f5e9; border-radius: 4px; height: 30px; width: 50px;"></div>
+                  <div style="background: #e8f5e9; border-radius: 4px; height: 30px; width: 50px;"></div>
+                  <div style="color: #ccc; font-size: 14px; display: flex; align-items: center; padding-left: 4px;">&#8250;</div>
+                </div>
+              </div>
+              <!-- Summary sidebar hint -->
+              <div style="background: #FFED28; border-radius: 6px; padding: 8px; margin-top: 10px; text-align: center;">
+                <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 11px;">Dein Mix: 3 ausgew&auml;hlt</div>
+                <div style="font-size: 10px; color: #666;">Spare bis zu 20%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- PDP cross-promotion -->
+        <div style="margin-top: 14px; border: 2px dashed #e91e63; border-radius: 8px; padding: 12px; position: relative; background: white;">
+          <div style="position: absolute; top: -10px; left: 12px; background: linear-gradient(135deg, #c2185b, #e91e63); color: white; font-size: 8px; font-weight: 700; padding: 2px 8px; border-radius: 3px; letter-spacing: 1px;">AUCH AUF PDPs</div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background: #FFEA23; border-radius: 6px; width: 40px; height: 40px; flex-shrink: 0;"></div>
+            <div style="flex: 1;">
+              <div style="font-size: 12px; font-weight: 600;">Diesen Geschmack im Mix &amp; Match?</div>
+              <div style="font-size: 11px; color: #666;">Spare bis zu 20% mit Mix &amp; Match</div>
+            </div>
+            <div class="holy-btn holy-btn-pink" style="padding: 6px 14px; font-size: 10px;">MIX &amp; MATCH</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Mix &amp; Match is HOLY's unique proposition &mdash; customers can build custom bundles and save up to 20%. But our team found it hard to fully grasp the offer. The page shows many products without visual or UX guidance. Individual PDPs don't communicate that products can be part of Mix &amp; Match at all. More Mix &amp; Match orders = higher AOV + increased brand satisfaction.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Redesign the page with categorised carousels (Energy &rarr; Iced Tea &rarr; Hydration &rarr; Milkshake), a &ldquo;Dein Mix&rdquo; summary sidebar, and cross-promotion CTAs on individual PDPs inviting users to add the product to their mix.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we redesign the Mix&nbsp;&amp;&nbsp;Match page with categorised carousels and a logical top-to-bottom flow, and add cross-promotion CTAs on individual PDPs, then we will see an increase in Mix&nbsp;&amp;&nbsp;Match orders and AOV, because users currently struggle to understand the offer &mdash; and making it intuitive turns HOLY's unique proposition into a conversion driver rather than a confusion point.</p>
+  </div>
+</div>
+
+<!-- =============================================
+     THEME 1: Product Page Value Props
+     ============================================= -->
+<div class="theme-header">
+  <div class="theme-badge green">Theme 1</div>
+  <h2>The Product Page Undersells HOLY's Strongest Value Props</h2>
+  <div class="insight">HOLY's PDP receives 110,000 weekly visitors at an 11.7% conversion rate &mdash; making it the single highest-revenue page on the site, with nearly &euro;2M in annual testing impact. But the current layout buries HOLY's most compelling selling points: a price-per-serving advantage that is 4&times; cheaper than Red Bull, massive social proof from 2 million customers and an FC K&ouml;ln partnership, and the natural scarcity of limited-edition flavours. Every percentage point of CR improvement on this page translates directly to revenue.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- IDEA 1: Price-Per-Serving -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">1</div>
+    <h3>Price-per-serving visual comparison on PDP</h3>
+    <div class="location-tag">PDP &mdash; Below product title</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 600px; padding: 20px;">
+        <div style="border: 2px dashed #FF7748; border-radius: 10px; padding: 24px; position: relative; background: #F3EDE1;">
+          <div class="proposed-badge">PROPOSED CHANGE</div>
+          <div style="margin-bottom: 20px;">
+            <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 22px; color: #000; margin-bottom: 4px;">HOLY Energy &mdash; Koala Kola</div>
+            <div style="font-size: 14px; color: #666; margin-bottom: 12px;">30 Portionen &bull; Zero Sugar &bull; Nootropics</div>
+            <div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 20px;">
+              <span style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 24px; color: #000;">Angebotspreis &euro;22,99</span>
+              <span style="font-size: 14px; color: #999; text-decoration: line-through;">&euro;24,99</span>
+              <span style="background: #FF7748; color: white; padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 3px;">SPARE &euro;2,00</span>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 8px; padding: 18px 20px; border: 1px solid #e0d9cf;">
+            <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #FF7748; margin-bottom: 14px;">Preisvergleich pro Portion</div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+              <div style="width: 80px; font-size: 12px; font-weight: 600; color: #000;">HOLY</div>
+              <div style="flex: 1; height: 28px; background: #f0f0f0; border-radius: 0; position: relative; overflow: hidden;">
+                <div style="width: 18%; height: 100%; background: #FFED28; display: flex; align-items: center; padding-left: 8px; font-size: 12px; font-weight: 700; min-width: 60px;">&euro;0,35</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+              <div style="width: 80px; font-size: 12px; color: #888;">Red Bull</div>
+              <div style="flex: 1; height: 28px; background: #f0f0f0; border-radius: 0; overflow: hidden;">
+                <div style="width: 75%; height: 100%; background: #d0d0d0; display: flex; align-items: center; padding-left: 8px; font-size: 12px; color: #666;">&euro;1,50</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 10px;">
+              <div style="width: 80px; font-size: 12px; color: #888;">AG1</div>
+              <div style="flex: 1; height: 28px; background: #f0f0f0; border-radius: 0; overflow: hidden;">
+                <div style="width: 100%; height: 100%; background: #d0d0d0; display: flex; align-items: center; padding-left: 8px; font-size: 12px; color: #666;">&euro;2,00</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 80px; font-size: 12px; color: #888;">Caf&eacute; Latte</div>
+              <div style="flex: 1; height: 28px; background: #f0f0f0; border-radius: 0; overflow: hidden;">
+                <div style="width: 100%; height: 100%; background: #c0c0c0; display: flex; align-items: center; padding-left: 8px; font-size: 12px; color: #666;">&euro;3,50</div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 12px; font-size: 11px; color: #999;">Durchschnittliche Marktpreise, M&auml;rz 2026</div>
+          </div>
+          <div style="margin-top: 20px;">
+            <div class="holy-btn holy-btn-green" style="width: 100%; padding: 14px; font-size: 15px; display: block;">IN DEN WARENKORB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        HOLY costs ~&euro;0.35 per serving &mdash; 4&times; cheaper than Red Bull and 5&times; cheaper than AG1. But nowhere on the PDP does this comparison appear. The price &ldquo;&euro;24.99 for a bag of powder&rdquo; creates sticker shock without context.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a visual price-per-serving comparison strip directly on the PDP, showing HOLY alongside Red Bull, AG1, and a caf&eacute; latte. Make the cost advantage impossible to miss.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a price-per-serving comparison strip below the product title on PDP, then we will see an increase in add-to-cart rate, because the current absolute price (&euro;24.99) creates sticker shock that disappears when reframed as &euro;0.35/serving against &euro;1.50+ alternatives &mdash; and competitor benchmarking confirms that value-framing is the strongest purchase driver for first-time buyers of powder-format drinks.</p>
+  </div>
+</div>
+
+<!-- IDEA 2: Social Proof Trust Bar -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">2</div>
+    <h3>Social proof &amp; trust bar above the fold</h3>
+    <div class="location-tag">PDP &mdash; Below navigation</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">de.holy.com/products/energy-koala-kola</div>
+        </div>
+        <div style="background: #FF7748; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 20px;">
+            <img src="https://de.holy.com/cdn/shop/files/HOLY_Logo_1_280x.png?v=1758636226" alt="HOLY" style="height: 22px; filter: brightness(0) invert(1);">
+            <div style="display: flex; gap: 16px; font-size: 11px; color: white; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+              <span>Produkte</span><span>Mix &amp; Match</span><span>Unsere Story</span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px; font-size: 11px; color: white;"><span>Suche</span><span>Konto</span><span style="font-weight: 700;">Warenkorb (0)</span></div>
+        </div>
+        <div style="position: relative;">
+          <div style="position: absolute; top: -1px; left: 10px; background: #FF7748; color: white; font-size: 8px; font-weight: 700; padding: 2px 8px; border-radius: 0 0 3px 3px; letter-spacing: 1px; z-index: 2;">NEU</div>
+          <div style="background: #F3EDE1; padding: 10px 20px; display: flex; align-items: center; justify-content: center; gap: 28px; border-bottom: 1px solid #e0d9cf; flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #000;">
+              <span style="color: #FFED28; font-size: 16px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span>4.8/5 &bull; Reviews.io</span>
+            </div>
+            <div style="width: 1px; height: 16px; background: #ccc;"></div>
+            <div style="font-size: 12px; font-weight: 600; color: #000;">2M+ gl&uuml;ckliche Kunden</div>
+            <div style="width: 1px; height: 16px; background: #ccc;"></div>
+            <div style="font-size: 12px; color: #000;">&#9854; 90% weniger Verpackung</div>
+            <div style="width: 1px; height: 16px; background: #ccc;"></div>
+            <div style="font-size: 12px; font-weight: 600; color: #000;">FC K&ouml;ln Partner</div>
+          </div>
+        </div>
+        <div style="padding: 20px; background: #F3EDE1;">
+          <div style="display: flex; gap: 20px;">
+            <div style="flex: 1; background: #FFEA23; border-radius: 10px; height: 120px; display: flex; align-items: center; justify-content: center;">
+              <img src="https://de.holy.com/cdn/shop/files/NC_Offering_Koala_1200x.webp?v=1774350489" alt="HOLY Product" style="height: 100px; object-fit: contain;">
+            </div>
+            <div style="flex: 1; padding-top: 10px;">
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 18px; margin-bottom: 6px;">HOLY Energy</div>
+              <div style="font-size: 12px; color: #666; margin-bottom: 10px;">Koala Kola &bull; 30 Portionen</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 18px;">Angebotspreis &euro;22,99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        HOLY has powerful trust signals &mdash; 2 million customers, Reviews.io integration, FC K&ouml;ln partnership, sustainability credentials. But on the PDP, these are either scattered below the fold or absent entirely. First-time visitors see no credibility signals at the moment of purchase decision.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Consolidate HOLY's strongest trust signals into a single, always-visible strip at the top of the product page, ensuring every visitor sees social proof before they see the price.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a consolidated trust bar with review score, customer count, sustainability badge, and FC K&ouml;ln partnership above the fold on PDP, then we will see an increase in add-to-cart rate and a decrease in bounce rate, because first-time visitors to a DTC brand they may not know need credibility signals at the point of purchase decision &mdash; not after they've already decided to leave.</p>
+  </div>
+</div>
+
+<!-- IDEA 3: Urgency on Limited Editions -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">3</div>
+    <h3>Urgency &amp; scarcity on limited-edition flavours</h3>
+    <div class="location-tag">PDP &mdash; Limited-edition products</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 500px; padding: 20px;">
+        <div style="border: 2px dashed #FF7748; border-radius: 10px; padding: 24px; position: relative; background: #F3EDE1;">
+          <div class="proposed-badge">PROPOSED CHANGE</div>
+          <div style="background: #FFEA23; border-radius: 10px; padding: 20px; text-align: center; position: relative; margin-bottom: 16px;">
+            <div style="position: absolute; top: 10px; left: 10px; background: #FCB4D9; color: #000; padding: 4px 12px; font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 0;">LIMITIERTE EDITION</div>
+            <div style="position: absolute; top: 10px; right: 10px; background: #FF7748; color: white; padding: 4px 10px; font-size: 10px; font-weight: 700; border-radius: 0; letter-spacing: 1px;">NEU!</div>
+            <div style="height: 140px; display: flex; align-items: center; justify-content: center;">
+              <img src="https://de.holy.com/cdn/shop/files/NC_Offering_Koala_1200x.webp?v=1774350489" alt="Limited Edition" style="height: 120px; object-fit: contain;">
+            </div>
+          </div>
+          <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 20px; margin-bottom: 4px;">K&ouml;lle Kamelle Edition</div>
+          <div style="font-size: 13px; color: #666; margin-bottom: 14px;">FC K&ouml;ln x HOLY &bull; 30 Portionen</div>
+          <div style="background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; border: 1px solid #e0d9cf;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <span style="font-size: 13px; font-weight: 600; color: #000;">Noch 127 auf Lager</span>
+              <span style="font-size: 11px; color: #e65100; font-weight: 600;">Begrenzter Vorrat</span>
+            </div>
+            <div style="height: 6px; background: #eee; border-radius: 3px; overflow: hidden;">
+              <div style="width: 25%; height: 100%; background: linear-gradient(90deg, #FF7748, #e65100); border-radius: 3px;"></div>
+            </div>
+          </div>
+          <div style="background: #2A1810; border-radius: 8px; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span style="color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 600;">Endet in:</span>
+            <div style="display: flex; gap: 8px;">
+              <div style="background: #FF7748; color: white; padding: 4px 8px; font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 16px; min-width: 36px; text-align: center;">12</div>
+              <span style="color: white; font-size: 16px; line-height: 28px;">:</span>
+              <div style="background: #FF7748; color: white; padding: 4px 8px; font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 16px; min-width: 36px; text-align: center;">08</div>
+              <span style="color: white; font-size: 16px; line-height: 28px;">:</span>
+              <div style="background: #FF7748; color: white; padding: 4px 8px; font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 16px; min-width: 36px; text-align: center;">42</div>
+              <span style="color: white; font-size: 16px; line-height: 28px;">:</span>
+              <div style="background: #FF7748; color: white; padding: 4px 8px; font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 16px; min-width: 36px; text-align: center;">15</div>
+            </div>
+          </div>
+          <div class="holy-btn holy-btn-green" style="width: 100%; padding: 14px; font-size: 15px; display: block; text-align: center;">IN DEN WARENKORB</div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        HOLY regularly launches limited-edition flavours and collaborations (FC K&ouml;ln), but the PDP gives no visual signal that these products are scarce or time-limited. Limited editions look identical to permanent products, meaning real urgency goes completely unharnessed.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add scarcity signals to limited-edition PDPs: a &ldquo;LIMITIERTE EDITION&rdquo; badge, approximate stock indicator, and a countdown timer for seasonal products. Use genuine scarcity &mdash; never fabricate urgency.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add scarcity messaging (limited-edition badge, stock indicator, and seasonal countdown) to limited-edition PDP pages, then we will see an increase in add-to-cart rate and a decrease in time-to-purchase for these SKUs, because consumers respond to genuine scarcity with faster purchase decisions &mdash; and HOLY's limited editions have real supply constraints that are currently invisible to the customer.</p>
+  </div>
+</div>
+
+<!-- =============================================
+     THEME 2: First-Time Visitor Understanding
+     ============================================= -->
+<div class="theme-header">
+  <div class="theme-badge blue">Theme 2</div>
+  <h2>New Visitors Don't Understand What HOLY Is</h2>
+  <div class="insight">HOLY's homepage sees 132,000 weekly visitors at just 9.1% conversion rate &mdash; the lowest of all key pages. The hero focuses on slogans and campaigns, but a first-time visitor still doesn't know: what is this product? How does it work? What's the difference between Energy, Hydration, Iced Tea and Milkshake? This conceptual gap is killing conversion before visitors even reach a product page. The newcomers page exists but converts at only 11.2%, suggesting the onboarding path needs fundamental rethinking.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- IDEA 4: Homepage Hero Clarity -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">4</div>
+    <h3>Explain what HOLY is &mdash; and show products above the fold</h3>
+    <div class="location-tag">Homepage &mdash; Hero section</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">de.holy.com</div>
+        </div>
+        <div style="background: #FF7748; padding: 8px 20px; display: flex; align-items: center; justify-content: space-between;">
+          <div style="display: flex; align-items: center; gap: 16px;">
+            <img src="https://de.holy.com/cdn/shop/files/HOLY_Logo_1_280x.png?v=1758636226" alt="HOLY" style="height: 18px; filter: brightness(0) invert(1);">
+            <div style="display: flex; gap: 14px; font-size: 10px; color: white; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">
+              <span>Probier's</span><span>Produkte</span><span>Mix &amp; Match</span>
+            </div>
+          </div>
+        </div>
+        <div style="background: #F3EDE1; padding: 20px 20px 12px;">
+          <!-- Clear product explanation -->
+          <div style="text-align: center; margin-bottom: 14px;">
+            <div style="font-family: 'Epilogue', sans-serif; font-weight: 900; font-size: 22px; color: #000; margin-bottom: 6px;">Zuckerfreie Pulvergetr&auml;nke &mdash;<br>einfach mit Wasser mischen.</div>
+            <div style="font-size: 13px; color: #666;">Energy, Hydration, Iced Tea &amp; Milkshake. Ab &euro;0,35 pro Portion.</div>
+          </div>
+          <!-- 3-step explainer -->
+          <div style="background: white; border-radius: 10px; padding: 14px; display: flex; gap: 8px; text-align: center; border: 2px solid #FFED28; margin-bottom: 14px;">
+            <div style="flex: 1;">
+              <div style="width: 28px; height: 28px; background: #FFED28; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px; font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 13px;">1</div>
+              <div style="font-size: 18px; margin-bottom: 2px;">&#127867;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 10px;">W&auml;hle</div>
+            </div>
+            <div style="display: flex; align-items: center; color: #ccc; font-size: 16px; padding-bottom: 14px;">&#10132;</div>
+            <div style="flex: 1;">
+              <div style="width: 28px; height: 28px; background: #FFED28; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px; font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 13px;">2</div>
+              <div style="font-size: 18px; margin-bottom: 2px;">&#128167;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 10px;">Mische</div>
+            </div>
+            <div style="display: flex; align-items: center; color: #ccc; font-size: 16px; padding-bottom: 14px;">&#10132;</div>
+            <div style="flex: 1;">
+              <div style="width: 28px; height: 28px; background: #FFED28; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 4px; font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 13px;">3</div>
+              <div style="font-size: 18px; margin-bottom: 2px;">&#127881;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 10px;">Genie&szlig;e</div>
+            </div>
+          </div>
+          <!-- Products visible above fold -->
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 8px; text-align: center;">
+              <img src="https://de.holy.com/cdn/shop/files/NC_Offering_Koala_1200x.webp?v=1774350489" alt="Product" style="height: 40px; object-fit: contain;">
+              <div style="font-size: 9px; font-weight: 600; margin-top: 3px;">Koala Kola</div>
+            </div>
+            <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 8px; text-align: center;">
+              <img src="https://de.holy.com/cdn/shop/files/Starter-set-energy-DE_5_1200x.png?v=1755704158" alt="Starter" style="height: 40px; object-fit: contain;">
+              <div style="font-size: 9px; font-weight: 600; margin-top: 3px;">Starter Set</div>
+            </div>
+            <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 8px; text-align: center;">
+              <div style="font-size: 26px; height: 40px; display: flex; align-items: center; justify-content: center;">&#127865;</div>
+              <div style="font-size: 9px; font-weight: 600; margin-top: 3px;">Mango Tango</div>
+            </div>
+            <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 8px; text-align: center;">
+              <div style="font-size: 26px; height: 40px; display: flex; align-items: center; justify-content: center;">&#127815;</div>
+              <div style="font-size: 9px; font-weight: 600; margin-top: 3px;">Blue Raspberry</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The homepage hero uses slogans like &ldquo;Grab some HOLY&rdquo; and &ldquo;Zero sugar. Zero bullshit.&rdquo; but never explains what the product actually is. First-time visitors don't know it's a powder you mix with water. Products are not visible above the fold. The 9.1% CR (lowest of all pages despite 132K/week traffic) suggests the hero fails to convert curiosity into understanding.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Replace the hero with a clear product explanation: &ldquo;Zuckerfreie Pulvergetr&auml;nke &mdash; einfach mit Wasser mischen.&rdquo; Add a 3-step explainer and show bestseller products above the fold. Reduce marketing, increase clarity.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we replace the marketing-heavy hero with a clear product explanation, a 3-step &ldquo;how it works&rdquo; strip, and visible products above the fold, then we will see an increase in homepage-to-PDP click-through rate, because first-time visitors need to understand what HOLY is before they can evaluate whether to buy &mdash; and showing products immediately gives them something to click on. This approach has been a significant win for other e-commerce brands (3&times; lift reported).</p>
+  </div>
+</div>
+
+<!-- IDEA 5: Category Explanations -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">5</div>
+    <h3>Add use-case explanations under each product category</h3>
+    <div class="location-tag">Homepage + Collection &mdash; Category navigation</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 600px; padding: 20px;">
+        <div style="border: 2px dashed #FF7748; border-radius: 10px; padding: 24px; position: relative; background: #F3EDE1;">
+          <div class="proposed-badge">PROPOSED CHANGE</div>
+          <div style="text-align: center; margin-bottom: 16px;">
+            <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 20px; margin-bottom: 4px;">Unsere Produkte</div>
+            <div style="font-size: 13px; color: #666;">Finde die richtige Kategorie f&uuml;r dich</div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <!-- Energy -->
+            <div style="background: white; border-radius: 10px; padding: 16px; text-align: center; border: 2px solid #FFED28;">
+              <div style="font-size: 32px; margin-bottom: 6px;">&#9889;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 4px;">Energy</div>
+              <div style="font-size: 12px; color: #666; line-height: 1.4;">F&uuml;r Fokus, Gaming &amp; Workouts</div>
+              <div style="margin-top: 8px; font-size: 10px; color: #FF7748; font-weight: 600;">Koffein + Nootropics</div>
+            </div>
+            <!-- Hydration -->
+            <div style="background: white; border-radius: 10px; padding: 16px; text-align: center; border: 1px solid #e0d9cf;">
+              <div style="font-size: 32px; margin-bottom: 6px;">&#128167;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 4px;">Hydration</div>
+              <div style="font-size: 12px; color: #666; line-height: 1.4;">Elektrolyte f&uuml;r Sport &amp; Erholung</div>
+              <div style="margin-top: 8px; font-size: 10px; color: #2E9E7B; font-weight: 600;">Elektrolyte + Vitamine</div>
+            </div>
+            <!-- Iced Tea -->
+            <div style="background: white; border-radius: 10px; padding: 16px; text-align: center; border: 1px solid #e0d9cf;">
+              <div style="font-size: 32px; margin-bottom: 6px;">&#127861;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 4px;">Iced Tea</div>
+              <div style="font-size: 12px; color: #666; line-height: 1.4;">Erfrischend f&uuml;r jeden Tag</div>
+              <div style="margin-top: 8px; font-size: 10px; color: #1565c0; font-weight: 600;">Nat&uuml;rliche Zutaten</div>
+            </div>
+            <!-- Milkshake -->
+            <div style="background: white; border-radius: 10px; padding: 16px; text-align: center; border: 1px solid #e0d9cf;">
+              <div style="font-size: 32px; margin-bottom: 6px;">&#129371;</div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 4px;">Milkshake</div>
+              <div style="font-size: 12px; color: #666; line-height: 1.4;">Genuss ohne Zucker</div>
+              <div style="margin-top: 8px; font-size: 10px; color: #c2185b; font-weight: 600;">Zero Sugar &bull; Guilt-free</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The difference between Energy, Hydration, Iced Tea and Milkshake is not obvious. Are these flavours or drinks designed for different use cases? It's not clear whether they contain caffeine, electrolytes, or different functional ingredients. This ambiguity slows decision-making for new visitors.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add short use-case explanations under each category: Energy &ldquo;F&uuml;r Fokus, Gaming &amp; Workouts&rdquo;, Hydration &ldquo;Elektrolyte f&uuml;r Sport &amp; Erholung&rdquo;, etc. Help visitors self-select the right category in seconds.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add short use-case explanations and key ingredient highlights under each product category, then we will see faster navigation to the right category and higher category-to-PDP click-through, because visitors who understand what each category is for can self-select faster &mdash; and current category labels alone don't communicate whether these are flavour variants or functionally different products.</p>
+  </div>
+</div>
+
+<!-- IDEA 6: Starter Set Default -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">6</div>
+    <h3>Starter set as default newcomer offer</h3>
+    <div class="location-tag">Newcomers page &mdash; Hero</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">de.holy.com/collections/neueinsteiger-packs</div>
+        </div>
+        <div style="background: #FF7748; padding: 8px 20px; display: flex; align-items: center; gap: 16px;">
+          <img src="https://de.holy.com/cdn/shop/files/HOLY_Logo_1_280x.png?v=1758636226" alt="HOLY" style="height: 18px; filter: brightness(0) invert(1);">
+          <div style="font-size: 10px; color: white; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Probier's</div>
+        </div>
+        <div style="background: #F3EDE1; padding: 24px 20px;">
+          <div style="text-align: center; margin-bottom: 16px;">
+            <div style="font-family: 'Epilogue', sans-serif; font-weight: 900; font-size: 24px; color: #000; margin-bottom: 4px;">Neu bei HOLY?</div>
+            <div style="font-size: 13px; color: #666;">Probier unsere beliebtesten Geschm&auml;cker &mdash; risikofrei</div>
+          </div>
+          <div style="background: white; border-radius: 10px; padding: 20px; border: 2px solid #FFED28; position: relative;">
+            <div style="position: absolute; top: -1px; right: 16px; background: #FFED28; color: #000; font-family: 'Epilogue', sans-serif; font-size: 9px; font-weight: 700; padding: 4px 10px; letter-spacing: 1px; border-radius: 0 0 4px 4px;">BESTSELLER</div>
+            <div style="display: flex; gap: 16px; align-items: center;">
+              <div style="flex-shrink: 0;">
+                <img src="https://de.holy.com/cdn/shop/files/Starter-set-energy-DE_5_1200x.png?v=1755704158" alt="Starter Set" style="width: 120px; height: 100px; object-fit: contain;">
+              </div>
+              <div style="flex: 1;">
+                <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 16px; margin-bottom: 4px;">Starter Set Energy</div>
+                <div style="font-size: 12px; color: #666; margin-bottom: 8px;">5 Geschm&auml;cker + Shaker &bull; Perfekt zum Probieren</div>
+                <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px;">
+                  <span style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 20px;">Angebotspreis &euro;19,99</span>
+                  <span style="font-size: 12px; color: #999; text-decoration: line-through;">&euro;29,99</span>
+                  <span style="background: #FF7748; color: white; padding: 2px 6px; font-size: 10px; font-weight: 700; border-radius: 2px;">SPARE &euro;10</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 6px; background: #e8f5e9; padding: 6px 10px; border-radius: 4px; margin-bottom: 12px;">
+                  <span style="color: #2E9E7B; font-size: 16px;">&#10003;</span>
+                  <span style="font-size: 11px; font-weight: 600; color: #2e7d32;">ZUFRIEDENHEITSGARANTIE</span>
+                </div>
+                <div class="holy-btn holy-btn-yellow" style="padding: 10px 24px; font-size: 12px;">JETZT PROBIEREN</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The newcomers page receives 44K weekly visitors at 11.2% CR &mdash; these visitors self-identify as new to HOLY. Despite this clear intent signal, the page doesn't lead with a low-commitment entry offer. First-time buyers face the same &ldquo;which of 50 flavours?&rdquo; decision, plus the added risk of &ldquo;what if I don't like the taste?&rdquo;
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Restructure the newcomers page hero to lead with a curated starter set (5 flavours + shaker) as the primary CTA, backed by a satisfaction guarantee badge to remove taste risk.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we make a curated starter set the default newcomer CTA with satisfaction guarantee messaging, then we will see an increase in newcomers page conversion rate, because first-time buyers need a low-risk entry point that removes the fear of choosing the wrong flavour &mdash; and the starter set bundles variety with a price anchor that feels significantly cheaper than buying individual tubs.</p>
+  </div>
+</div>
+
+<!-- =============================================
+     THEME 3: Small Friction Points
+     ============================================= -->
+<div class="theme-header">
+  <div class="theme-badge orange">Theme 3</div>
+  <h2>Small Friction Points Are Silently Leaking Revenue</h2>
+  <div class="insight">Not every conversion leak is a big strategic gap. Some are small UX friction points that compound across thousands of sessions: a quiz that overwhelms rather than guides, reviews buried where nobody sees them, product cards that frustrate because visitors can't figure out where to click. These are quick wins &mdash; fast to implement, easy to measure, and they often deliver surprising lift because the fix is so obvious in hindsight.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- IDEA 7: Flavour Finder Quiz -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">7</div>
+    <h3>Interactive flavour finder quiz</h3>
+    <div class="location-tag">Collection page &mdash; Above product grid</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 600px; padding: 20px;">
+        <div style="border: 2px dashed #FF7748; border-radius: 10px; padding: 24px; position: relative; background: #F3EDE1;">
+          <div class="proposed-badge">PROPOSED CHANGE</div>
+          <div style="text-align: center; margin-bottom: 16px;">
+            <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 20px; color: #000; margin-bottom: 4px;">Finde deinen Geschmack</div>
+            <div style="font-size: 13px; color: #666;">3 Fragen &mdash; deine perfekte Empfehlung</div>
+          </div>
+          <div style="background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #e0d9cf;">
+            <div style="font-size: 12px; font-weight: 600; color: #000; margin-bottom: 8px;">Was trinkst du normalerweise?</div>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <div style="padding: 6px 14px; background: #FFED28; border: 2px solid #000; font-size: 12px; font-weight: 600;">Energy Drink</div>
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Eistee</div>
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Wasser</div>
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Milchshake</div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 10px; border: 1px solid #e0d9cf;">
+            <div style="font-size: 12px; font-weight: 600; color: #000; margin-bottom: 8px;">Wie viel Koffein?</div>
+            <div style="display: flex; gap: 6px;">
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Viel</div>
+              <div style="padding: 6px 14px; background: #FFED28; border: 2px solid #000; font-size: 12px; font-weight: 600;">Etwas</div>
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Keins</div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 8px; padding: 14px 16px; margin-bottom: 14px; border: 1px solid #e0d9cf;">
+            <div style="font-size: 12px; font-weight: 600; color: #000; margin-bottom: 8px;">Welcher Geschmack?</div>
+            <div style="display: flex; gap: 6px;">
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Fruchtig</div>
+              <div style="padding: 6px 14px; background: white; border: 1px solid #ddd; font-size: 12px; color: #666;">Klassisch</div>
+              <div style="padding: 6px 14px; background: #FFED28; border: 2px solid #000; font-size: 12px; font-weight: 600;">Exotisch</div>
+            </div>
+          </div>
+          <div style="background: white; border-radius: 8px; padding: 14px 16px; border: 2px solid #2E9E7B;">
+            <div style="font-size: 11px; font-weight: 700; color: #2E9E7B; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;">F&uuml;r dich empfohlen</div>
+            <div style="display: flex; gap: 10px;">
+              <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 10px; text-align: center;">
+                <div style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px;">
+                  <img src="https://de.holy.com/cdn/shop/files/NC_Offering_Koala_1200x.webp?v=1774350489" alt="Product" style="height: 45px; object-fit: contain;">
+                </div>
+                <div style="font-size: 10px; font-weight: 600;">Koala Kola</div>
+                <div style="font-size: 10px; color: #666;">&euro;22,99</div>
+              </div>
+              <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 10px; text-align: center;">
+                <div style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; font-size: 28px;">&#127865;</div>
+                <div style="font-size: 10px; font-weight: 600;">Mango Tango</div>
+                <div style="font-size: 10px; color: #666;">&euro;24,99</div>
+              </div>
+              <div style="flex: 1; background: #FFEA23; border-radius: 8px; padding: 10px; text-align: center;">
+                <div style="height: 50px; display: flex; align-items: center; justify-content: center; margin-bottom: 6px; font-size: 28px;">&#127815;</div>
+                <div style="font-size: 10px; font-weight: 600;">Blue Raspberry</div>
+                <div style="font-size: 10px; color: #666;">&euro;24,99</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The collection page has 40K weekly visitors at 15.9% CR &mdash; the highest CR of any page, suggesting high intent. But with 20+ energy flavours on a single page and no filtering beyond manual scrolling, visitors with decision fatigue may leave. There is no guided recommendation mechanism.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add an interactive 3-question flavour quiz at the top of the collection page that narrows 20+ options down to 3&ndash;5 personalised recommendations, reducing decision paralysis at the moment of highest purchase intent.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add an interactive flavour quiz that filters the collection to 3&ndash;5 personalised recommendations, then we will see an increase in collection-to-cart conversion, because reducing 20+ options to a curated shortlist reduces decision fatigue and increases purchase confidence &mdash; a principle well-documented in choice architecture research (Iyengar &amp; Lepper, 2000).</p>
+  </div>
+</div>
+
+<!-- IDEA 8: Review Highlight Under CTA -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">8</div>
+    <h3>Highlight one customer review directly under add-to-cart</h3>
+    <div class="location-tag">PDP &mdash; Below add-to-cart button</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 500px; padding: 20px;">
+        <div style="border: 2px dashed #FF7748; border-radius: 10px; padding: 24px; position: relative; background: #F3EDE1;">
+          <div class="proposed-badge">PROPOSED CHANGE</div>
+          <div style="font-family: 'Epilogue', sans-serif; font-weight: 800; font-size: 20px; margin-bottom: 4px;">HOLY Energy &mdash; Mango Tango</div>
+          <div style="font-size: 13px; color: #666; margin-bottom: 12px;">30 Portionen &bull; Zero Sugar</div>
+          <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+            <span style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 22px;">&euro;24,99</span>
+          </div>
+          <div class="holy-btn holy-btn-green" style="width: 100%; padding: 14px; font-size: 15px; display: block; text-align: center; margin-bottom: 14px;">IN DEN WARENKORB</div>
+          <!-- Review highlight -->
+          <div style="background: white; border-radius: 8px; padding: 14px 16px; border: 1px solid #e0d9cf;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+              <span style="color: #FFED28; font-size: 14px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+              <span style="font-size: 12px; font-weight: 600; color: #000;">Verifizierter Kauf</span>
+            </div>
+            <div style="font-size: 14px; font-style: italic; color: #333; line-height: 1.5; margin-bottom: 8px;">&ldquo;Schmeckt mega! Mango Tango ist mein absoluter Favorit. Trinke ich jeden Tag statt Energy Drinks und spare dabei auch noch Geld.&rdquo;</div>
+            <div style="font-size: 12px; color: #888;">Anna K. &mdash; M&uuml;nchen</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Social proof on PDPs is addressed very low on the page. &ldquo;Flavour shoppers&rdquo; wondering if this is really for them don't see reviews until they scroll far past the purchase decision point. For other e-commerce brands, highlighting reviews near the CTA has been a significant win (5&times; lift reported).
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Highlight one curated, flavour-specific customer review directly under the add-to-cart button. A single compelling review at the right moment is more persuasive than 50 reviews buried below the fold.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we highlight one curated flavour-specific review directly under the add-to-cart CTA, then we will see an increase in add-to-cart rate, because visitors at the decision point need immediate taste reassurance &mdash; and a single compelling review at the right moment is more persuasive than 50 reviews buried below the fold. This pattern has been a significant win for other e-commerce brands (5&times; lift reported).</p>
+  </div>
+</div>
+
+<!-- IDEA 9: Make Product Cards Fully Clickable -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">9</div>
+    <h3>Make entire product card clickable</h3>
+    <div class="location-tag">Homepage + Collection &mdash; Product grid</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 600px; padding: 20px;">
+        <div style="display: flex; gap: 16px; width: 100%;">
+          <!-- Current -->
+          <div style="flex: 1;">
+            <div style="font-size: 10px; font-weight: 700; color: #e53935; letter-spacing: 1px; margin-bottom: 6px;">AKTUELL</div>
+            <div style="border: 1px solid #eee; border-radius: 10px; padding: 14px; opacity: 0.7; background: white;">
+              <div style="background: #FFEA23; border-radius: 8px; height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; position: relative;">
+                <img src="https://de.holy.com/cdn/shop/files/NC_Offering_Koala_1200x.webp?v=1774350489" alt="Product" style="height: 60px; object-fit: contain;">
+                <div style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.6); color: white; font-size: 8px; padding: 2px 6px; border-radius: 3px;">KLICKBAR</div>
+              </div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 4px; position: relative;">
+                Koala Kola
+                <div style="position: absolute; top: -2px; right: 0; background: rgba(0,0,0,0.6); color: white; font-size: 8px; padding: 2px 6px; border-radius: 3px;">KLICKBAR</div>
+              </div>
+              <div style="font-size: 12px; color: #666; margin-bottom: 6px; position: relative;">
+                30 Portionen
+                <div style="position: absolute; top: -2px; right: 0; background: #eee; color: #999; font-size: 8px; padding: 2px 6px; border-radius: 3px;">NICHT KLICKBAR</div>
+              </div>
+              <div style="font-size: 14px; font-weight: 700; position: relative;">
+                &euro;22,99
+                <div style="position: absolute; top: -2px; right: 0; background: #eee; color: #999; font-size: 8px; padding: 2px 6px; border-radius: 3px;">NICHT KLICKBAR</div>
+              </div>
+            </div>
+          </div>
+          <!-- Proposed -->
+          <div style="flex: 1;">
+            <div style="font-size: 10px; font-weight: 700; color: #43a047; letter-spacing: 1px; margin-bottom: 6px;">VORGESCHLAGEN</div>
+            <div style="border: 2px solid #43a047; border-radius: 10px; padding: 14px; background: white; cursor: pointer; position: relative;">
+              <div style="position: absolute; top: -1px; right: 12px; background: #43a047; color: white; font-size: 8px; font-weight: 700; padding: 2px 8px; border-radius: 0 0 3px 3px; letter-spacing: 1px;">ALLES KLICKBAR</div>
+              <div style="background: #FFEA23; border-radius: 8px; height: 80px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+                <img src="https://de.holy.com/cdn/shop/files/NC_Offering_Koala_1200x.webp?v=1774350489" alt="Product" style="height: 60px; object-fit: contain;">
+              </div>
+              <div style="font-family: 'Epilogue', sans-serif; font-weight: 700; font-size: 13px; margin-bottom: 4px;">Koala Kola</div>
+              <div style="font-size: 12px; color: #666; margin-bottom: 6px;">30 Portionen</div>
+              <div style="font-size: 14px; font-weight: 700;">&euro;22,99</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Only the product image and title on product cards are clickable. The description, price, and card background are dead zones. Without a clear CTA button, visitors may find it difficult to know where to click to reach the PDP. This creates unnecessary friction on every single product card.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Make every element on the product card clickable &mdash; image, title, description, price, and card background. The entire card becomes a link to the PDP. An alternative is to add a visible CTA button to each card.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we make every element on product cards clickable (image, title, description, price, card background), then we will see an increase in PDP visits from collection pages, because reducing click friction enables visitors to navigate to the product they're interested in faster &mdash; and every dead click is a micro-frustration that compounds across thousands of sessions.</p>
+  </div>
+</div>
+
+</body>
+</html>

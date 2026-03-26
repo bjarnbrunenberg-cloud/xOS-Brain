@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolt Pharmacy — Strategic Experimentation Ideas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   RESET & BASE
+   ============================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =============================================
+   COVER SECTION
+   ============================================= */
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f3c6c 0%, #0064b0 50%, #007f4e 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(0,127,78,0.2) 0%, transparent 70%);
+}
+.cover .logo {
+  position: relative;
+  margin-bottom: 50px;
+}
+.cover .logo img {
+  height: 60px;
+  border-radius: 12px;
+}
+.cover h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.cover .subtitle {
+  font-size: 24px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 40px;
+  position: relative;
+  line-height: 1.4;
+}
+.cover .divider {
+  width: 80px;
+  height: 4px;
+  background: #007f4e;
+  margin-bottom: 30px;
+  position: relative;
+  border-radius: 2px;
+}
+.cover .meta {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  position: relative;
+}
+.cover .meta span { margin: 0 12px; }
+.cover .prepared-for {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* =============================================
+   TL;DR SECTION
+   ============================================= */
+.tldr-section {
+  max-width: 1100px;
+  margin: 60px auto 40px;
+  background: white;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-left: 4px solid #0064b0;
+}
+.tldr-section .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #007f4e;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.tldr-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f3c6c;
+  margin-bottom: 24px;
+}
+.tldr-section p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+.tldr-section .data-points {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+  flex-wrap: wrap;
+}
+.tldr-section .data-point .label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #007f4e;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.tldr-section .data-point .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0f3c6c;
+}
+
+/* =============================================
+   BIG SWINGS HEADER
+   ============================================= */
+.big-swings-header {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: linear-gradient(135deg, #1a1035 0%, #2d1b69 100%);
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.big-swings-header::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 40%;
+  height: 160%;
+  background: radial-gradient(ellipse, rgba(200,50,120,0.12) 0%, transparent 70%);
+}
+.big-swing-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  color: white;
+}
+.big-swings-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  position: relative;
+}
+.big-swings-header .insight {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 800px;
+  position: relative;
+}
+.big-swings-header .idea-count {
+  margin-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  position: relative;
+}
+
+/* =============================================
+   THEME HEADER
+   ============================================= */
+.theme-header {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: #0f3c6c;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.theme-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.theme-badge.green { background: #e8f5e9; color: #2e7d32; }
+.theme-badge.blue { background: #e3f2fd; color: #1565c0; }
+.theme-badge.orange { background: #fff3e0; color: #e65100; }
+.theme-badge.purple-theme { background: #f3e5f5; color: #7b1fa2; }
+.theme-badge.teal { background: #e0f2f1; color: #00695c; }
+
+.theme-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.theme-header .insight {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 800px;
+}
+.theme-header .idea-count {
+  margin-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* =============================================
+   IDEA CARD
+   ============================================= */
+.idea-card {
+  max-width: 1100px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.idea-card.big-swing {
+  box-shadow: 0 4px 24px rgba(45,27,105,0.15), 0 0 0 2px rgba(200,50,120,0.15);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+  border-bottom: 1px solid #eee;
+  gap: 14px;
+}
+.idea-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.card-header h3 {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f3c6c;
+}
+.location-tag {
+  padding: 6px 14px;
+  background: #f0f2f5;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* =============================================
+   SCREENSHOT AREA — CRITICAL FLEX LAYOUT
+   ============================================= */
+.screenshot-area {
+  display: flex;
+  min-height: 350px;
+  background: #fafbfc;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.mockup-wrapper {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.notes-sidebar {
+  width: 270px;
+  min-width: 270px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8f9fa;
+  border-left: 1px solid #e8e8e8;
+}
+
+.sticky-note {
+  position: static;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.sticky-note .note-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.observation-note {
+  background: #fff9c4;
+  border-left: 3px solid #f9a825;
+}
+.observation-note .note-label { color: #f57f17; }
+.idea-note {
+  background: #c8e6c9;
+  border-left: 3px solid #43a047;
+}
+.idea-note .note-label { color: #2e7d32; }
+
+/* =============================================
+   HYPOTHESIS BAR
+   ============================================= */
+.hypothesis-bar {
+  padding: 20px 30px;
+  background: #f8f0ff;
+  border-left: 4px solid #7c4dff;
+}
+.hypothesis-bar .hyp-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #7c4dff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hypothesis-bar p {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* =============================================
+   MOCKUP INTERNALS
+   ============================================= */
+.browser-chrome {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+}
+.chrome-bar {
+  background: #f1f3f4;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.chrome-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.chrome-url {
+  flex: 1;
+  margin-left: 10px;
+  background: white;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #888;
+}
+.chrome-content {
+  padding: 20px;
+}
+.proposed-badge {
+  display: inline-block;
+  background: #7c4dff;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 3px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.mockup-label-current {
+  font-size: 10px;
+  font-weight: 700;
+  color: #e53935;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.mockup-label-proposed {
+  font-size: 10px;
+  font-weight: 700;
+  color: #43a047;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+</style>
+</head>
+<body>
+
+<!-- ===================================================
+     COVER
+     =================================================== -->
+<div class="cover">
+  <div class="logo">
+    <img src="https://s3-eu-west-1.amazonaws.com/tpd/logos/65611f4bf802f22a09936a08/0x0.png" alt="Bolt Pharmacy">
+  </div>
+  <h1>Bolt Pharmacy</h1>
+  <div class="subtitle">Strategic Experimentation Ideas<br>Weight Loss Treatment Journey</div>
+  <div class="divider"></div>
+  <div class="meta">
+    <strong>18 Experiment Ideas</strong>
+    <span>&bull;</span>
+    <strong>5 Research Themes</strong>
+    <span>&bull;</span>
+    <strong>4 Big Swings</strong>
+    <span>&bull;</span>
+    <strong>March 2026</strong>
+  </div>
+  <div class="prepared-for">Prepared for the Bolt Pharmacy Growth Team</div>
+</div>
+
+<!-- ===================================================
+     TL;DR — RESEARCH CONTEXT
+     =================================================== -->
+<div class="tldr-section">
+  <div class="section-label">Research Context</div>
+  <h2>What This Report Is Based On</h2>
+  <p>This document consolidates findings from multiple research streams: user research sessions with 5 participants who navigated the weight loss treatment journey end-to-end, a heuristic analysis workshop involving Bjarn, Reinhard, Gabriel, Nathan, and Christina, PostHog heat maps and session recordings, CX team feedback on recurring patient questions, and data collected through weekly catchup sessions.</p>
+  <p>Three core themes emerged directly from user research &mdash; <strong>treatment uncertainty</strong>, <strong>mismatched user expectations</strong>, and <strong>post-funnel noise</strong>. Two additional themes surfaced during the heuristic workshop: <strong>first-page friction</strong> (the pre-landing page is losing 40% of traffic before users even enter the funnel) and <strong>the lack of guide rails</strong> through the commitment journey. Four "big swing" experiments target structural changes to the funnel that could shift conversion materially if validated.</p>
+  <div class="data-points">
+    <div class="data-point">
+      <div class="label">User Research</div>
+      <div class="value">5 Participants &bull; End-to-end Journey</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Heuristic Session</div>
+      <div class="value">5 Team Members &bull; Full Funnel</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Additional Sources</div>
+      <div class="value">Heat Maps &bull; CX Feedback &bull; Weekly Data</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Scope</div>
+      <div class="value">Weight Loss Treatment Funnel</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================================================
+     BIG SWINGS — STRUCTURAL CHANGES
+     =================================================== -->
+<div class="big-swings-header">
+  <div class="big-swing-badge">Big Swings</div>
+  <h2>Structural Changes to the Funnel</h2>
+  <div class="insight">These four experiments target the architecture of the weight loss journey itself &mdash; not individual elements, but fundamental structural decisions that shape the entire experience. They carry higher implementation effort but address the largest drop-off points in the funnel. Each one emerged from converging signals across multiple research sources.</div>
+  <div class="idea-count">4 experiment ideas</div>
+</div>
+
+<!-- BS1: Wegovy-first plans page -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #c2185b, #e91e63); color: white;">BS1</div>
+    <h3>Wegovy-first plans page</h3>
+    <div class="location-tag">/weight-loss-plans-30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 750px;">
+        <div class="chrome-bar">
+          <div class="chrome-dot" style="background: #ff5f56;"></div>
+          <div class="chrome-dot" style="background: #ffbd2e;"></div>
+          <div class="chrome-dot" style="background: #27c93f;"></div>
+          <div class="chrome-url">boltpharmacy.co.uk/weight-loss-plans-30</div>
+        </div>
+        <div class="chrome-content" style="padding: 28px 20px; background: #fafffe; font-family: Gilroy, Arial, sans-serif;">
+          <div class="proposed-badge">PROPOSED VARIANT</div>
+
+          <!-- Page heading -->
+          <div style="text-align: center; margin-bottom: 24px;">
+            <div style="font-size: 24px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Weight care that works</div>
+            <div style="font-size: 14px; color: #3f6389;">Based on your consultation, we recommend starting with Wegovy</div>
+          </div>
+
+          <!-- Wegovy — primary card (RECOMMENDED) — mirrors exact Bolt prod-card_n structure -->
+          <div style="background: white; border-radius: 23px; padding: 0; box-shadow: 0 2px 16px rgba(15,60,108,0.08); border: 2px solid #007f4e; position: relative; overflow: hidden; margin-bottom: 14px;">
+            <!-- RECOMMENDED badge -->
+            <div style="position: absolute; top: 14px; right: 14px; background: #007f4e; color: white; font-size: 10px; font-weight: 700; padding: 5px 14px; border-radius: 1000px; letter-spacing: 0.5px; z-index: 2;">RECOMMENDED</div>
+
+            <!-- prod-card-image — real product image from Bolt CDN -->
+            <div style="background: #e5edf0; padding: 16px 24px; text-align: center; position: relative; min-height: 160px; display: flex; align-items: center; justify-content: center;">
+              <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/680f12d9b2453bbf1342a59b_Image%20(41).webp" alt="Wegovy injection pen" style="max-height: 140px; width: auto; object-fit: contain;" />
+            </div>
+
+            <!-- prod-content-n -->
+            <div style="padding: 20px 24px 24px;">
+              <!-- prod-pills — promo badge -->
+              <div style="margin-bottom: 10px;">
+                <span style="display: inline-block; font-size: 13px; font-weight: 600; color: #0f3c6c; font-family: Gilroy, Arial, sans-serif;">1st month promo &pound;29 off</span>
+              </div>
+
+              <!-- heading-32 -->
+              <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 8px; font-family: Gilroy, Arial, sans-serif;">Wegovy&reg; for Weight Loss</div>
+
+              <!-- prod-price-start -->
+              <div style="margin-bottom: 6px;">
+                <span style="font-size: 13px; color: #3f6389;">From</span>
+              </div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+                <div style="display: inline-flex; align-items: baseline; gap: 2px;">
+                  <span style="font-size: 14px; font-weight: 600; color: #007f4e; text-decoration: line-through;">&pound;29.75</span>
+                  <span style="font-size: 14px; font-weight: 600; color: #007f4e; text-decoration: line-through;">/week</span>
+                </div>
+                <div style="display: inline-flex; align-items: baseline; gap: 2px;">
+                  <span style="font-size: 22px; font-weight: 700; color: #ff0000;">&pound;22.25</span>
+                  <span style="font-size: 22px; font-weight: 700; color: #ff0000;">/week</span>
+                </div>
+              </div>
+
+              <!-- prod-divider -->
+              <div style="height: 1px; background: rgba(15,60,108,0.1); margin-bottom: 16px;"></div>
+
+              <!-- prod-descr_n -->
+              <p style="font-size: 14px; color: #3f6389; line-height: 1.65; margin-bottom: 18px; margin-top: 0;">Wegovy is a once-weekly injection approved for long-term weight management &mdash; backed by real-world results and robust clinical evidence.</p>
+
+              <!-- prod-benefits -->
+              <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; margin-bottom: 10px;">Benefits:</div>
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">~20.7% average body weight loss</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">Does not affect oral contraceptive effectiveness</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">Boost metabolic and cardiovascular health</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div style="width: 18px; height: 18px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                  </div>
+                  <span style="font-size: 14px; color: #3f6389;">Proven, long-established safety profile</span>
+                </div>
+              </div>
+
+              <!-- prod-btns — CTA with arrow SVG -->
+              <a style="display: flex; align-items: center; justify-content: center; gap: 8px; background: #0064b0; color: white; text-align: center; padding: 14px 24px; border-radius: 1000px; font-weight: 600; font-size: 15px; cursor: pointer; font-family: Gilroy, Arial, sans-serif; text-decoration: none;">
+                <span>Start my Journey</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" viewBox="0 0 20 21" fill="none"><path d="M12.0254 5.44141L17.0837 10.4997L12.0254 15.5581" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.91602 10.5H16.941" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Mounjaro — collapsed accordion (de-emphasised) -->
+          <div style="background: white; border-radius: 23px; padding: 18px 24px; box-shadow: 0 1px 8px rgba(15,60,108,0.05); border: 1px solid rgba(15,60,108,0.12); opacity: 0.50;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-size: 16px; font-weight: 600; color: #3f6389; font-family: Gilroy, Arial, sans-serif;">Mounjaro&reg; for Weight Loss</div>
+                <div style="font-size: 12px; color: #3f6389; opacity: 0.7; margin-top: 4px;">
+                  From
+                  <span style="text-decoration: line-through; color: #007f4e; margin-left: 4px;">&pound;44.75/week</span>
+                  <span style="color: #ff0000; font-weight: 600; margin-left: 4px;">&pound;37.25/week</span>
+                </div>
+              </div>
+              <div style="font-size: 13px; color: #0064b0; font-weight: 600; cursor: pointer; white-space: nowrap;">View alternative &darr;</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Plans page shows both treatments side-by-side with equal visual weight, causing 50% drop-off. PostHog test (YourPlanRD) is already showing positive signals for leading with a single recommendation. Wegovy has better long-term retention data.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Lead with Wegovy as the default recommended treatment in a fully expanded card. Collapse Mounjaro into a greyed-out accordion below. Reduce decision paralysis at the most critical page in the funnel.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>Because decision paralysis between two similar treatments is causing 50% drop-off on the plans page, and Wegovy has better retention data, we believe leading with Wegovy as the sole recommended option will increase Start My Journey clicks and improve 90-day retention, measured by plans page CTR and 90-day active subscription rate.</p>
+  </div>
+</div>
+
+<!-- BS2: Side effects transparency comparison -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #c2185b, #e91e63); color: white;">BS2</div>
+    <h3>Side effects transparency comparison</h3>
+    <div class="location-tag">/weight-loss-plans-30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 750px;">
+        <div class="chrome-bar">
+          <div class="chrome-dot" style="background: #ff5f56;"></div>
+          <div class="chrome-dot" style="background: #ffbd2e;"></div>
+          <div class="chrome-dot" style="background: #27c93f;"></div>
+          <div class="chrome-url">boltpharmacy.co.uk/weight-loss-plans-30</div>
+        </div>
+        <div class="chrome-content" style="padding: 28px 20px; background: #fafffe; font-family: Gilroy, Arial, sans-serif;">
+          <div class="proposed-badge">PROPOSED — NEW SECTION</div>
+
+          <!-- Context: sits below the product cards on the plans page -->
+          <div style="font-size: 10px; color: #3f6389; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; text-align: center;">&#x2193; Below the product cards &#x2193;</div>
+
+          <!-- What to Expect section — Bolt prod-card_n style container -->
+          <div style="background: white; border-radius: 23px; padding: 28px 24px; box-shadow: 0 2px 16px rgba(15,60,108,0.08); border: 1px solid rgba(15,60,108,0.12);">
+
+            <div style="text-align: center; margin-bottom: 22px;">
+              <div style="font-size: 22px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px; font-family: Gilroy, Arial, sans-serif;">What to Expect</div>
+              <div style="font-size: 14px; color: #3f6389;">Honest comparison so you can choose with confidence</div>
+            </div>
+
+            <!-- Two-column comparison — Bolt card structure -->
+            <div style="display: flex; gap: 14px; margin-bottom: 18px;">
+
+              <!-- Wegovy column -->
+              <div style="flex: 1; background: #e5edf0; border-radius: 18px; overflow: hidden;">
+                <!-- Product image header -->
+                <div style="padding: 16px 16px 12px; text-align: center;">
+                  <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/680f12d9b2453bbf1342a59b_Image%20(41).webp" alt="Wegovy pen" style="max-height: 60px; width: auto; object-fit: contain; margin-bottom: 6px;" />
+                  <div style="font-size: 12px; font-weight: 700; color: #007f4e; letter-spacing: 0.5px;">WEGOVY&reg;</div>
+                </div>
+                <!-- Side effects content -->
+                <div style="background: white; margin: 0 10px 10px; border-radius: 14px; padding: 16px;">
+                  <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">Side Effects Profile</div>
+                  <div style="display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px;">
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Gentler start &mdash; gradual dose over 16 weeks</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Mild nausea in first 2&ndash;4 weeks (most common)</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Single receptor (GLP-1) &mdash; well-studied</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Side effects typically resolve within weeks</span>
+                    </div>
+                  </div>
+                  <div style="background: rgba(0,127,78,0.08); border-radius: 1000px; padding: 8px 12px; font-size: 11px; color: #007f4e; font-weight: 600; text-align: center;">Easier adjustment period</div>
+                </div>
+              </div>
+
+              <!-- Mounjaro column -->
+              <div style="flex: 1; background: #e5edf0; border-radius: 18px; overflow: hidden;">
+                <!-- Product image header -->
+                <div style="padding: 16px 16px 12px; text-align: center;">
+                  <div style="width: 50px; height: 50px; margin: 0 auto 6px; background: rgba(15,60,108,0.08); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                    <span style="font-size: 10px; font-weight: 700; color: #0f3c6c;">M</span>
+                  </div>
+                  <div style="font-size: 12px; font-weight: 700; color: #0f3c6c; letter-spacing: 0.5px;">MOUNJARO&reg;</div>
+                </div>
+                <!-- Side effects content -->
+                <div style="background: white; margin: 0 10px 10px; border-radius: 14px; padding: 16px;">
+                  <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">Side Effects Profile</div>
+                  <div style="display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px;">
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Dual receptor (GLP-1 + GIP) &mdash; stronger effect</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Nausea + reduced appetite in first 4&ndash;6 weeks</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">More pronounced initial adjustment period</span>
+                    </div>
+                    <div style="display: flex; align-items: flex-start; gap: 7px;">
+                      <div style="width: 16px; height: 16px; background: #0064b0; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="9" viewBox="0 0 14 15" fill="none"><path d="M5.57085 10.9311L2.24585 7.60609L3.0771 6.77484L5.57085 9.26859L10.9229 3.9165L11.7542 4.74775L5.57085 10.9311Z" fill="white"/></svg>
+                      </div>
+                      <span style="font-size: 12px; color: #3f6389; line-height: 1.4;">Higher average weight loss (~22.5%)</span>
+                    </div>
+                  </div>
+                  <div style="background: rgba(0,100,176,0.08); border-radius: 1000px; padding: 8px 12px; font-size: 11px; color: #0064b0; font-weight: 600; text-align: center;">Stronger results, bolder start</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Clinician reassurance strip — Bolt trust pattern -->
+            <div style="background: rgba(0,127,78,0.05); border: 1px solid rgba(0,127,78,0.15); border-radius: 14px; padding: 16px 18px; display: flex; align-items: center; gap: 14px;">
+              <div style="width: 40px; height: 40px; background: #007f4e; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 14px; font-weight: 600; color: #0f3c6c;">Your clinician will monitor you throughout</div>
+                <div style="font-size: 13px; color: #3f6389; margin-top: 3px; line-height: 1.4;">Dose adjustments are made based on your individual response. You&rsquo;re never on your own.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Zero side effect information anywhere in the funnel. Users leave to Google side effects before committing. CX team consistently reports side effect anxiety as a top concern. This information gap is driving exits at a critical decision point.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a "What to Expect" section below the product cards that honestly compares both treatments&rsquo; side effects, matching the existing card visual style. Position transparency as a trust signal with clinician reassurance.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>Because users are anxious about side effects and leave the site to Google them (never returning), we believe proactively addressing side effects with an honest comparison will increase consultation starts and decrease page exits on the plans page, measured by plans page exit rate and downstream consultation start rate.</p>
+  </div>
+</div>
+
+<!-- BS3: Quiz length reduction -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #c2185b, #e91e63); color: white;">BS3</div>
+    <h3>Quiz length reduction (19 &rarr; 10)</h3>
+    <div class="location-tag">Quiz</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 24px; width: 100%; max-width: 700px;">
+        <!-- Current: 19 steps -->
+        <div style="flex: 1;">
+          <div class="mockup-label-current">CURRENT &mdash; 19 QUESTIONS</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white;">
+            <div style="display: flex; gap: 2px; margin-bottom: 12px;">
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+            </div>
+            <div style="font-size: 11px; color: #999; text-align: center;">Question 3 of 19</div>
+            <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; text-align: center; margin: 12px 0;">What is your date of birth?</div>
+            <div style="font-size: 11px; color: #e53935; text-align: center;">(Age asked again at Q7)</div>
+            <div style="margin-top: 12px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 12px; color: #888; text-align: center;">dd / mm / yyyy</div>
+          </div>
+        </div>
+        <!-- Proposed: 10 steps -->
+        <div style="flex: 1;">
+          <div class="mockup-label-proposed">PROPOSED &mdash; 10 QUESTIONS</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
+            <div style="display: flex; gap: 3px; margin-bottom: 12px;">
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#007f4e; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+              <div style="flex:1; height:4px; background:#e0e0e0; border-radius:2px;"></div>
+            </div>
+            <div style="font-size: 11px; color: #43a047; text-align: center; font-weight: 600;">Question 3 of 10</div>
+            <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; text-align: center; margin: 12px 0;">What is your date of birth?</div>
+            <div style="margin-top: 12px; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 12px; color: #888; text-align: center;">dd / mm / yyyy</div>
+            <div style="margin-top: 14px; padding: 10px; background: #f0faf6; border-radius: 6px; font-size: 11px; color: #2e7d32; text-align: center;">
+              We&rsquo;ll ask the rest after you&rsquo;re approved &mdash; only essential questions for now
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        19-question quiz is a huge commitment upfront. Age is asked twice (Q3 and Q7). Per-question drop-off data from PostHog shows progressive abandonment at each step. Users have not yet seen a price or product &mdash; they are being asked to invest effort before receiving value.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Cut to 10-12 essential medical questions. Defer non-critical questions (lifestyle, preferences) to post-payment enrolment. Remove duplicates. Show users that the process is short and purposeful.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>Because each additional quiz question increases abandonment probability and several questions are duplicated or non-essential, we believe reducing from 19 to 10-12 questions will significantly increase quiz completion rate, measured by quiz start-to-completion conversion rate.</p>
+  </div>
+</div>
+
+<!-- BS4: Post-payment enrollment completion -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #c2185b, #e91e63); color: white;">BS4</div>
+    <h3>Post-payment enrolment completion</h3>
+    <div class="location-tag">/success</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 500px; padding: 20px;">
+        <div class="proposed-badge">PROPOSED</div>
+        <div style="background: white; border: 2px solid #007f4e; border-radius: 12px; padding: 28px; text-align: center;">
+          <div style="font-size: 28px; margin-bottom: 6px;">&#10003;</div>
+          <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Payment Confirmed</div>
+          <div style="font-size: 13px; color: #888; margin-bottom: 20px;">Now let&rsquo;s get your medication on the way</div>
+          <!-- Progress indicator -->
+          <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 24px;">
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: #007f4e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">&#10003;</div>
+            <div style="width: 40px; height: 2px; background: #007f4e;"></div>
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: #007f4e; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">&#10003;</div>
+            <div style="width: 40px; height: 2px; background: #007f4e;"></div>
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: #ff9800; color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</div>
+            <div style="width: 40px; height: 2px; background: #e0e0e0;"></div>
+            <div style="width: 28px; height: 28px; border-radius: 50%; background: #e0e0e0; color: #888; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">4</div>
+          </div>
+          <div style="display: flex; justify-content: center; gap: 30px; font-size: 10px; color: #888; margin-bottom: 20px;">
+            <span>Quiz</span>
+            <span>Payment</span>
+            <span style="color: #ff9800; font-weight: 700;">Enrolment</span>
+            <span>Delivery</span>
+          </div>
+          <!-- Urgency -->
+          <div style="background: #fff3e0; border-radius: 8px; padding: 12px; margin-bottom: 16px;">
+            <div style="font-size: 14px; font-weight: 700; color: #e65100;">Complete now to receive in 1-2 days</div>
+            <div style="font-size: 12px; color: #888; margin-top: 4px;">Finishing enrolment takes less than 2 minutes</div>
+          </div>
+          <div style="background: #007f4e; color: white; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px;">Complete Enrolment in Bolt Hub &rarr;</div>
+          <!-- Reminder preview -->
+          <div style="margin-top: 16px; border: 1px dashed #ddd; border-radius: 8px; padding: 10px; font-size: 11px; color: #888;">
+            <div style="font-weight: 600; color: #555; margin-bottom: 4px;">&#128233; Reminder set</div>
+            If you leave, we&rsquo;ll send you an email + SMS reminder to finish enrolment
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        After payment, users must complete enrolment in Bolt Hub to receive medication. This page has never been optimised. Drop-off here means a paying customer never gets their medication &mdash; lost revenue and a terrible patient experience.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Redesign the success page with a clear progress indicator (Step 3 of 4), urgency messaging ("Complete now to receive in 1-2 days"), and email/SMS reminder fallbacks for users who leave before finishing.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>Because paying customers who do not complete enrolment never receive their medication (resulting in lost revenue and poor experience), we believe adding urgency cues, a clear progress indicator, and automated reminders will increase enrolment completion rate, measured by payment-to-enrolment-completion conversion rate.</p>
+  </div>
+</div>
+
+<!-- ===================================================
+     THEME 1: REDUCE TREATMENT UNCERTAINTY
+     =================================================== -->
+<div class="theme-header">
+  <div class="theme-badge green">Theme 1</div>
+  <h2>Reduce Treatment Uncertainty</h2>
+  <div class="insight">Users consistently wanted verifiable proof that Bolt Pharmacy is a legitimate, regulated pharmacy. GPhC registration numbers were buried at the bottom of the page where nobody scrolls. Clinical claims like "22.5% weight loss" had zero source references. Trust signals were scattered, inconsistent, and invisible at the moments that matter most &mdash; when users are deciding whether to commit their health (and money) to an online pharmacy.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- Idea 1: GPhC verification badge -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">1</div>
+    <h3>GPhC verification badge on homepage hero</h3>
+    <div class="location-tag">Home</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 820px;">
+        <div class="chrome-bar">
+          <div class="chrome-dot" style="background: #ff5f56;"></div>
+          <div class="chrome-dot" style="background: #ffbd2e;"></div>
+          <div class="chrome-dot" style="background: #27c93f;"></div>
+          <div class="chrome-url">boltpharmacy.co.uk</div>
+        </div>
+        <div class="chrome-content" style="padding: 0; background: #fafffe; font-family: Gilroy, Arial, sans-serif;">
+
+          <!-- Navbar — exact Bolt structure -->
+          <div style="display: flex; align-items: center; padding: 12px 20px; border-bottom: 1px solid rgba(15,60,108,0.08);">
+            <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/680eed2c79d0f53c03be15da_Bolt%20Pharmacy%20Final%20Logo%20-%20Copy.webp" alt="Bolt Pharmacy" style="height: 28px; width: auto; margin-right: 24px;" />
+            <div style="display: flex; gap: 16px; font-size: 12px; color: #0f3c6c; font-weight: 500;">
+              <span>Weight Loss</span>
+              <span>FAQs</span>
+              <span>Guides</span>
+            </div>
+            <div style="margin-left: auto; display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 11px; color: #0f3c6c;">Login</span>
+              <span style="font-size: 10px; color: #0f3c6c; border: 1px solid rgba(15,60,108,0.2); padding: 5px 10px; border-radius: 1000px; font-weight: 500;">Get my Refill &rarr;</span>
+              <span style="font-size: 10px; color: white; background: #0064b0; padding: 5px 10px; border-radius: 1000px; font-weight: 600;">Check Eligibility &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Trustpilot bar — existing (with PROPOSED GPhC badge) -->
+          <div style="padding: 8px 20px; display: flex; align-items: center; gap: 8px;">
+            <!-- Existing Trustpilot -->
+            <span style="font-size: 11px; font-weight: 600; color: #0f3c6c;">Excellent</span>
+            <div style="display: flex; gap: 2px;">
+              <div style="width: 16px; height: 16px; background: #00b67a; display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 9px;">&#9733;</span></div>
+              <div style="width: 16px; height: 16px; background: #00b67a; display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 9px;">&#9733;</span></div>
+              <div style="width: 16px; height: 16px; background: #00b67a; display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 9px;">&#9733;</span></div>
+              <div style="width: 16px; height: 16px; background: #00b67a; display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 9px;">&#9733;</span></div>
+              <div style="width: 16px; height: 16px; background: linear-gradient(90deg, #00b67a 50%, #dcdce6 50%); display: flex; align-items: center; justify-content: center;"><span style="color: white; font-size: 9px;">&#9733;</span></div>
+            </div>
+            <span style="font-size: 10px; color: #3f6389;">4.4 out of 5 based on <u>1,727 reviews</u></span>
+            <span style="font-size: 10px; color: #3f6389;">&#9733; Trustpilot</span>
+
+            <!-- PROPOSED: GPhC badge -->
+            <div style="margin-left: 12px; display: flex; align-items: center; gap: 6px; border: 2px dashed #007f4e; border-radius: 6px; padding: 3px 8px; position: relative;">
+              <div style="position: absolute; top: -7px; right: 6px; background: #007f4e; color: white; font-size: 7px; font-weight: 700; padding: 1px 5px; border-radius: 3px; letter-spacing: 0.5px;">NEW</div>
+              <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/6989bbf87d1e8fe6bba28b88_gphc.jpg" alt="GPhC" style="height: 18px; width: auto; border-radius: 2px;" />
+              <span style="font-size: 10px; color: #0064b0; font-weight: 600; text-decoration: underline; cursor: pointer;">Verify on GPhC register &rarr;</span>
+            </div>
+          </div>
+
+          <!-- Hero section — matches actual Bolt homepage -->
+          <div style="padding: 24px 20px 20px; display: flex; gap: 20px; align-items: center;">
+            <!-- Hero left -->
+            <div style="flex: 1;">
+              <h1 style="font-size: 26px; font-weight: 700; color: #0f3c6c; line-height: 1.15; margin: 0 0 10px 0; font-family: Gilroy, Arial, sans-serif;">The Most Affordable Weight Loss Care In The UK.</h1>
+              <p style="font-size: 13px; color: #3f6389; line-height: 1.5; margin: 0 0 16px 0;">Lose 22.5% of your body weight* within a year. Excellent service at wholesale prices.</p>
+              <a style="display: inline-flex; align-items: center; gap: 8px; background: #0064b0; color: white; padding: 12px 20px; border-radius: 1000px; font-weight: 600; font-size: 13px; text-decoration: none; font-family: Gilroy, Arial, sans-serif; cursor: pointer;">
+                <span>See all Treatments</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" viewBox="0 0 20 21" fill="none"><path d="M12.0254 5.44141L17.0837 10.4997L12.0254 15.5581" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.91602 10.5H16.941" stroke="white" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+            <!-- Hero right — product image -->
+            <div style="flex: 0 0 220px; text-align: center; position: relative;">
+              <img src="https://cdn.prod.website-files.com/68072c16317fc2e0431a531c/68637b4d129baf6e6f5715ab_bolt-uk-hero-v2.webp" alt="Bolt Pharmacy products" style="width: 100%; height: auto; border-radius: 12px;" />
+              <!-- Price badge -->
+              <div style="position: absolute; bottom: 8px; right: -6px; background: #007f4e; color: white; border-radius: 50%; width: 64px; height: 64px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <div style="font-size: 8px; font-weight: 600;">Only</div>
+                <div style="font-size: 18px; font-weight: 700; line-height: 1;">&pound;24<sup style="font-size: 9px;">.75</sup></div>
+                <div style="font-size: 8px; font-weight: 600;">/week</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        GPhC registration numbers are buried at the bottom of the page. During user research, participants explicitly stated they wanted verifiable proof of legitimacy before engaging. Trustpilot alone was not enough &mdash; they wanted regulatory credentials.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a clickable GPhC verification badge next to the existing Trustpilot rating in the homepage hero section. Link directly to the GPhC register so users can verify independently.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a visible, clickable GPhC badge to the homepage hero alongside Trustpilot, then Check Eligibility clicks will increase, because user research showed that participants wanted verifiable proof of pharmacy legitimacy at the point of engagement &mdash; not buried in the footer.</p>
+  </div>
+</div>
+
+<!-- Idea 2: Clinical study source links -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">2</div>
+    <h3>Clinical study source links on product benefits</h3>
+    <div class="location-tag">PDP</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 550px; padding: 20px;">
+        <div class="proposed-badge">PROPOSED</div>
+        <div style="background: white; border: 2px solid #007f4e; border-radius: 12px; padding: 24px;">
+          <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-bottom: 16px;">Why Mounjaro Works</div>
+          <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+            <div style="font-size: 14px; color: #333; font-weight: 600;">Up to 22.5% body weight reduction</div>
+            <div style="font-size: 11px; color: #1565c0; margin-top: 4px; cursor: pointer;">
+              <span style="text-decoration: underline;">Source: SURMOUNT-1 Trial (NEJM, 2022)</span> &rarr;
+            </div>
+          </div>
+          <div style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #f0f0f0;">
+            <div style="font-size: 14px; color: #333; font-weight: 600;">NICE-approved for weight management</div>
+            <div style="font-size: 11px; color: #1565c0; margin-top: 4px; cursor: pointer;">
+              <span style="text-decoration: underline;">Source: NICE Technology Appraisal TA1026</span> &rarr;
+            </div>
+          </div>
+          <div style="margin-bottom: 12px;">
+            <div style="font-size: 14px; color: #333; font-weight: 600;">Dual-action mechanism (GLP-1 + GIP)</div>
+            <div style="font-size: 11px; color: #1565c0; margin-top: 4px; cursor: pointer;">
+              <span style="text-decoration: underline;">Source: European Medicines Agency Assessment</span> &rarr;
+            </div>
+          </div>
+          <div style="margin-top: 16px; background: #007f4e; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px;">Get Started</div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Product pages claim "22.5% weight loss" but provide zero source links. During user research, participants asked where the clinical data came from and wanted to read the actual studies. Unsubstantiated claims reduce credibility for a health product.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add small, clickable source links after each clinical claim &mdash; linking to the SURMOUNT-1 trial, NICE approval, and EMA assessment. Turn claims into verifiable evidence.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add source links to clinical claims on the product page, then Get Started clicks will increase, because user research participants explicitly asked for study references &mdash; and health-related purchase decisions require evidence that users can verify themselves.</p>
+  </div>
+</div>
+
+<!-- Idea 3: Persistent trust strip -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">3</div>
+    <h3>Persistent trust strip</h3>
+    <div class="location-tag">Sitewide</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="chrome-bar">
+          <div class="chrome-dot" style="background: #ff5f56;"></div>
+          <div class="chrome-dot" style="background: #ffbd2e;"></div>
+          <div class="chrome-dot" style="background: #27c93f;"></div>
+          <div class="chrome-url">boltpharmacy.co.uk/any-page</div>
+        </div>
+        <div class="chrome-content" style="padding: 0;">
+          <!-- Nav -->
+          <div style="display: flex; align-items: center; padding: 10px 16px; border-bottom: 1px solid #eee;">
+            <div style="font-weight: 700; color: #0f3c6c; font-size: 13px;">Bolt Pharmacy</div>
+            <div style="margin-left: auto; font-size: 11px; color: #888;">Weight Loss &bull; Treatments &bull; About</div>
+          </div>
+          <!-- Trust strip — PROPOSED -->
+          <div style="border: 2px dashed #007f4e; position: relative;">
+            <div style="position: absolute; top: -8px; left: 10px; background: #007f4e; color: white; font-size: 9px; font-weight: 700; padding: 1px 6px; border-radius: 3px; letter-spacing: 1px;">PROPOSED</div>
+            <div style="background: #007f4e; padding: 8px 16px; display: flex; justify-content: center; gap: 24px; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 5px;">
+                <div style="width: 16px; height: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white;">&#10003;</div>
+                <span style="color: white; font-size: 11px; font-weight: 500;">GPhC Registered</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 5px;">
+                <div style="width: 16px; height: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white;">&#10003;</div>
+                <span style="color: white; font-size: 11px; font-weight: 500;">MHRA Approved</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 5px;">
+                <div style="width: 16px; height: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white;">&#10003;</div>
+                <span style="color: white; font-size: 11px; font-weight: 500;">UK Prescribers</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 5px;">
+                <div style="width: 16px; height: 16px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white;">&#10003;</div>
+                <span style="color: white; font-size: 11px; font-weight: 500;">Genuine Medication</span>
+              </div>
+            </div>
+          </div>
+          <!-- Page content placeholder -->
+          <div style="padding: 20px; text-align: center; color: #bbb; font-size: 12px;">
+            <div style="height: 60px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">Page content appears below trust strip</div>
+            <div style="height: 40px; background: #f5f5f5; border-radius: 8px; display: flex; align-items: center; justify-content: center;">Visible on every page across the site</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        No persistent trust signals exist across the site. Trust cues appear on some pages but disappear on others. Users navigating between pages lose the credibility signals they saw initially. For a health product, trust must be reinforced at every touchpoint.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a slim green trust strip below the navigation on every page, showing four key credentials: GPhC Registered, MHRA Approved, UK Prescribers, Genuine Medication. Always visible, never scrolled past.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a persistent trust strip below the navigation on every page, then consultation starts will increase, because trust is currently established inconsistently &mdash; and for a health product purchased online, users need continuous reassurance that they are dealing with a legitimate, regulated pharmacy.</p>
+  </div>
+</div>
+
+<!-- ===================================================
+     THEME 2: MATCH USER ANTICIPATION
+     =================================================== -->
+<div class="theme-header">
+  <div class="theme-badge blue">Theme 2</div>
+  <h2>Match User Anticipation</h2>
+  <div class="insight">Users arrive expecting guidance on which treatment is right for them, but the site presents two nearly identical product cards with no decision support. Dosage options are listed without context on what each dose means or when to change. The funnel assumes users already know what they want &mdash; but user research showed they need help choosing. The 50% drop-off on the plans page is a direct result of this expectation mismatch.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- Idea 4: Treatment quiz -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">4</div>
+    <h3>Treatment quiz above product cards</h3>
+    <div class="location-tag">/weight-loss-plans-30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="chrome-bar">
+          <div class="chrome-dot" style="background: #ff5f56;"></div>
+          <div class="chrome-dot" style="background: #ffbd2e;"></div>
+          <div class="chrome-dot" style="background: #27c93f;"></div>
+          <div class="chrome-url">boltpharmacy.co.uk/weight-loss-plans-30</div>
+        </div>
+        <div class="chrome-content">
+          <div class="proposed-badge">PROPOSED</div>
+          <!-- Quiz module -->
+          <div style="border: 2px solid #1565c0; border-radius: 12px; padding: 20px; margin-bottom: 16px; background: linear-gradient(135deg, #f5f9ff, #e3f2fd);">
+            <div style="text-align: center;">
+              <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Not sure which treatment is right for you?</div>
+              <div style="font-size: 12px; color: #666; margin-bottom: 14px;">Answer 3 quick questions and we&rsquo;ll recommend the best option</div>
+              <div style="display: flex; gap: 10px; justify-content: center;">
+                <div style="background: #1565c0; color: white; padding: 10px 24px; border-radius: 8px; font-weight: 600; font-size: 13px;">Help Me Choose</div>
+                <div style="background: white; color: #888; padding: 10px 24px; border-radius: 8px; font-weight: 500; font-size: 13px; border: 1px solid #ddd;">Skip &mdash; I know what I want</div>
+              </div>
+            </div>
+          </div>
+          <!-- Product cards below (faded to show hierarchy) -->
+          <div style="opacity: 0.5; display: flex; gap: 12px;">
+            <div style="flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 14px; background: white;">
+              <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Wegovy</div>
+              <div style="font-size: 11px; color: #888; margin-top: 4px;">From &pound;149/month</div>
+            </div>
+            <div style="flex: 1; border: 1px solid #eee; border-radius: 8px; padding: 14px; background: white;">
+              <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Mounjaro</div>
+              <div style="font-size: 11px; color: #888; margin-top: 4px;">From &pound;149/month</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Two treatments displayed side-by-side with no guidance on which to choose. Users in research sessions said they wanted "which is right for me" guidance. The plans page has 50% drop-off &mdash; decision paralysis is a primary cause.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add an interactive 3-question quiz module above the product cards with a "Help Me Choose" CTA and a "Skip" option for users who already know. Quiz leads to a personalised recommendation.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a short treatment recommendation quiz above the product cards, then Start My Journey clicks will increase, because user research showed that participants wanted guidance on choosing between treatments &mdash; and a personalised recommendation removes the decision burden that causes 50% drop-off.</p>
+  </div>
+</div>
+
+<!-- Idea 5: Dosage progression timeline -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">5</div>
+    <h3>Dosage progression timeline</h3>
+    <div class="location-tag">PDP</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 600px; padding: 20px;">
+        <div class="proposed-badge">PROPOSED</div>
+        <div style="background: white; border: 2px solid #1565c0; border-radius: 12px; padding: 24px;">
+          <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Your Treatment Journey</div>
+          <div style="font-size: 12px; color: #888; margin-bottom: 20px;">Your clinician adjusts your dose based on how you respond</div>
+          <!-- Dose selector pills -->
+          <div style="display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap;">
+            <div style="padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: #1565c0; color: white;">2.5 mg</div>
+            <div style="padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; background: #e3f2fd; color: #1565c0;">5 mg</div>
+            <div style="padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; background: #e3f2fd; color: #1565c0;">7.5 mg</div>
+            <div style="padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; background: #e3f2fd; color: #1565c0;">10 mg</div>
+            <div style="padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; background: #e3f2fd; color: #1565c0;">12.5 mg</div>
+            <div style="padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; background: #e3f2fd; color: #1565c0;">15 mg</div>
+          </div>
+          <!-- Timeline -->
+          <div style="display: flex; align-items: flex-start; gap: 0; margin-bottom: 10px;">
+            <!-- Stage 1 -->
+            <div style="flex: 1; text-align: center;">
+              <div style="height: 6px; background: #1565c0; border-radius: 3px 0 0 3px;"></div>
+              <div style="margin-top: 10px;">
+                <div style="font-size: 13px; font-weight: 700; color: #1565c0;">2.5 mg</div>
+                <div style="font-size: 10px; color: #888; margin-top: 2px;">Month 1&ndash;2</div>
+                <div style="font-size: 10px; color: #555; margin-top: 4px;">Starting dose<br>Body adjusts</div>
+              </div>
+            </div>
+            <!-- Stage 2 -->
+            <div style="flex: 1; text-align: center;">
+              <div style="height: 6px; background: #42a5f5;"></div>
+              <div style="margin-top: 10px;">
+                <div style="font-size: 13px; font-weight: 700; color: #42a5f5;">5 mg</div>
+                <div style="font-size: 10px; color: #888; margin-top: 2px;">Month 3&ndash;4</div>
+                <div style="font-size: 10px; color: #555; margin-top: 4px;">Dose increase<br>Results build</div>
+              </div>
+            </div>
+            <!-- Stage 3 -->
+            <div style="flex: 1; text-align: center;">
+              <div style="height: 6px; background: #90caf9; border-radius: 0 3px 3px 0;"></div>
+              <div style="margin-top: 10px;">
+                <div style="font-size: 13px; font-weight: 700; color: #0d47a1;">7.5 mg+</div>
+                <div style="font-size: 10px; color: #888; margin-top: 2px;">Month 5+</div>
+                <div style="font-size: 10px; color: #555; margin-top: 4px;">Optimal dose<br>Maximum effect</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Product page shows 6 dose options with zero context on which to pick, when to increase, or what the treatment timeline looks like. Users have no mental model of the journey &mdash; they see a confusing list of numbers without meaning.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a horizontal timeline below the dose selector showing three stages: starting dose (Month 1-2), dose increase (Month 3-4), and optimal dose (Month 5+). Give users a clear picture of the treatment journey ahead.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a dosage progression timeline below the dose selector, then page exits will decrease, because users currently see 6 dose options with no context &mdash; and providing a clear treatment journey reduces the confusion that drives them to leave the page.</p>
+  </div>
+</div>
+
+<!-- Idea 6: Goal-based recommendation labels -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">6</div>
+    <h3>Goal-based recommendation labels</h3>
+    <div class="location-tag">/weight-loss-plans-30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 650px; padding: 20px;">
+        <div class="proposed-badge">PROPOSED</div>
+        <div style="display: flex; gap: 16px;">
+          <!-- Mounjaro card -->
+          <div style="flex: 1; border: 2px solid #6a1b9a; border-radius: 12px; padding: 18px; background: white; position: relative;">
+            <div style="position: absolute; top: -10px; left: 14px; background: #6a1b9a; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px;">BEST FOR: MAXIMUM RESULTS</div>
+            <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-top: 8px;">Mounjaro</div>
+            <div style="font-size: 12px; color: #666; margin: 6px 0 12px;">(Tirzepatide)</div>
+            <div style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 12px;">
+              &bull; Dual receptor mechanism<br>
+              &bull; Higher average weight loss<br>
+              &bull; Stronger appetite suppression
+            </div>
+            <div style="background: #f3e5f5; border-radius: 8px; padding: 10px; margin-bottom: 12px;">
+              <div style="font-size: 10px; font-weight: 700; color: #6a1b9a; letter-spacing: 1px; margin-bottom: 4px;">BEST IF YOU&hellip;</div>
+              <div style="font-size: 12px; color: #555; line-height: 1.5;">Want the strongest clinical results and are comfortable with a more intensive start</div>
+            </div>
+            <div style="background: #6a1b9a; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start My Journey</div>
+          </div>
+          <!-- Wegovy card -->
+          <div style="flex: 1; border: 2px solid #007f4e; border-radius: 12px; padding: 18px; background: white; position: relative;">
+            <div style="position: absolute; top: -10px; left: 14px; background: #007f4e; color: white; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 10px;">BEST FOR: STEADY MANAGEMENT</div>
+            <div style="font-size: 16px; font-weight: 700; color: #0f3c6c; margin-top: 8px;">Wegovy</div>
+            <div style="font-size: 12px; color: #666; margin: 6px 0 12px;">(Semaglutide)</div>
+            <div style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 12px;">
+              &bull; Single receptor mechanism<br>
+              &bull; Gentler starting experience<br>
+              &bull; Stronger long-term retention
+            </div>
+            <div style="background: #e8f5e9; border-radius: 8px; padding: 10px; margin-bottom: 12px;">
+              <div style="font-size: 10px; font-weight: 700; color: #2e7d32; letter-spacing: 1px; margin-bottom: 4px;">BEST IF YOU&hellip;</div>
+              <div style="font-size: 12px; color: #555; line-height: 1.5;">Prefer a gentler approach and value long-term sustainability over rapid results</div>
+            </div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Start My Journey</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Both product cards have identical layouts with generic bullet points. There is no visual differentiation or guidance on who each treatment is best suited for. 50% drop-off indicates users cannot make a confident choice between the two options.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add goal-based labels ("Best for: Maximum results" vs "Best for: Steady management") and a "Best if you&hellip;" section to each card. Help users self-select based on their personal goals rather than medical terminology.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add goal-based recommendation labels to each treatment card, then bounce rate will decrease and Start My Journey clicks will increase, because users will quickly identify which treatment matches their personal goals &mdash; reducing the decision paralysis that currently drives 50% away from the plans page.</p>
+  </div>
+</div>
+
+<!-- ===================================================
+     THEME 3: REDUCE NOISE AFTER FUNNEL
+     =================================================== -->
+<div class="theme-header">
+  <div class="theme-badge orange">Theme 3</div>
+  <h2>Reduce Noise After the Decision Point</h2>
+  <div class="insight">Once users decide they are interested, the funnel introduces new friction: a competitor comparison table that triggers scepticism, opaque pricing that creates hidden-fee anxiety, and a consultation start page that reads like a legal document. These elements are meant to reassure &mdash; but they actually introduce new objections. The content between "I'm interested" and "I'll start" needs to build confidence, not create doubt.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- Idea 7: Replace comparison table -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">7</div>
+    <h3>Replace comparison table with pricing explainer</h3>
+    <div class="location-tag">PDP</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- Current -->
+        <div style="flex: 1;">
+          <div class="mockup-label-current">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 14px; opacity: 0.7; background: white; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-8deg); background: rgba(229,57,53,0.9); color: white; font-size: 10px; font-weight: 700; padding: 6px 14px; border-radius: 4px; letter-spacing: 1px; white-space: nowrap; z-index: 1;">TRIGGERS SCEPTICISM</div>
+            <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">Bolt vs Others</div>
+            <table style="width: 100%; font-size: 10px; border-collapse: collapse;">
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 6px 4px; color: #888;"></td>
+                <td style="padding: 6px 4px; font-weight: 600; color: #007f4e;">Bolt</td>
+                <td style="padding: 6px 4px; color: #888;">Others</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 6px 4px; color: #555;">UK Prescribers</td>
+                <td style="padding: 6px 4px; color: #007f4e;">&#10003;</td>
+                <td style="padding: 6px 4px; color: #e53935;">&#10007;</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f0f0f0;">
+                <td style="padding: 6px 4px; color: #555;">Free Delivery</td>
+                <td style="padding: 6px 4px; color: #007f4e;">&#10003;</td>
+                <td style="padding: 6px 4px; color: #e53935;">&#10007;</td>
+              </tr>
+              <tr>
+                <td style="padding: 6px 4px; color: #555;">Clinician Support</td>
+                <td style="padding: 6px 4px; color: #007f4e;">&#10003;</td>
+                <td style="padding: 6px 4px; color: #e53935;">&#10007;</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- Proposed -->
+        <div style="flex: 1;">
+          <div class="mockup-label-proposed">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 14px; background: white;">
+            <div style="font-size: 13px; font-weight: 700; color: #0f3c6c; margin-bottom: 10px;">How We Keep Prices Low</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+              <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+                <div style="font-size: 16px; margin-bottom: 4px;">&#127973;</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">Direct from manufacturers</div>
+              </div>
+              <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+                <div style="font-size: 16px; margin-bottom: 4px;">&#128187;</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">No high-street overheads</div>
+              </div>
+              <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+                <div style="font-size: 16px; margin-bottom: 4px;">&#128666;</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">Delivery included</div>
+              </div>
+              <div style="background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+                <div style="font-size: 16px; margin-bottom: 4px;">&#129657;</div>
+                <div style="font-size: 10px; font-weight: 600; color: #0f3c6c;">Consultation included</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The "Bolt vs Others" comparison table triggered scepticism in user research. Participants said "of course they'd say that" &mdash; self-reported comparisons are not credible. The table introduces a new objection instead of resolving one.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Replace the comparison table with a "How We Keep Prices Low" transparency section. Four-grid explainer showing direct sourcing, no overheads, included delivery, and included consultation. Focus on explaining value, not attacking competitors.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we replace the self-serving comparison table with a transparent pricing explainer, then downstream conversion will increase, because user research showed the comparison table triggered scepticism ("of course they'd say that") &mdash; while proactively explaining pricing builds genuine trust.</p>
+  </div>
+</div>
+
+<!-- Idea 8: Transparent price breakdown -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">8</div>
+    <h3>Transparent price breakdown</h3>
+    <div class="location-tag">PDP</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 450px; padding: 20px;">
+        <div class="proposed-badge">PROPOSED</div>
+        <div style="background: white; border: 2px solid #e65100; border-radius: 12px; padding: 24px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div style="font-size: 16px; font-weight: 700; color: #0f3c6c;">Wegovy Monthly Plan</div>
+            <div style="font-size: 22px; font-weight: 700; color: #0f3c6c;">&pound;149</div>
+          </div>
+          <!-- Expandable breakdown -->
+          <div style="border: 1px solid #eee; border-radius: 8px; overflow: hidden;">
+            <div style="background: #fafafa; padding: 10px 14px; font-size: 12px; font-weight: 600; color: #555; border-bottom: 1px solid #eee;">Price breakdown</div>
+            <div style="padding: 10px 14px;">
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5;">
+                <span style="font-size: 13px; color: #555;">Medication (Wegovy 2.5mg)</span>
+                <span style="font-size: 13px; font-weight: 600; color: #0f3c6c;">&pound;129</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5;">
+                <span style="font-size: 13px; color: #555;">Clinical consultation</span>
+                <span style="font-size: 13px; font-weight: 600; color: #0f3c6c;">&pound;15</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f5f5f5;">
+                <span style="font-size: 13px; color: #555;">Next-day delivery</span>
+                <span style="font-size: 13px; font-weight: 600; color: #0f3c6c;">&pound;5</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 8px 0; font-weight: 700;">
+                <span style="font-size: 13px; color: #0f3c6c;">Total</span>
+                <span style="font-size: 13px; color: #0f3c6c;">&pound;149</span>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 12px; padding: 10px; background: #e8f5e9; border-radius: 6px; font-size: 11px; color: #2e7d32; text-align: center;">
+            No hidden fees &bull; No subscription lock-in &bull; Cancel anytime
+          </div>
+          <div style="margin-top: 14px; background: #007f4e; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 14px;">Get Started</div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Users see &pound;149 but have no idea what is included. Is consultation extra? Is delivery extra? Are there hidden fees? This ambiguity creates anxiety that delays or kills the purchase decision. Hidden-fee anxiety is a known conversion killer in e-commerce.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add an expandable price breakdown showing each line item: medication (&pound;129), consultation (&pound;15), delivery (&pound;5). Add "No hidden fees" reassurance strip. Make the total feel transparent and fair.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a transparent price breakdown showing exactly what &pound;149 includes, then Get Started clicks will increase and downstream cart abandonment will decrease, because eliminating pricing ambiguity removes the hidden-fee anxiety that causes users to hesitate at the commitment point.</p>
+  </div>
+</div>
+
+<!-- Idea 9: Redesign consultation start page -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">9</div>
+    <h3>Redesign consultation start page</h3>
+    <div class="location-tag">/consultation-sb-b</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- Current -->
+        <div style="flex: 1;">
+          <div class="mockup-label-current">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white; position: relative;">
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-5deg); background: rgba(229,57,53,0.9); color: white; font-size: 9px; font-weight: 700; padding: 5px 12px; border-radius: 4px; letter-spacing: 1px; white-space: nowrap; z-index: 1;">COLD, TEXT-HEAVY</div>
+            <div style="font-size: 14px; font-weight: 700; color: #0f3c6c; margin-bottom: 8px;">Consultation</div>
+            <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 90%;"></div>
+            <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 100%;"></div>
+            <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 85%;"></div>
+            <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 95%;"></div>
+            <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 6px; width: 70%;"></div>
+            <div style="height: 8px; background: #f0f0f0; border-radius: 4px; margin-bottom: 12px; width: 88%;"></div>
+            <div style="background: #e0e0e0; text-align: center; padding: 8px; border-radius: 6px; font-size: 11px; color: #888;">Start Consultation</div>
+          </div>
+        </div>
+        <!-- Proposed -->
+        <div style="flex: 1;">
+          <div class="mockup-label-proposed">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
+            <div style="font-size: 14px; font-weight: 700; color: #0f3c6c; margin-bottom: 4px;">Your Free Clinical Assessment</div>
+            <div style="font-size: 11px; color: #888; margin-bottom: 12px;">Takes 3-5 minutes &bull; No payment required</div>
+            <!-- Trust badges -->
+            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+              <div style="flex: 1; background: #e8f5e9; border-radius: 6px; padding: 6px; text-align: center; font-size: 9px; font-weight: 600; color: #2e7d32;">GPhC Reg.</div>
+              <div style="flex: 1; background: #e3f2fd; border-radius: 6px; padding: 6px; text-align: center; font-size: 9px; font-weight: 600; color: #1565c0;">UK Clinicians</div>
+              <div style="flex: 1; background: #f3e5f5; border-radius: 6px; padding: 6px; text-align: center; font-size: 9px; font-weight: 600; color: #7b1fa2;">Confidential</div>
+            </div>
+            <!-- What to expect -->
+            <div style="font-size: 11px; color: #555; line-height: 1.6; margin-bottom: 12px;">
+              <div style="margin-bottom: 4px;">&#10003; Quick health questions</div>
+              <div style="margin-bottom: 4px;">&#10003; Reviewed by a UK prescriber</div>
+              <div>&#10003; No obligation to proceed</div>
+            </div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 12px;">Start My Free Assessment &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Consultation start page is a cold wall of text with zero trust cues. No indication of how long it takes, no reassurance about cost (it is free), and no credibility signals. All three themes from user research converge on this page &mdash; trust, anticipation, and noise.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Redesign as "Your Free Clinical Assessment" with trust badges (GPhC, UK Clinicians, Confidential), time expectation (3-5 minutes), no-payment reassurance, and a clear what-to-expect list. Make the CTA inviting rather than clinical.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we redesign the consultation start page with trust signals, clear framing, and time expectations, then consultation completion rates will increase, because the current page is a cold wall of text that fails to address the three concerns users have at this point: legitimacy, commitment level, and cost.</p>
+  </div>
+</div>
+
+<!-- ===================================================
+     THEME 4: FIRST-PAGE FRICTION
+     =================================================== -->
+<div class="theme-header">
+  <div class="theme-badge purple-theme">Theme 4</div>
+  <h2>First-Page Friction Is Killing 40% of Traffic</h2>
+  <div class="insight">The pre-landing page (/prelanding30) is where the largest volume of users enters the funnel &mdash; and where 40% of them leave. The page uses a split-screen layout that forces unnatural left-right reading on desktop. Copy is not aligned with the full funnel proposition. An age gate adds friction before users have seen any value. This page was identified during the heuristic workshop as the single biggest untapped opportunity for improving overall funnel throughput.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- Idea 10: Rewrite pre-landing copy -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #f3e5f5; color: #7b1fa2;">10</div>
+    <h3>Rewrite pre-landing copy</h3>
+    <div class="location-tag">/prelanding30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- Current -->
+        <div style="flex: 1;">
+          <div class="mockup-label-current">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white;">
+            <div style="font-size: 15px; font-weight: 700; color: #0f3c6c; margin-bottom: 8px;">Lose Weight With Clinically-Proven Treatments</div>
+            <div style="height: 6px; background: #f0f0f0; border-radius: 4px; margin-bottom: 4px; width: 90%;"></div>
+            <div style="height: 6px; background: #f0f0f0; border-radius: 4px; margin-bottom: 4px; width: 100%;"></div>
+            <div style="height: 6px; background: #f0f0f0; border-radius: 4px; margin-bottom: 12px; width: 75%;"></div>
+            <div style="font-size: 10px; color: #e53935; text-align: center; font-style: italic;">Generic, not proposition-focused</div>
+          </div>
+        </div>
+        <!-- Proposed -->
+        <div style="flex: 1;">
+          <div class="mockup-label-proposed">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
+            <div style="font-size: 15px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Wegovy &amp; Mounjaro from &pound;149/month</div>
+            <div style="font-size: 12px; color: #555; line-height: 1.6; margin-bottom: 12px;">
+              Prescribed by UK clinicians. Delivered next-day to your door. Includes ongoing clinical support.
+            </div>
+            <div style="display: flex; gap: 8px; margin-bottom: 12px;">
+              <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 8px; text-align: center;">
+                <div style="font-size: 18px; font-weight: 700; color: #007f4e;">22.5%</div>
+                <div style="font-size: 9px; color: #888;">avg. weight loss</div>
+              </div>
+              <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 8px; text-align: center;">
+                <div style="font-size: 18px; font-weight: 700; color: #007f4e;">&pound;149</div>
+                <div style="font-size: 9px; color: #888;">per month, all-in</div>
+              </div>
+              <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 8px; text-align: center;">
+                <div style="font-size: 18px; font-weight: 700; color: #007f4e;">48hr</div>
+                <div style="font-size: 9px; color: #888;">delivery</div>
+              </div>
+            </div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check My Eligibility &rarr;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Pre-landing copy is generic ("Lose weight with clinically-proven treatments") and does not communicate the specific value proposition: price, effectiveness data, or delivery speed. It reads like a category page, not a compelling entry point for a &pound;149/month commitment.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Rewrite the headline and supporting copy to lead with the proposition: specific treatments, price, effectiveness data, and delivery promise. Make the first 5 seconds communicate exactly what users get and what it costs.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we rewrite the pre-landing copy to lead with specific treatments, price, and effectiveness data, then pre-landing CTR will increase, because the current generic copy does not communicate the value proposition within the 5 seconds users give the page before deciding to stay or leave.</p>
+  </div>
+</div>
+
+<!-- Idea 11: Single column layout -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #f3e5f5; color: #7b1fa2;">11</div>
+    <h3>Single column layout</h3>
+    <div class="location-tag">/prelanding30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- Current: split screen -->
+        <div style="flex: 1;">
+          <div class="mockup-label-current">CURRENT &mdash; SPLIT SCREEN</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 14px; opacity: 0.7; background: white;">
+            <div style="display: flex; gap: 8px;">
+              <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 12px;">
+                <div style="height: 6px; background: #ddd; border-radius: 4px; margin-bottom: 4px; width: 80%;"></div>
+                <div style="height: 6px; background: #ddd; border-radius: 4px; margin-bottom: 4px; width: 100%;"></div>
+                <div style="height: 6px; background: #ddd; border-radius: 4px; width: 60%;"></div>
+              </div>
+              <div style="flex: 1; background: #eee; border-radius: 6px; padding: 12px; display: flex; align-items: center; justify-content: center;">
+                <div style="font-size: 20px; color: #bbb;">&#128247;</div>
+              </div>
+            </div>
+            <div style="font-size: 10px; color: #e53935; text-align: center; margin-top: 8px; font-style: italic;">Forces left-right reading &bull; 40% drop-off</div>
+          </div>
+        </div>
+        <!-- Proposed: single column -->
+        <div style="flex: 1;">
+          <div class="mockup-label-proposed">PROPOSED &mdash; SINGLE COLUMN</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 14px; background: white;">
+            <div style="text-align: center;">
+              <div style="font-size: 15px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Your Weight Loss Journey Starts Here</div>
+              <div style="font-size: 11px; color: #666; margin-bottom: 12px;">One clear message. One clear action.</div>
+              <div style="background: #f5f5f5; border-radius: 8px; padding: 14px; margin-bottom: 12px;">
+                <div style="font-size: 12px; color: #555; line-height: 1.6;">UK-prescribed Wegovy &amp; Mounjaro<br>From &pound;149/month &bull; Next-day delivery</div>
+              </div>
+              <div style="background: #007f4e; color: white; text-align: center; padding: 10px; border-radius: 8px; font-weight: 600; font-size: 13px;">Check My Eligibility</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The current split-screen layout forces left-right reading on desktop, which is unnatural for web users who scan top-down. The dual-panel design splits attention between text and imagery without clear visual hierarchy. 40% of traffic drops off from this page.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Replace with a single-column layout: minimal text, one clear message, one prominent CTA. Remove the distraction of the image panel. Focus all visual weight on the value proposition and the next step.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we simplify the pre-landing page to a single-column layout with one clear message and one CTA, then bounce rate will decrease, because the current split-screen forces unnatural left-right reading on desktop &mdash; and a top-down layout matches how users actually scan web pages.</p>
+  </div>
+</div>
+
+<!-- Idea 12: Remove/soften age gate -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #f3e5f5; color: #7b1fa2;">12</div>
+    <h3>Remove or soften age gate</h3>
+    <div class="location-tag">/prelanding30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- Current -->
+        <div style="flex: 1;">
+          <div class="mockup-label-current">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white; position: relative;">
+            <div style="font-size: 12px; color: #888; margin-bottom: 8px;">Before you continue...</div>
+            <div style="border: 2px solid #e53935; border-radius: 8px; padding: 14px; text-align: center;">
+              <div style="font-size: 14px; font-weight: 600; color: #0f3c6c; margin-bottom: 8px;">Are you over 18?</div>
+              <div style="font-size: 11px; color: #888; margin-bottom: 10px;">Redundant text about age requirements that adds friction</div>
+              <div style="display: flex; gap: 8px; justify-content: center;">
+                <div style="background: #007f4e; color: white; padding: 8px 20px; border-radius: 6px; font-size: 12px; font-weight: 600;">I'm over 18</div>
+                <div style="background: #f5f5f5; color: #888; padding: 8px 20px; border-radius: 6px; font-size: 12px;">I'm under 18</div>
+              </div>
+            </div>
+            <div style="font-size: 9px; color: #e53935; text-align: center; margin-top: 8px;">Extra click before any value shown</div>
+          </div>
+        </div>
+        <!-- Proposed -->
+        <div style="flex: 1;">
+          <div class="mockup-label-proposed">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
+            <div style="font-size: 14px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Start your weight loss journey</div>
+            <div style="font-size: 12px; color: #555; margin-bottom: 14px;">UK-prescribed treatments, delivered to your door</div>
+            <div style="background: #007f4e; color: white; text-align: center; padding: 12px; border-radius: 8px; font-weight: 600; font-size: 13px; margin-bottom: 10px;">Check My Eligibility &rarr;</div>
+            <div style="font-size: 10px; color: #888; text-align: center;">
+              By continuing, you confirm you are 18 or over
+            </div>
+            <div style="margin-top: 10px; padding: 8px; background: #f5f5f5; border-radius: 6px; font-size: 10px; color: #888; text-align: center;">
+              Age verified during clinical assessment
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The "I'm over 18" gate adds an extra click before users see any value. Redundant text above it explains age requirements unnecessarily. This creates a "hard landing" into the quiz &mdash; friction before trust or value is established. Age can be verified during the clinical assessment.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Remove the standalone age gate. Instead, add "By continuing, you confirm you are 18 or over" as a passive confirmation below the main CTA. Defer formal age verification to the clinical assessment where date of birth is already collected.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we soften the age gate from an active click barrier to a passive confirmation, then first-page drop-off will decrease, because the current gate adds friction before users have seen any value &mdash; and age is already verified during the clinical assessment, making the gate redundant.</p>
+  </div>
+</div>
+
+<!-- ===================================================
+     THEME 5: THE COMMITMENT JOURNEY HAS NO GUIDE RAILS
+     =================================================== -->
+<div class="theme-header">
+  <div class="theme-badge teal">Theme 5</div>
+  <h2>The Commitment Journey Has No Guide Rails</h2>
+  <div class="insight">As users move through the funnel, small signals send the wrong message. Red pricing creates negative associations for what should be a positive savings moment. The quiz starts with no preparation &mdash; users go from browsing to a 19-question medical questionnaire with no transition. These "micro-signals" compound throughout the journey, each one adding a small amount of friction that, together, erode the confidence users need to commit to a monthly health plan.</div>
+  <div class="idea-count">2 experiment ideas</div>
+</div>
+
+<!-- Idea 13: Change red pricing to green -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e0f2f1; color: #00695c;">13</div>
+    <h3>Change red pricing to green</h3>
+    <div class="location-tag">/weight-loss-plans-30</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 24px; width: 100%; max-width: 600px; align-items: center;">
+        <!-- Current: red -->
+        <div style="flex: 1; text-align: center;">
+          <div class="mockup-label-current">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 12px; padding: 20px; background: white; opacity: 0.8;">
+            <div style="font-size: 14px; color: #888; text-decoration: line-through; margin-bottom: 2px;">&pound;189</div>
+            <div style="font-size: 32px; font-weight: 800; color: #e53935;">&pound;149</div>
+            <div style="font-size: 12px; color: #888; margin-top: 2px;">per month</div>
+            <div style="margin-top: 8px; font-size: 10px; color: #e53935; font-style: italic;">Red = danger, warning, negative</div>
+          </div>
+        </div>
+        <!-- Arrow -->
+        <div style="font-size: 24px; color: #bbb;">&rarr;</div>
+        <!-- Proposed: green -->
+        <div style="flex: 1; text-align: center;">
+          <div class="mockup-label-proposed">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 12px; padding: 20px; background: white;">
+            <div style="font-size: 14px; color: #999; text-decoration: line-through; margin-bottom: 2px;">&pound;189</div>
+            <div style="font-size: 32px; font-weight: 800; color: #2e7d32;">&pound;149</div>
+            <div style="font-size: 12px; color: #888; margin-top: 2px;">per month</div>
+            <div style="margin-top: 6px; background: #e8f5e9; border-radius: 20px; padding: 4px 12px; display: inline-block; font-size: 11px; font-weight: 600; color: #2e7d32;">Save &pound;40/month</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Discount pricing is displayed in red &mdash; a colour associated with danger, warnings, and negative outcomes. For a health product where trust is critical, red price signals create an unconscious negative association at the exact moment users are evaluating cost.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Change the discounted price colour from red to green (positive, savings, health) and show the original price in grey. Add a "Save &pound;40/month" badge to frame the discount positively rather than just showing a red number.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we change the pricing colour from red to green and add a positive savings frame, then plan selection CTR will increase, because green signals savings and positivity while red signals danger &mdash; and at the price evaluation moment, the colour association matters for a health product commitment.</p>
+  </div>
+</div>
+
+<!-- Idea 14: Softer quiz entry -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e0f2f1; color: #00695c;">14</div>
+    <h3>Softer quiz entry</h3>
+    <div class="location-tag">/consultation-sb-b</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="width: 100%; max-width: 450px; padding: 20px;">
+        <div class="proposed-badge">PROPOSED &mdash; NEW INTRO SCREEN</div>
+        <div style="background: white; border: 2px solid #00695c; border-radius: 12px; padding: 28px; text-align: center;">
+          <div style="font-size: 28px; margin-bottom: 8px;">&#128139;</div>
+          <div style="font-size: 20px; font-weight: 700; color: #0f3c6c; margin-bottom: 6px;">Your Clinical Assessment</div>
+          <div style="font-size: 13px; color: #666; margin-bottom: 20px; line-height: 1.6;">We need to ask you some health questions so our clinicians can prescribe safely. Here&rsquo;s what to expect:</div>
+          <!-- What to expect -->
+          <div style="text-align: left; margin-bottom: 20px;">
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #e0f2f1; color: #00695c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">1</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">10 quick health questions</div>
+                <div style="font-size: 11px; color: #888;">Takes 3-5 minutes</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #e0f2f1; color: #00695c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">2</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Clinician reviews your answers</div>
+                <div style="font-size: 11px; color: #888;">Usually within 24 hours</div>
+              </div>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <div style="width: 24px; height: 24px; border-radius: 50%; background: #e0f2f1; color: #00695c; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0;">3</div>
+              <div>
+                <div style="font-size: 13px; font-weight: 600; color: #0f3c6c;">Get your personalised treatment plan</div>
+                <div style="font-size: 11px; color: #888;">No obligation to proceed</div>
+              </div>
+            </div>
+          </div>
+          <div style="background: #00695c; color: white; padding: 14px; border-radius: 8px; font-weight: 600; font-size: 15px; margin-bottom: 10px;">Begin Assessment &rarr;</div>
+          <div style="font-size: 11px; color: #999;">Free &bull; Confidential &bull; No payment details required</div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Users go from browsing directly into a 19-question medical quiz with no preparation or transition. This "hard landing" creates anxiety &mdash; users do not know how long it will take, what happens after, or whether they are committing to anything. The abruptness causes immediate abandonment.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add an intro screen before the quiz begins: explain the purpose (safe prescribing), set time expectations (3-5 minutes), outline the process (3 steps), and reassure (no obligation, free, confidential). Turn a "hard landing" into a guided entry.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a preparatory intro screen before the clinical assessment quiz, then quiz completion rate will increase, because users who understand the purpose, duration, and no-obligation nature of the quiz before starting will feel less anxious and be more likely to complete it.</p>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semrush — Strategic Experimentation Ideas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =============================================
+   COVER SECTION
+   ============================================= */
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #191C45 0%, #1a1a2e 50%, #3D1D72 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 80px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(255,100,45,0.12) 0%, transparent 70%);
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 50%;
+  height: 150%;
+  background: radial-gradient(ellipse, rgba(107,77,186,0.15) 0%, transparent 70%);
+}
+.cover h1 {
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+  position: relative;
+}
+.cover .subtitle {
+  font-size: 24px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 40px;
+  position: relative;
+}
+.cover .divider {
+  width: 80px;
+  height: 4px;
+  background: #FF642D;
+  margin-bottom: 30px;
+  position: relative;
+}
+.cover .meta {
+  font-size: 15px;
+  color: rgba(255,255,255,0.5);
+  position: relative;
+}
+.cover .meta span { margin: 0 12px; }
+.cover .prepared-for {
+  position: absolute;
+  bottom: 40px;
+  left: 80px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.35);
+}
+
+/* =============================================
+   TL;DR SECTION
+   ============================================= */
+.tldr-section {
+  max-width: 1100px;
+  margin: 60px auto 40px;
+  background: white;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  border-left: 4px solid #FF642D;
+}
+.tldr-section .section-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FF642D;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.tldr-section h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #191C45;
+  margin-bottom: 24px;
+}
+.tldr-section p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+}
+.tldr-section .data-points {
+  display: flex;
+  gap: 40px;
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #eee;
+}
+.tldr-section .data-point .label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #FF642D;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.tldr-section .data-point .value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #191C45;
+}
+
+/* =============================================
+   BIG SWINGS HEADER
+   ============================================= */
+.big-swings-header {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: linear-gradient(135deg, #191C45 0%, #3D1D72 100%);
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: relative;
+  overflow: hidden;
+}
+.big-swings-header::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 40%;
+  height: 160%;
+  background: radial-gradient(ellipse, rgba(255,100,45,0.15) 0%, transparent 70%);
+}
+.big-swing-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #FF642D, #FF8A5C);
+  color: white;
+}
+.big-swings-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  position: relative;
+}
+.big-swings-header .insight {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 800px;
+  position: relative;
+}
+.big-swings-header .idea-count {
+  margin-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  position: relative;
+}
+.idea-card.big-swing {
+  box-shadow: 0 4px 24px rgba(25,28,69,0.15), 0 0 0 2px rgba(255,100,45,0.15);
+}
+
+/* =============================================
+   THEME HEADER
+   ============================================= */
+.theme-header {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: #191C45;
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.theme-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.theme-badge.green { background: #e8f5e9; color: #2e7d32; }
+.theme-badge.blue { background: #e3f2fd; color: #1565c0; }
+.theme-badge.orange { background: #fff3e0; color: #e65100; }
+.theme-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.theme-header .insight {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  max-width: 800px;
+}
+.theme-header .idea-count {
+  margin-top: 30px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+}
+
+/* =============================================
+   IDEA CARD
+   ============================================= */
+.idea-card {
+  max-width: 1100px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  padding: 18px 30px;
+  border-bottom: 1px solid #eee;
+  gap: 14px;
+}
+.idea-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+}
+.card-header h3 {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 600;
+  color: #191C45;
+}
+.location-tag {
+  padding: 6px 14px;
+  background: #f0f2f5;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* =============================================
+   SCREENSHOT AREA — CRITICAL FLEX LAYOUT
+   ============================================= */
+.screenshot-area {
+  display: flex;
+  min-height: 350px;
+  background: #fafbfc;
+  border-bottom: 1px solid #e8e8e8;
+}
+.mockup-wrapper {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.notes-sidebar {
+  width: 270px;
+  min-width: 270px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f8f9fa;
+  border-left: 1px solid #e8e8e8;
+}
+.sticky-note {
+  position: static;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+  font-size: 13px;
+  line-height: 1.5;
+}
+.sticky-note .note-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.observation-note {
+  background: #fff9c4;
+  border-left: 3px solid #f9a825;
+}
+.observation-note .note-label { color: #f57f17; }
+.idea-note {
+  background: #c8e6c9;
+  border-left: 3px solid #43a047;
+}
+.idea-note .note-label { color: #2e7d32; }
+
+/* =============================================
+   HYPOTHESIS BAR
+   ============================================= */
+.hypothesis-bar {
+  padding: 20px 30px;
+  background: #FFF5F0;
+  border-left: 4px solid #FF642D;
+}
+.hypothesis-bar .hyp-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #FF642D;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hypothesis-bar p {
+  font-size: 14px;
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* =============================================
+   MOCKUP STYLES
+   ============================================= */
+.browser-chrome {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 700px;
+}
+.browser-bar {
+  background: #f1f3f4;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-bottom: 1px solid #ddd;
+}
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.browser-url {
+  flex: 1;
+  margin-left: 10px;
+  background: white;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: #888;
+}
+
+/* Semrush nav mockup */
+.sr-nav {
+  background: #191C45;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 12px;
+}
+.sr-logo {
+  font-weight: 700;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.sr-nav-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 11px; }
+.sr-nav-right { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.sr-btn-login { color: rgba(255,255,255,0.8); font-size: 11px; text-decoration: none; }
+.sr-btn-signup {
+  background: #FF642D;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Hero mockup */
+.sr-hero {
+  padding: 30px 20px;
+  text-align: center;
+}
+.sr-hero h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #191C45;
+  margin-bottom: 8px;
+}
+.sr-hero .sr-sub {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+.sr-search-bar {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.sr-search-bar input {
+  flex: 1;
+  border: none;
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #333;
+  outline: none;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.sr-search-bar button {
+  background: #FF642D;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Results mockup */
+.sr-results {
+  padding: 15px 20px;
+  background: #f9f9f9;
+}
+.sr-results-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 11px;
+  color: #666;
+}
+.sr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+.sr-table th {
+  text-align: left;
+  padding: 8px 10px;
+  background: #f0f2f5;
+  color: #666;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.sr-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+.sr-blurred {
+  filter: blur(3px);
+  opacity: 0.5;
+  user-select: none;
+}
+.sr-overlay-cta {
+  position: relative;
+  background: rgba(255,255,255,0.95);
+  border: 2px solid #FF642D;
+  border-radius: 8px;
+  padding: 12px 16px;
+  text-align: center;
+  margin: 10px 0;
+}
+.sr-inline-row {
+  background: #FFF5F0;
+  border: 2px dashed #FF642D;
+  border-radius: 8px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 8px 0;
+  position: relative;
+}
+.sr-inline-row::before {
+  content: 'PROPOSED CHANGE';
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #FF642D;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+
+/* Social proof strip */
+.sr-social-proof {
+  background: #f0f2f5;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 11px;
+  color: #666;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+.sr-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+  color: #191C45;
+}
+.sr-badge svg { width: 16px; height: 16px; }
+.sr-stat { font-weight: 600; color: #FF642D; }
+
+/* Proposed change marker */
+.proposed-marker {
+  position: relative;
+}
+.proposed-marker::before {
+  content: 'PROPOSED';
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #FF642D;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+/* Value comparison strip */
+.sr-value-strip {
+  background: linear-gradient(135deg, #FFF5F0 0%, #FFF0E8 100%);
+  border: 2px dashed #FF642D;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 10px 20px;
+  position: relative;
+}
+.sr-value-strip::before {
+  content: 'PROPOSED CHANGE';
+  position: absolute;
+  top: -8px;
+  left: 12px;
+  background: #FF642D;
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+}
+.sr-value-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 8px;
+}
+.sr-value-item {
+  text-align: center;
+  padding: 8px;
+}
+.sr-value-item .sr-val-icon {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+.sr-value-item .sr-val-text {
+  font-size: 10px;
+  color: #555;
+  line-height: 1.4;
+}
+.sr-value-item .sr-val-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #FF642D;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Quick wins section */
+.quick-wins {
+  max-width: 1100px;
+  margin: 60px auto 20px;
+  background: linear-gradient(135deg, #191C45 0%, #2D1B4E 100%);
+  border-radius: 16px;
+  padding: 50px 60px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+.quick-wins h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+.quick-wins .qw-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 30px;
+}
+.qw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+.qw-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  padding: 24px;
+}
+.qw-card .qw-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #FF642D;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.qw-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.qw-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+.qw-tag {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 3px 10px;
+  background: rgba(255,100,45,0.15);
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #FF642D;
+}
+
+@media (max-width: 900px) {
+  .screenshot-area { flex-direction: column; }
+  .notes-sidebar { width: 100%; min-width: 100%; flex-direction: row; border-left: none; border-top: 1px solid #e8e8e8; }
+  .cover { padding: 40px 30px; }
+  .cover h1 { font-size: 36px; }
+  .tldr-section { padding: 30px; }
+  .theme-header { padding: 30px; }
+  .qw-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================= COVER ============================================= -->
+<div class="cover">
+  <h1>Semrush</h1>
+  <div class="subtitle">Free Tools — Conversion Optimisation<br>Strategic Experimentation Ideas</div>
+  <div class="divider"></div>
+  <div class="meta">
+    <strong>3 Big Swings</strong>
+    <span>&bull;</span>
+    <strong>6 Theme Ideas</strong>
+    <span>&bull;</span>
+    <strong>6 Quick Wins</strong>
+    <span>&bull;</span>
+    <strong>March 2026</strong>
+  </div>
+  <div class="prepared-for">Prepared for the Semrush Free Tools Team</div>
+</div>
+
+<!-- ============================================= TL;DR ============================================= -->
+<div class="tldr-section">
+  <div class="section-label">Research Context</div>
+  <h2>What This Report Is Based On</h2>
+  <p>This report synthesises findings from five research methods conducted across Semrush's free tools pages: heatmap and scroll analysis (Microsoft Clarity, 12&ndash;19 March), 150+ session recordings per page analysed with AI-assisted behavioural coding, a collaborative heuristic review session with both the Semrush team (Zach, Alexei) and agency team (using sticky notes and voting), customer service analysis, and a strategic kick-off workshop. The heuristic session was particularly rich &mdash; the team voted on priority ideas, and the most-voted ideas form the backbone of Themes 1 and 2 below.</p>
+  <p>Three dominant patterns emerged. First, the above-the-fold experience has competing CTAs and zero framing for the paid value path &mdash; the team unanimously voted to remove the "Try Semrush" CTA from the hero. Second, results pages are where user intent peaks, but three competing CTAs ("Download my keywords," blurred "Access all keywords," and "View all keywords") fragment attention instead of guiding it. Third, the free tool satisfies the immediate need so completely &mdash; with no bridge to paid value &mdash; that users land on the $139.95/month pricing page without understanding what they'd get. The three most impactful structural changes are presented as Big Swings at the top, followed by six theme ideas and six quick wins.</p>
+  <div class="data-points">
+    <div class="data-point">
+      <div class="label">Data Sources</div>
+      <div class="value">Heatmaps &bull; Session Recordings &bull; Heuristic Review &bull; CS Analysis</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Focus</div>
+      <div class="value">Free Tool &rarr; Trial/Paid Conversion</div>
+    </div>
+    <div class="data-point">
+      <div class="label">Scope</div>
+      <div class="value">5 Free Tools Pages (Desktop)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================= BIG SWINGS ============================================= -->
+<div class="big-swings-header">
+  <div class="big-swing-badge">Big Swings</div>
+  <h2>Structural Changes to the Free-to-Paid Journey</h2>
+  <div class="insight">These three experiments target the architecture of the free-to-paid conversion journey itself &mdash; not individual elements, but fundamental structural decisions that shape the entire experience. They were the highest-voted ideas in the collaborative heuristic session and address the three largest friction points: competing CTAs in the hero that fragment attention, a missing value bridge between free usage and the $139.95/month pricing page, and a credit system that punishes first-time exploration. Each carries higher implementation effort but addresses root causes, not symptoms.</div>
+  <div class="idea-count">3 experiment ideas</div>
+</div>
+
+<!-- BS1: Remove dual CTA (#1 voted idea) -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #FF642D, #FF8A5C); color: white;">BS1</div>
+    <h3>Replace dual CTA with single focused conversion path</h3>
+    <div class="location-tag">Keyword Magic Tool &mdash; Hero CTAs</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- CURRENT -->
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #e53935; letter-spacing: 1px; margin-bottom: 6px;">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.7; background: white;">
+            <div style="font-size: 14px; font-weight: 700; color: #191C45; margin-bottom: 10px; text-align: center;">Free Keyword Tool</div>
+            <div style="display: flex; max-width: 300px; margin: 0 auto 8px; border: 2px solid #ddd; border-radius: 6px; overflow: hidden;">
+              <div style="flex: 1; padding: 8px 10px; font-size: 11px; color: #aaa;">Enter keyword...</div>
+              <div style="background: #FF642D; color: white; padding: 8px 14px; font-size: 11px; font-weight: 600;">Find Keywords</div>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+              <div style="display: inline-block; background: #FF642D; color: white; padding: 8px 20px; border-radius: 6px; font-size: 12px; font-weight: 600;">Try Semrush</div>
+            </div>
+            <div style="text-align: center; margin-top: 6px; font-size: 10px; color: #e53935;">&#8593; Two competing CTAs</div>
+          </div>
+        </div>
+        <!-- PROPOSED -->
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #43a047; letter-spacing: 1px; margin-bottom: 6px;">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
+            <div style="font-size: 14px; font-weight: 700; color: #191C45; margin-bottom: 10px; text-align: center;">Free Keyword Tool</div>
+            <div style="display: flex; max-width: 300px; margin: 0 auto 8px; border: 2px solid #ddd; border-radius: 6px; overflow: hidden;">
+              <div style="flex: 1; padding: 8px 10px; font-size: 11px; color: #aaa;">Enter keyword...</div>
+              <div style="background: #FF642D; color: white; padding: 8px 14px; font-size: 11px; font-weight: 600;">Find Keywords</div>
+            </div>
+            <div style="text-align: center; margin-top: 10px; font-size: 10px; color: #666;">
+              <span style="color: #2FA84F; font-weight: 600;">&#10003;</span> No sign-up required &bull; 5 free searches &bull; Full keyword data
+            </div>
+            <div style="text-align: center; margin-top: 4px; font-size: 8px; color: #999; font-style: italic;">Variant B: &ldquo;7-day free trial &middot; No credit card &middot; Cancel anytime&rdquo;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        This was the <strong>#1 voted idea</strong> in the collaborative heuristic session. The team identified two competing CTAs in the hero: &ldquo;Find Keywords&rdquo; (tool action) and &ldquo;Try Semrush&rdquo; (product conversion). As one participant noted, the &ldquo;Try Semrush&rdquo; button &ldquo;brings me out of my goal&rdquo; &mdash; users arrive to research keywords, not to evaluate a product. The tool CTA gets 17.82% of clicks; the conversion CTA gets just 0.16%. The conversion CTA actively hurts the flow by splitting attention and introducing friction before the user has received any value.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Remove the &ldquo;Try Semrush&rdquo; CTA from the hero entirely and replace it with reassurance microcopy beneath the search bar. Test two microcopy variants: (A) &ldquo;No sign-up required &bull; 5 free searches &bull; Full keyword data&rdquo; and (B) &ldquo;7-day free trial &middot; No credit card required &middot; Cancel anytime.&rdquo; Let the tool do the selling. Move conversion triggers to after the user has received value (the results page). The team unanimously agreed: the hero should serve one purpose &mdash; getting users into the tool.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we remove the competing "Try Semrush" CTA from the hero and replace it with reassurance microcopy, then we will see an increase in tool usage (Find Keywords clicks) and downstream trial starts, because reducing choice anxiety at the entry point lets users commit to the free tool experience &mdash; which is the strongest conversion mechanism Semrush has.</p>
+  </div>
+</div>
+
+<!-- BS2: Value bridge before pricing -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #FF642D, #FF8A5C); color: white;">BS2</div>
+    <h3>Add &ldquo;What you&rsquo;re missing&rdquo; value comparison after results</h3>
+    <div class="location-tag">All Results Pages &mdash; After first results view</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 640px;">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">semrush.com/analytics/keywordmagic (results)</div>
+        </div>
+        <div style="padding: 16px;">
+          <div style="font-size: 11px; color: #666; margin-bottom: 8px;">Your free search: <strong>"seo strategy"</strong> &mdash; 10 keywords shown</div>
+          <table class="sr-table" style="font-size: 10px; margin-bottom: 12px;">
+            <tr><th>Keyword</th><th>Vol</th><th>KD</th></tr>
+            <tr><td>seo strategy</td><td>14.8K</td><td>72</td></tr>
+          </table>
+          <!-- PROPOSED: Value comparison strip -->
+          <div style="border: 2px dashed #e65100; border-radius: 8px; padding: 14px; background: linear-gradient(135deg, #FFF8F0 0%, #FFF3E0 100%); position: relative;">
+            <div style="position: absolute; top: -8px; left: 12px; background: #e65100; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;">PROPOSED CHANGE</div>
+            <div style="font-size: 10px; font-weight: 700; color: #e65100; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px;">What you're missing</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+              <div style="text-align: center; background: white; border-radius: 6px; padding: 10px;">
+                <div style="font-size: 20px; font-weight: 700; color: #191C45;">2,847</div>
+                <div style="font-size: 9px; color: #666;">more keywords<br>for this search</div>
+              </div>
+              <div style="text-align: center; background: white; border-radius: 6px; padding: 10px;">
+                <div style="font-size: 20px; font-weight: 700; color: #191C45;">312</div>
+                <div style="font-size: 9px; color: #666;">low-competition<br>opportunities</div>
+              </div>
+              <div style="text-align: center; background: white; border-radius: 6px; padding: 10px;">
+                <div style="font-size: 20px; font-weight: 700; color: #191C45;">26.9B</div>
+                <div style="font-size: 9px; color: #666;">keywords in<br>full database</div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+              <div style="display: inline-block; background: #FF642D; color: white; padding: 8px 24px; border-radius: 4px; font-size: 11px; font-weight: 600;">Start Free 7-Day Trial &rarr;</div>
+              <div style="font-size: 9px; color: #888; margin-top: 4px;">No credit card required &middot; Cancel anytime</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The heuristic session revealed a critical gap: clicking &ldquo;Try Semrush&rdquo; dumps users directly onto a pricing page showing <strong>$139.95/month</strong> (Pro) or $249.95/month (Guru) &mdash; without ever explaining what they&rsquo;d get for that price. Users go from &ldquo;free tool that answered my question&rdquo; to &ldquo;pay $140/month&rdquo; with no value bridge in between. The free experience shows 10 keywords but never communicates how many more exist, what deeper insights are available, or why the jump from free to $139.95/month is worth it.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        After showing the free results, add a &ldquo;What you&rsquo;re missing&rdquo; strip that quantifies the gap: &ldquo;2,847 more keywords,&rdquo; &ldquo;312 low-competition opportunities,&rdquo; &ldquo;26.9B keyword database.&rdquo; Make the value of upgrading concrete and specific to the user&rsquo;s actual search, not generic marketing copy. This bridges the gap between free usage and the $139.95/month pricing page &mdash; users need to understand what they&rsquo;d get <em>before</em> they see the price. Include microcopy on the trial CTA: &ldquo;7-day free trial &middot; No credit card required &middot; Cancel anytime.&rdquo;
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a "What you're missing" value comparison strip that quantifies the gap between free and paid results using the user's actual search data, then we will see an increase in trial starts, because users currently jump from free results to a generic pricing page without ever understanding what they'd gain &mdash; making the value abstract instead of concrete.</p>
+  </div>
+</div>
+
+<!-- BS3: Testing credit system -->
+<div class="idea-card big-swing">
+  <div class="card-header">
+    <div class="idea-number" style="background: linear-gradient(135deg, #FF642D, #FF8A5C); color: white;">BS3</div>
+    <h3>Introduce a testing credit before consuming main credits</h3>
+    <div class="location-tag">All Free Tools &mdash; Credit system / first use</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- CURRENT -->
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #e53935; letter-spacing: 1px; margin-bottom: 6px;">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 16px; opacity: 0.8; background: white;">
+            <div style="text-align: center; margin-bottom: 10px;">
+              <div style="font-size: 11px; font-weight: 600; color: #191C45;">Your free searches</div>
+              <div style="display: flex; justify-content: center; gap: 6px; margin-top: 6px;">
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #ccc; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">&#10003;</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">2</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">3</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">4</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">5</div>
+              </div>
+              <div style="font-size: 9px; color: #e53935; margin-top: 6px;">&#8593; 1st credit wasted on testing</div>
+            </div>
+          </div>
+        </div>
+        <!-- PROPOSED -->
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #43a047; letter-spacing: 1px; margin-bottom: 6px;">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 16px; background: white;">
+            <div style="text-align: center; margin-bottom: 10px;">
+              <div style="font-size: 11px; font-weight: 600; color: #191C45;">Your free searches</div>
+              <div style="display: flex; justify-content: center; gap: 6px; margin-top: 6px; align-items: center;">
+                <div style="padding: 4px 10px; border-radius: 12px; background: #e8f5e9; border: 1px solid #43a047; font-size: 9px; font-weight: 600; color: #2e7d32;">Try it first</div>
+                <div style="color: #ccc; font-size: 10px;">+</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">1</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">2</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">3</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">4</div>
+                <div style="width: 24px; height: 24px; border-radius: 50%; background: #FF642D; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white;">5</div>
+              </div>
+              <div style="font-size: 9px; color: #2e7d32; margin-top: 6px;">&#10003; Free test search + 5 real searches</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        During the heuristic review, it was noted that users get 5 credits but their first credit is consumed during testing — before they understand how the tool works. Users want to maximise their limited free searches but can't explore without spending one. This creates friction and regret, especially for beginners.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a separate "test search" credit that doesn't count against the user's 5 free searches. Frame it as: "Try it first — this one's on us." This lets users explore the tool's value before committing their limited credits, reducing the anxiety of wasting a search.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we introduce a free "test search" credit that doesn't consume one of the 5 main credits, then we will see an increase in tool engagement and downstream trial starts, because users currently waste their first credit learning the interface &mdash; creating regret that discourages further exploration and conversion.</p>
+  </div>
+</div>
+
+<!-- ============================================= THEME 1 ============================================= -->
+<div class="theme-header">
+  <div class="theme-badge green">Theme 1</div>
+  <h2>Above-the-Fold Doesn&rsquo;t Set Up the Conversion Path</h2>
+  <div class="insight">The hero area on all free tool pages focuses entirely on tool functionality &mdash; enter a domain, click the button, get results. There is zero framing for what the paid product offers beyond this free experience. Heatmaps confirm users concentrate almost exclusively on the hero and tool interaction (17.82% click &ldquo;Find Keywords&rdquo; on the Keyword Magic page, but only 0.16% click &ldquo;Try Semrush&rdquo;). Users need context &mdash; credibility, value differentiation, and a reason to explore paid features &mdash; within the first 5 seconds. The Big Swing (BS1) addresses the competing CTA problem; these two ideas tackle what&rsquo;s missing from the hero experience.</div>
+  <div class="idea-count">2 experiment ideas</div>
+</div>
+
+<!-- IDEA 1 -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">1</div>
+    <h3>Add social proof strip below the search bar</h3>
+    <div class="location-tag">All Free Tool Pages &mdash; Below hero search bar</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">semrush.com/analytics/keywordmagic</div>
+        </div>
+        <div class="sr-nav">
+          <span class="sr-logo">SEMRUSH</span>
+          <a class="sr-nav-link">Products</a>
+          <a class="sr-nav-link">Pricing</a>
+          <a class="sr-nav-link">Resources</a>
+          <div class="sr-nav-right">
+            <a class="sr-btn-login">Log In</a>
+            <a class="sr-btn-signup">Sign Up</a>
+          </div>
+        </div>
+        <div class="sr-hero">
+          <h2>Free Keyword Tool</h2>
+          <div class="sr-sub">Find keywords to grow your traffic and reach more customers.</div>
+          <div class="sr-search-bar">
+            <input type="text" value="seo strategy for hotels" readonly>
+            <button>Find Keywords</button>
+          </div>
+        </div>
+        <!-- PROPOSED: Social proof strip -->
+        <div class="sr-social-proof proposed-marker" style="border: 2px dashed #FF642D; border-radius: 0; margin: 0;">
+          <div class="sr-badge">
+            <svg viewBox="0 0 24 24" fill="#FF642D"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+            <span>G2 Leader 2026</span>
+          </div>
+          <div class="sr-badge">
+            <svg viewBox="0 0 24 24" fill="#2FA84F"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            <span>Trusted by 10M+ marketers</span>
+          </div>
+          <div class="sr-badge">
+            <svg viewBox="0 0 24 24" fill="#6B4DBA"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>26.9 Billion keywords</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Heatmap data shows users focus almost exclusively on the hero and tool interaction. The "Try Semrush" CTA received just 72 clicks (0.16%) on the Keyword Magic page vs. 6,811 clicks (17.82%) on "Find Keywords." Users engage with the tool but see no credibility signals at the point of action.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a compact social proof strip directly below the search bar — the one area where every user's attention converges. Include G2 leader badge, total user count, and database size. Position it within the hero, not below the fold where 50%+ never scroll.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a social proof strip with G2 badges and the "10M+ marketers" stat directly below the search bar, then we will see an increase in trial starts, because users making a tool choice need credibility signals at the moment of engagement &mdash; not after they've already decided to leave.</p>
+  </div>
+</div>
+
+<!-- IDEA 2 -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e8f5e9; color: #2e7d32;">2</div>
+    <h3>Add real-world keyword case study in hero section</h3>
+    <div class="location-tag">Keyword Magic Tool &mdash; Below search bar</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">semrush.com/analytics/keywordmagic</div>
+        </div>
+        <div class="sr-hero" style="padding-bottom: 10px;">
+          <h2 style="font-size: 18px;">Free Keyword Tool</h2>
+          <div class="sr-sub" style="font-size: 11px;">Find keywords to grow your traffic.</div>
+          <div class="sr-search-bar" style="max-width: 400px; margin-bottom: 8px;">
+            <input type="text" value="seo strategy" readonly style="font-size: 12px; padding: 8px 12px;">
+            <button style="font-size: 11px; padding: 8px 14px;">Find Keywords</button>
+          </div>
+        </div>
+        <!-- PROPOSED: Case study section -->
+        <div style="border: 2px dashed #FF642D; margin: 0 15px 15px; border-radius: 8px; padding: 14px 18px; background: #FAFBFF; position: relative;">
+          <div style="position: absolute; top: -8px; left: 12px; background: #FF642D; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;">PROPOSED CHANGE</div>
+          <div style="font-size: 10px; font-weight: 700; color: #6B4DBA; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;">How marketers use this</div>
+          <div style="display: flex; gap: 14px; align-items: flex-start;">
+            <div style="flex: 1;">
+              <div style="font-size: 12px; font-weight: 600; color: #191C45; margin-bottom: 4px;">"We found 847 untapped keywords in 5 minutes"</div>
+              <div style="font-size: 10px; color: #666; line-height: 1.5;">Sarah, SEO Manager at a B2B SaaS company, used the Keyword Magic Tool to discover long-tail opportunities her competitors missed. Within one month, organic traffic increased by 23%.</div>
+            </div>
+            <div style="min-width: 80px; text-align: center; padding: 8px; background: #e8f5e9; border-radius: 6px;">
+              <div style="font-size: 18px; font-weight: 700; color: #2e7d32;">+23%</div>
+              <div style="font-size: 9px; color: #555;">organic traffic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The heuristic review found that beginners (the primary audience for free tools) don't know which keywords to choose or how to use the tool effectively. Attention heatmaps show users reading "Why You Need Keywords" and "How to use" sections, confirming they need educational context. But 50%+ never scroll to those sections.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a compact real-world case study directly in the hero, above the fold. Show a concrete example: a marketer who used the tool, found X keywords, and achieved Y result. This educates beginners on the tool's value and demonstrates the business impact &mdash; without requiring them to scroll.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a real-world case study showing how a marketer used the Keyword Magic Tool to achieve measurable results, then we will see an increase in tool engagement and trial starts, because beginners need concrete examples of business impact before they understand why keyword research matters &mdash; and 50%+ never scroll to the educational sections below the fold.</p>
+  </div>
+</div>
+
+<!-- ============================================= THEME 2 ============================================= -->
+<div class="theme-header">
+  <div class="theme-badge blue">Theme 2</div>
+  <h2>The Results Page Is a Conversion Dead Zone</h2>
+  <div class="insight">Users engage with keyword results &mdash; they scroll, they read the data, they run multiple queries. But they completely ignore the conversion elements. Heatmaps confirm that CTA banners on results pages receive minimal clicks, and the blurred overlay is treated as an ad and dismissed. On the Backlinks tool, only 25% of users even see the &ldquo;Unlock the full report&rdquo; CTA. Session recordings show users running 3&ndash;5 queries in rapid succession, checking only top-level stats. The results page is where user intent peaks, but conversion elements miss that intent entirely.</div>
+  <div class="idea-count">2 experiment ideas</div>
+</div>
+
+<!-- IDEA 3 -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">3</div>
+    <h3>Replace blurred overlay with inline unlock row</h3>
+    <div class="location-tag">All Results Pages &mdash; Keyword results table</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div style="display: flex; gap: 20px; width: 100%; max-width: 700px;">
+        <!-- CURRENT -->
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #e53935; letter-spacing: 1px; margin-bottom: 6px;">CURRENT</div>
+          <div style="border: 1px solid #eee; border-radius: 8px; padding: 12px; opacity: 0.8; background: white;">
+            <table class="sr-table" style="font-size: 10px;">
+              <tr><th>Keyword</th><th>Volume</th><th>KD%</th></tr>
+              <tr><td>seo strategy</td><td>14,800</td><td>72%</td></tr>
+              <tr><td>seo tools</td><td>9,900</td><td>68%</td></tr>
+              <tr class="sr-blurred"><td>seo audit checklist</td><td>6,400</td><td>45%</td></tr>
+              <tr class="sr-blurred"><td>keyword research tips</td><td>4,100</td><td>38%</td></tr>
+            </table>
+            <div style="text-align: center; margin-top: 8px; background: rgba(255,100,45,0.1); padding: 6px; border-radius: 4px; font-size: 10px; color: #FF642D; font-weight: 600;">
+              Access all keywords &rarr;
+            </div>
+            <div style="text-align: center; margin-top: 4px; font-size: 9px; color: #e53935;">&#8593; Treated as ad &mdash; dismissed</div>
+          </div>
+        </div>
+        <!-- PROPOSED -->
+        <div style="flex: 1;">
+          <div style="font-size: 10px; font-weight: 700; color: #43a047; letter-spacing: 1px; margin-bottom: 6px;">PROPOSED</div>
+          <div style="border: 2px solid #43a047; border-radius: 8px; padding: 12px; background: white;">
+            <table class="sr-table" style="font-size: 10px;">
+              <tr><th>Keyword</th><th>Volume</th><th>KD%</th></tr>
+              <tr><td>seo strategy</td><td>14,800</td><td>72%</td></tr>
+              <tr><td>seo tools</td><td>9,900</td><td>68%</td></tr>
+            </table>
+            <div style="background: #FFF5F0; border: 1px solid #FFD4C2; border-radius: 6px; padding: 8px 12px; margin: 6px 0; display: flex; align-items: center; justify-content: space-between;">
+              <div>
+                <div style="font-size: 10px; font-weight: 600; color: #191C45;">+ 2,847 more keywords hidden</div>
+                <div style="font-size: 9px; color: #666;">Including 312 low-competition opportunities</div>
+              </div>
+              <div style="background: #FF642D; color: white; padding: 5px 10px; border-radius: 4px; font-size: 9px; font-weight: 600; white-space: nowrap;">Start Free Trial</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The heuristic session identified <strong>three competing CTAs</strong> on the results page, all fighting for the same conversion: (1) &ldquo;Download my keywords&rdquo; button, (2) blurred rows with an &ldquo;Access all keywords&rdquo; overlay plus a &ldquo;Try Semrush&rdquo; banner, and (3) a &ldquo;View all keywords&rdquo; link. This was a top-voted issue. Users don&rsquo;t know which path to take, and the redundancy dilutes click intent. Heatmaps confirm the overlay is dismissed like an ad. On Backlinks, only 25% scroll to the &ldquo;Unlock the full report&rdquo; CTA. The blurred rows communicate restriction but not value.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Consolidate all three competing CTAs into a single, inline table row that sits naturally within the results. Remove the floating overlay, the separate &ldquo;View all keywords&rdquo; link, and the &ldquo;Download&rdquo; button — replace them with one clear path. Show the exact count of hidden keywords and highlight specific value (e.g., &ldquo;312 low-competition opportunities&rdquo;). One focused CTA eliminates decision paralysis; an inline element that quantifies what users are missing creates genuine FOMO, while three competing options create confusion and banner blindness.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we replace the floating CTA overlay with an inline table row that shows the total count of hidden keywords and specific features they'd unlock, then we will see an increase in trial starts from the results page, because the current overlay is perceived as an ad, while an inline element that communicates specific data loss creates genuine FOMO.</p>
+  </div>
+</div>
+
+<!-- IDEA 4 -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #e3f2fd; color: #1565c0;">4</div>
+    <h3>Reframe conversion elements as workflow next steps</h3>
+    <div class="location-tag">All Results Pages &mdash; Below results table</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 640px;">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">semrush.com/analytics/keywordmagic (results)</div>
+        </div>
+        <div class="sr-results" style="padding: 12px 16px;">
+          <div style="font-size: 11px; color: #666; margin-bottom: 8px;">Results for <strong>"seo strategy"</strong> &mdash; showing 10 of 2,857 keywords</div>
+          <table class="sr-table" style="font-size: 10px; margin-bottom: 12px;">
+            <tr><th>Keyword</th><th>Vol</th><th>KD</th></tr>
+            <tr><td>seo strategy</td><td>14.8K</td><td>72</td></tr>
+            <tr><td>seo strategy 2026</td><td>3.2K</td><td>41</td></tr>
+          </table>
+          <!-- PROPOSED: Workflow next steps -->
+          <div style="border: 2px dashed #1565c0; border-radius: 8px; padding: 14px; background: #F5F8FF; position: relative;">
+            <div style="position: absolute; top: -8px; left: 12px; background: #1565c0; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;">PROPOSED CHANGE</div>
+            <div style="font-size: 10px; font-weight: 700; color: #1565c0; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Your next steps</div>
+            <div style="display: flex; gap: 10px;">
+              <div style="flex: 1; background: white; border-radius: 6px; padding: 10px; border: 2px solid #FF642D;">
+                <div style="font-size: 9px; font-weight: 700; color: #FF642D; letter-spacing: 0.5px; margin-bottom: 2px;">RECOMMENDED</div>
+                <div style="font-size: 11px; font-weight: 600; color: #191C45; margin-bottom: 3px;">1. Audit your site</div>
+                <div style="font-size: 9px; color: #666; line-height: 1.4;">Check if your pages are optimised for these keywords &mdash; 140+ checks</div>
+                <div style="margin-top: 6px; font-size: 9px; color: #FF642D; font-weight: 600;">Run free site audit &rarr;</div>
+              </div>
+              <div style="flex: 1; background: white; border-radius: 6px; padding: 10px; border: 1px solid #e0e8f0;">
+                <div style="font-size: 11px; font-weight: 600; color: #191C45; margin-bottom: 3px;">2. Track these keywords</div>
+                <div style="font-size: 9px; color: #666; line-height: 1.4;">Monitor ranking changes daily with Position Tracking</div>
+                <div style="margin-top: 6px; font-size: 9px; color: #FF642D; font-weight: 600;">Start tracking &rarr;</div>
+              </div>
+              <div style="flex: 1; background: white; border-radius: 6px; padding: 10px; border: 1px solid #e0e8f0;">
+                <div style="font-size: 11px; font-weight: 600; color: #191C45; margin-bottom: 3px;">3. Spy on competitors</div>
+                <div style="font-size: 9px; color: #666; line-height: 1.4;">See who ranks for these keywords and how to beat them</div>
+                <div style="margin-top: 6px; font-size: 9px; color: #FF642D; font-weight: 600;">Analyse competitors &rarr;</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        Session recordings show users run 3&ndash;5 queries in rapid succession, checking only top-level stats. They are in &ldquo;research mode&rdquo; &mdash; gathering data, not ready to buy. Current CTA banners (&ldquo;Don&rsquo;t get left behind,&rdquo; &ldquo;Try Semrush&rdquo;) interrupt the research workflow and are dismissed. The heuristic session specifically identified <strong>Site Audit as the ideal next tool</strong> to guide users toward &mdash; it&rsquo;s a natural workflow continuation (&ldquo;you&rsquo;ve found keywords, now check if your site is ready&rdquo;) and creates a deeper product engagement loop.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Replace promotional CTA banners with workflow-based &ldquo;next step&rdquo; cards that feel like a natural continuation of the research process. Lead with <strong>Site Audit</strong> as the primary recommended action &mdash; it&rsquo;s the most natural next step (&ldquo;you found keywords, now check if your site is optimised for them&rdquo;) and has the strongest engagement metrics (11-minute average sessions, 0% zero-click rate). Follow with &ldquo;Track these keywords&rdquo; and &ldquo;Analyse competitors.&rdquo; All lead to paid features but are framed as logical next actions, not product promotions.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we reframe the post-results conversion elements as logical next workflow steps rather than product promotions, then we will see an increase in trial starts, because users in a research workflow respond better to "here's your next step" than "buy our product" &mdash; and session recordings confirm that promotional interruptions are dismissed as roadblocks.</p>
+  </div>
+</div>
+
+<!-- ============================================= THEME 3 ============================================= -->
+<div class="theme-header">
+  <div class="theme-badge orange">Theme 3</div>
+  <h2>Bridge the Gap Between Free Usage and Paid Conversion</h2>
+  <div class="insight">Semrush excels at driving traffic to free tool pages, but the free tool experience satisfies the immediate need so completely that users have no reason to explore paid features. Session recordings show a 46% zero-click rate on the Keyword Magic page &mdash; nearly half of all visitors don&rsquo;t even interact with the tool. For those who do, current conversion elements (blurred overlays, floating CTAs) are dismissed as ads. The Big Swings (BS2 and BS3) address the two largest structural gaps &mdash; the missing value bridge and the punitive credit system. These two ideas tackle the remaining opportunities: making the value comparison contextual to specific tools, and capturing leads through genuine utility.</div>
+  <div class="idea-count">2 experiment ideas</div>
+</div>
+
+<!-- IDEA 5 (was Idea 6 — moved from Theme 2) -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">5</div>
+    <h3>Add contextual &ldquo;Compare with paid&rdquo; data teaser in results</h3>
+    <div class="location-tag">Backlinks &amp; Site Audit &mdash; Results overview</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 640px;">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">semrush.com/analytics/backlinks (results)</div>
+        </div>
+        <div style="padding: 16px;">
+          <div style="font-size: 12px; font-weight: 600; color: #191C45; margin-bottom: 10px;">Backlinks Overview for example.com</div>
+          <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+            <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+              <div style="font-size: 9px; color: #666; margin-bottom: 2px;">Authority Score</div>
+              <div style="font-size: 18px; font-weight: 700; color: #191C45;">42</div>
+            </div>
+            <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+              <div style="font-size: 9px; color: #666; margin-bottom: 2px;">Backlinks</div>
+              <div style="font-size: 18px; font-weight: 700; color: #191C45;">1.2K</div>
+            </div>
+            <div style="flex: 1; background: #f5f5f5; border-radius: 6px; padding: 10px; text-align: center;">
+              <div style="font-size: 9px; color: #666; margin-bottom: 2px;">Ref. Domains</div>
+              <div style="font-size: 18px; font-weight: 700; color: #191C45;">284</div>
+            </div>
+          </div>
+          <!-- PROPOSED: Comparison teaser -->
+          <div style="border: 2px dashed #e65100; border-radius: 8px; padding: 12px; background: #FFF8F0; position: relative;">
+            <div style="position: absolute; top: -8px; left: 12px; background: #e65100; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;">PROPOSED CHANGE</div>
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="flex: 1;">
+                <div style="font-size: 10px; font-weight: 600; color: #191C45; margin-bottom: 3px;">You&rsquo;re seeing a summary. The full report includes:</div>
+                <div style="font-size: 9px; color: #666; line-height: 1.6;">
+                  <span style="color: #2FA84F; font-weight: 600;">&#10003;</span> All 1,247 backlinks with anchor text &nbsp;
+                  <span style="color: #2FA84F; font-weight: 600;">&#10003;</span> Toxic link identification &nbsp;
+                  <span style="color: #2FA84F; font-weight: 600;">&#10003;</span> Competitor backlink comparison &nbsp;
+                  <span style="color: #2FA84F; font-weight: 600;">&#10003;</span> Historical backlink trends
+                </div>
+              </div>
+              <div style="background: #FF642D; color: white; padding: 8px 14px; border-radius: 4px; font-size: 10px; font-weight: 600; white-space: nowrap; text-align: center;">
+                Try Free for<br>7 Days
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        On the Backlinks results page, attention heatmaps prove users are only interested in the high-level summary (Authority Score, Backlinks, Referring Domains). No other section gets any attention &mdash; not even moderate. Only 25% scroll to the &ldquo;Unlock the full report&rdquo; CTA. Users get their answer from the overview and leave.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a contextual comparison strip directly below the overview metrics (the area that gets 100% attention). Show exactly what the full report includes that the free summary doesn&rsquo;t. Position this where users are already looking, not below where they never scroll.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a contextual comparison strip directly below the overview metrics showing what the full report includes, then we will see an increase in &ldquo;Unlock full report&rdquo; clicks and trial starts, because attention heatmaps confirm the overview section is the only area that receives attention &mdash; and 75% of users never scroll to the current conversion CTA.</p>
+  </div>
+</div>
+
+<!-- IDEA 6 (was Idea 9) -->
+<div class="idea-card">
+  <div class="card-header">
+    <div class="idea-number" style="background: #fff3e0; color: #e65100;">6</div>
+    <h3>Add export-to-Google-Sheets as a lead generation mechanism</h3>
+    <div class="location-tag">Keyword Magic &amp; Backlinks &mdash; Results page</div>
+  </div>
+  <div class="screenshot-area">
+    <div class="mockup-wrapper">
+      <div class="browser-chrome" style="max-width: 640px;">
+        <div class="browser-bar">
+          <div class="browser-dot" style="background: #ff5f56;"></div>
+          <div class="browser-dot" style="background: #ffbd2e;"></div>
+          <div class="browser-dot" style="background: #27c93f;"></div>
+          <div class="browser-url">semrush.com/analytics/keywordmagic (results)</div>
+        </div>
+        <div style="padding: 16px;">
+          <div style="font-size: 11px; color: #666; margin-bottom: 8px;">Results for <strong>"seo strategy"</strong> &mdash; 10 keywords shown</div>
+          <table class="sr-table" style="font-size: 10px; margin-bottom: 10px;">
+            <tr><th>Keyword</th><th>Vol</th><th>KD</th></tr>
+            <tr><td>seo strategy</td><td>14.8K</td><td>72</td></tr>
+            <tr><td>seo tools</td><td>9.9K</td><td>68</td></tr>
+          </table>
+          <!-- PROPOSED: Export CTA -->
+          <div style="border: 2px dashed #e65100; border-radius: 8px; padding: 12px; background: #FFF8F0; position: relative; display: flex; align-items: center; gap: 12px;">
+            <div style="position: absolute; top: -8px; left: 12px; background: #e65100; color: white; font-size: 9px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.5px;">PROPOSED CHANGE</div>
+            <div style="min-width: 36px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#2FA84F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+            </div>
+            <div style="flex: 1;">
+              <div style="font-size: 11px; font-weight: 600; color: #191C45;">Save these keywords to Google Sheets</div>
+              <div style="font-size: 9px; color: #666;">Export your results as a spreadsheet. Powered by Semrush data.</div>
+            </div>
+            <div style="background: #2FA84F; color: white; padding: 8px 14px; border-radius: 4px; font-size: 10px; font-weight: 600; white-space: nowrap;">
+              Export &rarr;
+            </div>
+          </div>
+          <div style="font-size: 9px; color: #888; margin-top: 6px; text-align: center;">Requires email to send &mdash; creates remarketing opportunity</div>
+        </div>
+      </div>
+    </div>
+    <div class="notes-sidebar">
+      <div class="sticky-note observation-note">
+        <div class="note-label">Observation</div>
+        The heuristic review noted that SEO specialists typically work in Google Sheets — "90% of SEO specialists have tons of spreadsheets." Currently, users can only export data by signing up for the paid tool. There's no intermediate step that captures the user's email while providing genuine value.
+      </div>
+      <div class="sticky-note idea-note">
+        <div class="note-label">Idea</div>
+        Add a "Save to Google Sheets" export button on results pages. Require an email address to send the spreadsheet. This captures the lead for remarketing while providing real value (the data in a format they actually work in). The exported sheet can include Semrush branding and a "powered by Semrush" footer that drives them back.
+      </div>
+    </div>
+  </div>
+  <div class="hypothesis-bar">
+    <div class="hyp-label">Hypothesis</div>
+    <p>If we add a Google Sheets export option that requires an email address, then we will see an increase in email captures and subsequent trial starts through remarketing, because SEO professionals work primarily in spreadsheets &mdash; offering their data in the format they use daily is a natural value exchange that current free tools don't provide.</p>
+  </div>
+</div>
+
+<!-- ============================================= QUICK WINS ============================================= -->
+<div class="quick-wins">
+  <h2>Quick Wins &mdash; Low-Effort, High-Impact</h2>
+  <div class="qw-sub">Six simple tests to get started while building towards the strategic experiments above. QW-01 to QW-03 are already in pipeline; QW-04 to QW-06 emerged from the heuristic analysis session.</div>
+  <div class="qw-grid">
+    <div class="qw-card">
+      <div class="qw-num">QW-01</div>
+      <h4>Banner copy: "Try free for 7 days"</h4>
+      <p>Test the blog-style banner ("Try free for 7 days" with feature bullets) on free tool pages. This format already works on blog pages — let's see if it transfers.</p>
+      <div class="qw-tag">All free tool pages</div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">QW-02</div>
+      <h4>CTA text: "Try free for 7 days" vs "Try Semrush"</h4>
+      <p>Replace "Try Semrush" with "Try Free for 7 Days" on the sticky bar CTA. Specificity about the trial reduces perceived risk. Can run across all pages simultaneously.</p>
+      <div class="qw-tag">Sticky navigation CTA</div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">QW-03</div>
+      <h4>Add sticky CTA to category pages</h4>
+      <p>Category pages currently lack a persistent conversion element. Add the existing sticky bar CTA design (already part of the design system) to these pages.</p>
+      <div class="qw-tag">Category pages</div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">QW-04</div>
+      <h4>Move "How to use" section above the fold</h4>
+      <p>Heuristic session identified that beginners need guidance before using the tool, but the &ldquo;How to use&rdquo; section sits below the fold where 50%+ never scroll. Move it to a compact expandable panel directly beneath the search bar.</p>
+      <div class="qw-tag">Keyword Magic Tool</div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">QW-05</div>
+      <h4>Add keyword action buttons (copy, add to list)</h4>
+      <p>Session recordings show users manually copying keywords from results. Add inline &ldquo;Copy&rdquo; and &ldquo;Add to list&rdquo; buttons on each keyword row. The list feature requires sign-up &mdash; creating a natural conversion trigger from genuine utility.</p>
+      <div class="qw-tag">Results pages</div>
+    </div>
+    <div class="qw-card">
+      <div class="qw-num">QW-06</div>
+      <h4>Add trial reassurance microcopy to all CTAs</h4>
+      <p>The heuristic team proposed adding &ldquo;7-day free trial &middot; No credit card required &middot; Cancel anytime&rdquo; beneath every conversion CTA. Currently, CTAs say &ldquo;Try Semrush&rdquo; with zero risk-reduction messaging. A simple copy addition, no design changes needed.</p>
+      <div class="qw-tag">All free tool pages</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
