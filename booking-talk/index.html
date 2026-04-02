@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bjarn Brunenberg — Talk Proposal: Experimentation Conference at Booking.com</title>
+    <meta name="description" content="Talk proposal by Bjarn Brunenberg for the Experimentation Conference at Booking.com, May 18th 2026. AI in Experimentation.">
+    <style>
+        :root {
+            --bg: #FAFAFA;
+            --surface: #FFFFFF;
+            --text: #1A1A1A;
+            --text-secondary: #555;
+            --accent: #003580;
+            --accent-light: #E8EFF7;
+            --border: #E0E0E0;
+            --quote-bg: #F5F7FA;
+            --highlight: #FF6B35;
+            --tag-bg: #EDF2F7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-label {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-meta {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .hero-meta strong {
+            color: var(--text);
+        }
+
+        /* Sections */
+        section {
+            padding: 48px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Abstract hook */
+        .hook {
+            font-size: 1.35rem;
+            font-weight: 400;
+            line-height: 1.5;
+            color: var(--text);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        /* Quote blocks */
+        .quote-block {
+            background: var(--quote-bg);
+            border-left: 3px solid var(--accent);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-block p {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .quote-block .attribution {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 13px;
+            font-style: normal;
+            color: var(--text-secondary);
+        }
+
+        /* Pattern cards */
+        .patterns-grid {
+            display: grid;
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .pattern-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+        }
+
+        .pattern-card .pattern-number {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--highlight);
+            margin-bottom: 8px;
+        }
+
+        .pattern-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .pattern-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            background: var(--tag-bg);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 100px;
+            margin: 2px 4px 2px 0;
+        }
+
+        /* Interview logos */
+        .interview-sources {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .interview-chip {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 100px;
+            color: var(--text);
+        }
+
+        .interview-chip .role {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Takeaways */
+        .takeaway-list {
+            list-style: none;
+            counter-reset: takeaway;
+        }
+
+        .takeaway-list li {
+            counter-increment: takeaway;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.05rem;
+        }
+
+        .takeaway-list li:last-child {
+            border-bottom: none;
+        }
+
+        .takeaway-list li::before {
+            content: counter(takeaway) ".";
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 700;
+            color: var(--highlight);
+            margin-right: 10px;
+        }
+
+        /* Bio section */
+        .bio-section {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .bio-text {
+            flex: 1;
+        }
+
+        .credibility-stack {
+            margin-top: 20px;
+        }
+
+        .credibility-item {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            padding: 8px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 14px;
+        }
+
+        .credibility-icon {
+            color: var(--highlight);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 56px 0 80px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 24px;
+        }
+
+        .cta-links {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+        }
+
+        .cta-links a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+
+        .cta-links a:hover {
+            color: var(--highlight);
+            border-color: var(--highlight);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero { padding: 48px 0 32px; }
+            .hero h1 { font-size: 1.8rem; }
+            .hook { font-size: 1.15rem; }
+            section { padding: 36px 0; }
+            .bio-section { flex-direction: column; }
+        }
+
+        /* Storytelling structure indicator */
+        .story-arc {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--highlight);
+            opacity: 0.7;
+            margin-bottom: 8px;
+        }
+
+        /* Divider */
+        .divider {
+            width: 48px;
+            height: 3px;
+            background: var(--accent);
+            margin: 32px 0;
+            border-radius: 2px;
+        }
+
+        /* Footer */
+        footer {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 32px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HERO -->
+    <header class="hero">
+        <div class="hero-label">Talk Proposal &mdash; Experimentation Conference at Booking.com</div>
+        <h1>Every AI Initiative Is an Experiment.<br>Nobody's Treating It Like One.</h1>
+        <div class="hero-meta">
+            <strong>Bjarn Brunenberg</strong> &middot; May 18th, 2026 &middot; 15&ndash;20 min talk + Q&amp;A<br>
+            Topic: AI in Experimentation
+        </div>
+    </header>
+
+    <!-- ABSTRACT -->
+    <section>
+        <h2>Abstract</h2>
+
+        <p class="hook">"We've spent eighteen months on AI. I couldn't tell you which pilots are working."</p>
+
+        <p>That's what a director of product at a large enterprise told me during one of a series of in-depth interviews I've been conducting with senior managers across Dutch and European organisations. Not the polished conference version of their AI story &mdash; the real one.</p>
+
+        <p>The patterns across these conversations are striking. Every single manager described top-down pressure to "do something with AI" &mdash; with no framework for what "something" means. Teams launch pilots that never reach production because nobody defined what success or failure looks like before they started. And when I asked "how do you decide whether to scale or kill an AI project?", almost nobody had an answer.</p>
+
+        <p>Here's the twist: this isn't an AI problem. It's an experimentation problem &mdash; one that's hiding in plain sight.</p>
+
+        <p>Every AI initiative inside these organisations is, by definition, an experiment. Unknown outcomes, uncertain ROI, high variability. Yet nobody is applying the discipline we use every day: hypotheses before tools, a single success metric before scale, and pre-defined kill criteria before kickoff. The result? Pilot purgatory &mdash; initiatives that launch, linger, and never ship.</p>
+
+        <p>In this talk, I'll share what I found across my interviews: the recurring patterns, the surprising blind spots, and the one discipline that separates organisations shipping AI from organisations stuck in limbo. Spoiler: it's the discipline this room already has.</p>
+
+        <p>You'll leave with a practical framework to turn any AI initiative into a structured, measurable experiment &mdash; complete with hypotheses, decision points, and a kill switch.</p>
+    </section>
+
+    <!-- RESEARCH EVIDENCE -->
+    <section>
+        <h2>What the Research Shows</h2>
+
+        <p>I've been interviewing senior managers and directors at organisations ranging from scale-ups to large enterprises &mdash; from media and e-commerce to travel and fashion. The goal: understand what's <em>actually</em> happening with AI adoption behind the LinkedIn posts.</p>
+
+        <div class="interview-sources">
+            <span class="interview-chip">DPG Media <span class="role">&middot; AI Team Lead</span></span>
+            <span class="interview-chip">Booking.com <span class="role">&middot; Director of Product, ML</span></span>
+            <span class="interview-chip">Spryker <span class="role">&middot; Technology Evangelist</span></span>
+            <span class="interview-chip">MR MARVIS <span class="role">&middot; Tech Director</span></span>
+            <span class="interview-chip">Enterprise AI Consultant</span>
+            <span class="interview-chip" style="border-style: dashed; color: var(--text-secondary);">+ more interviews ongoing</span>
+        </div>
+
+        <div class="patterns-grid">
+            <div class="pattern-card">
+                <div class="pattern-number">Pattern 01</div>
+                <h3>The Automation Paradox</h3>
+                <p>People assume AI automates things out of the box. When they discover the setup work required, they disengage. As one AI lead put it: "The paradox in AI is that people think it automates stuff, but you have to do a lot of stuff to get stuff automated well." The expectation gap kills momentum before any real progress is made.</p>
+            </div>
+
+            <div class="pattern-card">
+                <div class="pattern-number">Pattern 02</div>
+                <h3>Pilot Purgatory</h3>
+                <p>Teams launch proof-of-concepts with no hypothesis, no single KPI, and no pre-defined decision point. The result: pilots that run indefinitely without anyone knowing whether they've succeeded or failed. Nobody asks "what would make us kill this?" before they start &mdash; so nothing ever gets killed, and nothing ever ships.</p>
+            </div>
+
+            <div class="pattern-card">
+                <div class="pattern-number">Pattern 03</div>
+                <h3>The Translation Layer Gap</h3>
+                <p>C-suite mandates "we need to do AI." Teams interpret this as "use ChatGPT more." The critical middle layer &mdash; someone who translates strategic intent into structured, measurable initiatives &mdash; is missing in almost every organisation. One director called himself "the translation layer" and said most companies don't have one. He's right.</p>
+            </div>
+
+            <div class="pattern-card">
+                <div class="pattern-number">Pattern 04</div>
+                <h3>Tool-First Thinking</h3>
+                <p>Organisations jump straight to AI tools without understanding the process they're trying to improve. The pattern is consistent: business outcome should come first, then the process, then the tools. Most people skip to step three. One consultant spent 50 questions defining a client's process before any AI was applied &mdash; the client got frustrated, but it was the only way to get real results.</p>
+            </div>
+
+            <div class="pattern-card">
+                <div class="pattern-number">Pattern 05</div>
+                <h3>Training &ne; Adoption</h3>
+                <p>Every organisation runs AI training sessions. Awareness goes up. Behaviour doesn't change. One company measured it precisely: awareness moved from 2.5 to 3.5 after three training sessions. But hands-on usage barely shifted. The only intervention that actually worked? Hackathons where people build something real in a constrained timeframe &mdash; with a problem they personally care about solving.</p>
+            </div>
+
+            <div class="pattern-card">
+                <div class="pattern-number">Pattern 06</div>
+                <h3>The Benchmark Illusion</h3>
+                <p>Every manager assumed their competitors were further ahead. When I cross-referenced the interviews, they're all clustered at the same early maturity stage. The relief was visible when they heard it. The race isn't as far along as anyone thinks &mdash; which means the window to build a real advantage is still wide open.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section>
+        <h2>In Their Own Words</h2>
+
+        <div class="quote-block">
+            <p>"The paradox in AI is that people think it automates stuff, but you have to do a lot of stuff to get stuff automated well."</p>
+            <span class="attribution">&mdash; AI Team Lead, DPG Media</span>
+        </div>
+
+        <div class="quote-block">
+            <p>"Whatever was the gap between a tech-focused PM and a not tech-focused PM has become magnified 100 times."</p>
+            <span class="attribution">&mdash; Director of Product (ML), Booking.com</span>
+        </div>
+
+        <div class="quote-block">
+            <p>"It's not a magic tool. They're lying in your face, and it's not true."</p>
+            <span class="attribution">&mdash; Enterprise AI Consultant</span>
+        </div>
+
+        <div class="quote-block">
+            <p>"I'm allergic to AI hype. Let's by default consider AI is embedded in everything. Let's now talk about problem solving."</p>
+            <span class="attribution">&mdash; Tech Director, MR MARVIS</span>
+        </div>
+
+        <div class="quote-block">
+            <p>"It is people like me that most organisations miss. The translation layer."</p>
+            <span class="attribution">&mdash; Director of Product (ML), Booking.com</span>
+        </div>
+    </section>
+
+    <!-- WHAT THE AUDIENCE GETS -->
+    <section>
+        <h2>What the Audience Leaves With</h2>
+
+        <ol class="takeaway-list">
+            <li><strong>A clear picture of where organisations actually stand with AI</strong> &mdash; based on real interview data, not hype. Cross-referenced patterns that show where the industry is stuck and why.</li>
+            <li><strong>The "AI Experiment" framework</strong> &mdash; a practical method to turn any AI initiative into a structured experiment with a hypothesis, a single success metric, a timeframe, and a kill switch. Built on the same experimentation discipline this audience already practices.</li>
+            <li><strong>A provocation they can take back to their teams</strong> &mdash; the argument that AI adoption isn't a technology challenge, it's an experimentation maturity challenge. And that experimenters are uniquely positioned to lead it.</li>
+        </ol>
+    </section>
+
+    <!-- TALK STRUCTURE -->
+    <section>
+        <h2>Talk Structure (15&ndash;20 min)</h2>
+
+        <div class="pattern-card" style="margin-bottom: 16px;">
+            <div class="story-arc">Opening hook &middot; 2 min</div>
+            <p>A real quote from my research that reframes the room's assumptions. Create tension between what people assume is happening with AI and what's actually happening.</p>
+        </div>
+
+        <div class="pattern-card" style="margin-bottom: 16px;">
+            <div class="story-arc">The research &middot; 5 min</div>
+            <p>Walk through the key patterns from the interviews. Real quotes, real data, no sanitised corporate summaries. Let the audience recognise their own organisations in the findings.</p>
+        </div>
+
+        <div class="pattern-card" style="margin-bottom: 16px;">
+            <div class="story-arc">The reframe &middot; 3 min</div>
+            <p>The reveal: every single pattern maps to a known experimentation anti-pattern. Pilot purgatory = running tests without hypotheses. Tool-first thinking = skipping discovery. The translation layer gap = no experimentation programme owner. The audience already knows how to solve these &mdash; they just haven't been told to apply it to AI.</p>
+        </div>
+
+        <div class="pattern-card" style="margin-bottom: 16px;">
+            <div class="story-arc">The framework &middot; 5 min</div>
+            <p>Introduce the "AI Experiment" framework: how to take any AI initiative and structure it as a proper experiment. Hypothesis, single metric, timeframe, decision criteria. With a concrete before/after example from the interviews.</p>
+        </div>
+
+        <div class="pattern-card">
+            <div class="story-arc">Close + call to action &middot; 2 min</div>
+            <p>The window is still open. Organisations that apply experimentation discipline to AI now will pull ahead &mdash; not because they move faster, but because they learn faster. End with a direct challenge to the room.</p>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>About Bjarn Brunenberg</h2>
+
+        <div class="bio-text">
+            <p>Senior Product Manager with 8+ years driving measurable growth through experimentation, data-driven strategy, and systematic product innovation. I architect experimentation operating systems that connect strategy to execution and ship hypothesis-driven product decisions at scale &mdash; with proven expertise in onboarding, activation, and retention.</p>
+
+            <p>At TomTom (EUR&nbsp;585M, 29 countries), I built the experimentation OS that scaled testing from 20 to 300+ experiments per year, driving 100% year-over-year app revenue growth. Now I work at the intersection of experimentation and AI adoption, helping teams become AI-fluent so they can accelerate growth through faster experiments, better decisions, and leaner workflows.</p>
+
+            <p>Co-founder of the AI Fluency Club, a community helping professionals apply AI to practical systems. I regularly speak at conferences and co-host the Future of eXperimentation (FoX) event in Porto.</p>
+
+            <p>This talk is part of an ongoing research project where I interview senior managers about what's really happening with AI inside their organisations. The goal: build a data-backed picture of AI adoption that goes beyond the hype &mdash; and turn it into practical frameworks that actually work.</p>
+
+            <div class="credibility-stack">
+                <div class="credibility-item">
+                    <span class="credibility-icon">&rarr;</span>
+                    <span>TomTom: 20 &rarr; 300+ experiments/year, 100% YoY app revenue growth</span>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-icon">&rarr;</span>
+                    <span>2&times; Experimentation Culture Award winner (2022, 2023)</span>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-icon">&rarr;</span>
+                    <span>Top A/B Testing Influencer 2024</span>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-icon">&rarr;</span>
+                    <span>Co-founder AI Fluency Club &middot; Co-host Future of eXperimentation (FoX)</span>
+                </div>
+                <div class="credibility-item">
+                    <span class="credibility-icon">&rarr;</span>
+                    <span>+85% MRR growth over 4 quarters through experimentation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXISTING MATERIAL -->
+    <section>
+        <h2>Existing Material</h2>
+
+        <p>I've previously developed and submitted a related talk for a Berlin AI conference, including a recorded Tella video pitch. While this Booking proposal is built specifically for an experimentation audience, the underlying research and thinking connects to that earlier work.</p>
+
+        <p style="margin-top: 12px;">
+            <strong>Tella video (previous talk pitch):</strong><br>
+            <a href="https://www.tella.tv/video/productlab-talk-your-ai-strategy-is-stuck-so-what-do-we-need-to-do-instead-2jn3" style="color: var(--accent); word-break: break-all;" target="_blank">Watch the 3-minute pitch video &rarr;</a>
+        </p>
+
+        <p style="margin-top: 12px;">
+            <strong>LinkedIn:</strong><br>
+            <a href="https://www.linkedin.com/in/bjarnbrunenberg/" style="color: var(--accent);" target="_blank">linkedin.com/in/bjarnbrunenberg &rarr;</a>
+        </p>
+    </section>
+
+    <!-- CTA -->
+    <div class="cta-section">
+        <div class="divider" style="margin: 0 auto 32px;"></div>
+        <p>Looking forward to discussing this further with Melanie, Kevin, and Jorden.</p>
+        <div class="cta-links">
+            <a href="mailto:bjarn.brunenberg@gmail.com">bjarn.brunenberg@gmail.com</a>
+            &nbsp;&middot;&nbsp;
+            <a href="https://www.linkedin.com/in/bjarnbrunenberg/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    <div class="container">
+        &copy; 2026 Bjarn Brunenberg &middot; Talk proposal for Experimentation Conference at Booking.com
+    </div>
+</footer>
+
+</body>
+</html>
