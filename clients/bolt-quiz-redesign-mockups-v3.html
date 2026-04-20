@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolt Pharmacy — Quiz Redesign Mockups V3</title>
+<style>
+  :root {
+    --bolt-navy: #0A2540;
+    --bolt-blue: #0753A0;
+    --bolt-blue-dark: #053D7A;
+    --bolt-green: #6FB83B;
+    --cream: #FDF9EE;
+    --cream-darker: #F5EFE0;
+    --page-bg: #EEF0F4;
+    --ink: #1a2533;
+    --muted: #6B7280;
+    --border: #E2E6EC;
+    --green-tint: #EFF8E6;
+    --blue-tint: #E9F1FB;
+    --red-tint: #FEECEC;
+    --yellow-tint: #FEF6D9;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--page-bg);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+
+  .page-header {
+    background: linear-gradient(135deg, var(--bolt-navy) 0%, var(--bolt-blue) 100%);
+    color: white;
+    padding: 60px 40px 80px;
+    text-align: center;
+  }
+  .page-header .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 11px;
+    opacity: 0.7;
+    margin-bottom: 12px;
+  }
+  .page-header h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .page-header p {
+    font-size: 17px;
+    opacity: 0.85;
+    max-width: 720px;
+    margin: 0 auto 24px;
+  }
+  .page-header .badges {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .badge {
+    background: rgba(255,255,255,0.15);
+    padding: 8px 16px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .badge.green { background: rgba(111, 184, 59, 0.25); }
+
+  .container { max-width: 1440px; margin: 0 auto; padding: 0 32px 80px; }
+
+  .section-nav {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 40px;
+  }
+  .section-nav .inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    align-items: center;
+  }
+  .section-nav a {
+    text-decoration: none;
+    color: var(--muted);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .section-nav a:hover { background: var(--cream); color: var(--bolt-blue); }
+  .section-nav .label { color: var(--bolt-navy); font-weight: 700; margin-right: 8px; font-size: 13px; }
+
+  .chapter-banner {
+    background: linear-gradient(135deg, var(--bolt-blue) 0%, var(--bolt-blue-dark) 100%);
+    color: white;
+    padding: 28px 32px;
+    border-radius: 14px;
+    margin: 48px 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .chapter-banner .chapter-num {
+    font-size: 48px;
+    font-weight: 800;
+    opacity: 0.3;
+    line-height: 1;
+  }
+  .chapter-banner .chapter-content h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .chapter-banner .chapter-content p {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  .step-row {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 40px;
+    align-items: start;
+    margin-bottom: 80px;
+  }
+  @media (max-width: 1100px) {
+    .step-row { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  .phone-wrap { position: sticky; top: 80px; }
+  .phone {
+    background: #1a1a1a;
+    border-radius: 38px;
+    padding: 12px;
+    box-shadow: 0 30px 60px rgba(10, 37, 64, 0.25), 0 0 0 1px rgba(255,255,255,0.03);
+    width: 380px;
+    margin: 0 auto;
+  }
+  .phone-screen {
+    background: var(--cream);
+    border-radius: 28px;
+    overflow: hidden;
+    min-height: 740px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .phone-notch {
+    background: #1a1a1a;
+    width: 110px;
+    height: 24px;
+    border-radius: 0 0 14px 14px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+  }
+
+  .app-header {
+    padding: 40px 20px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .app-back {
+    width: 32px; height: 32px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bolt-navy); font-size: 18px; cursor: pointer;
+  }
+  .progress-wrap { flex: 1; }
+  .progress-chapter {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--bolt-blue);
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .progress-bar {
+    height: 6px;
+    background: var(--cream-darker);
+    border-radius: 100px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--bolt-blue) 0%, var(--bolt-green) 100%);
+    border-radius: 100px;
+  }
+
+  .bolt-logo {
+    display: flex;
+    justify-content: center;
+    padding: 8px 0 16px;
+  }
+  .bolt-logo-svg {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .bolt-pill {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--bolt-blue) 50%, var(--bolt-green) 50%);
+    border-radius: 50%;
+    position: relative;
+    transform: rotate(-35deg);
+  }
+  .bolt-pill::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--cream);
+  }
+  .bolt-text {
+    color: var(--bolt-navy);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+  }
+  .bolt-text small {
+    font-size: 8px;
+    letter-spacing: 3px;
+    color: var(--bolt-green);
+    text-transform: uppercase;
+    font-weight: 700;
+    display: block;
+    margin-top: -2px;
+    margin-left: 2px;
+  }
+
+  .app-body {
+    padding: 8px 24px 28px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .app-body h1.screen-title {
+    color: var(--bolt-navy);
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+  .app-body p.screen-sub {
+    color: var(--muted);
+    font-size: 13.5px;
+    margin-bottom: 20px;
+  }
+
+  .opt {
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-size: 14px;
+    color: var(--ink);
+    position: relative;
+  }
+  .opt:hover { border-color: var(--bolt-blue); }
+  .opt.selected {
+    border-color: var(--bolt-blue);
+    background: var(--blue-tint);
+  }
+  .opt .tick {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 2px solid #c9cfd6;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: white;
+  }
+  .opt.selected .tick {
+    background: var(--bolt-blue);
+    border-color: var(--bolt-blue);
+  }
+  .opt.selected .tick::after {
+    content: '';
+    width: 10px; height: 5px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translate(1px, -1px);
+  }
+  .opt.checkbox .tick { border-radius: 6px; }
+  .opt.prominent {
+    background: var(--bolt-blue);
+    border-color: var(--bolt-blue);
+    color: white;
+    font-weight: 700;
+  }
+  .opt.prominent .tick { background: white; border-color: white; }
+  .opt.prominent.selected .tick::after { border-color: var(--bolt-blue); }
+  .opt .opt-body { flex: 1; }
+  .opt .opt-sub { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+
+  .group-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 16px 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .group-label.blue { color: var(--bolt-blue); }
+  .group-label.green { color: var(--bolt-green); }
+  .group-label::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .cta {
+    background: var(--bolt-blue);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 16px 24px;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: auto;
+    transition: all 0.15s;
+    box-shadow: 0 6px 14px rgba(7, 83, 160, 0.25);
+  }
+  .cta:hover { background: var(--bolt-blue-dark); transform: translateY(-1px); }
+  .cta:disabled {
+    background: #c9cfd6;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  .cta-helper {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .field-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--bolt-navy);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .field-label .info-icon {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--cream-darker);
+    color: var(--muted);
+    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    cursor: help;
+  }
+  input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    font-size: 15px;
+    color: var(--ink);
+    font-family: inherit;
+    transition: border-color 0.15s;
+  }
+  input:focus { outline: none; border-color: var(--bolt-blue); }
+  .field-row { margin-bottom: 16px; }
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .segmented {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--cream-darker);
+    padding: 4px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+  .segmented button {
+    padding: 10px;
+    border: none;
+    background: transparent;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--muted);
+    cursor: pointer;
+  }
+  .segmented button.active {
+    background: var(--bolt-blue);
+    color: white;
+  }
+
+  .inline-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 14px;
+    background: white;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  .inline-toggle.on { border-color: var(--bolt-blue); background: var(--blue-tint); }
+  .inline-toggle .label { font-size: 13px; font-weight: 600; color: var(--bolt-navy); }
+  .toggle-switch {
+    width: 40px; height: 22px;
+    background: #c9cfd6;
+    border-radius: 100px;
+    position: relative;
+    transition: all 0.2s;
+  }
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px; left: 2px;
+    width: 18px; height: 18px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+  .inline-toggle.on .toggle-switch { background: var(--bolt-blue); }
+  .inline-toggle.on .toggle-switch::after { left: 20px; }
+
+  .reveal {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+  .reveal.open { max-height: 900px; margin-top: 12px; }
+
+  textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+  }
+  textarea:focus { outline: none; border-color: var(--bolt-blue); }
+
+  .trust-strip {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 12px;
+    text-align: center;
+  }
+  .trust-strip .item { display: flex; align-items: center; gap: 4px; }
+  .trust-strip .item::before { content: '✓'; color: var(--bolt-green); font-weight: 800; }
+
+  /* ANNOTATION PANEL */
+  .annot {
+    background: white;
+    border-radius: 14px;
+    padding: 32px;
+    border: 1px solid var(--border);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+  .annot .step-badge {
+    display: inline-block;
+    background: var(--bolt-blue);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .annot h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--bolt-navy);
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .annot .replaces {
+    background: var(--red-tint);
+    color: #9a2c2c;
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .annot .replaces strong { color: #7a2020; }
+  .annot .replaces::before {
+    content: '◀';
+    font-size: 10px;
+    color: #9a2c2c;
+    flex-shrink: 0;
+    padding-top: 2px;
+  }
+  .annot h4 {
+    color: var(--bolt-navy);
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .annot h4::before {
+    content: '';
+    width: 4px; height: 18px;
+    background: var(--bolt-blue);
+    border-radius: 100px;
+  }
+  .annot p { font-size: 14.5px; color: #374151; margin-bottom: 10px; }
+  .annot ul { list-style: none; padding-left: 0; }
+  .annot ul li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #374151;
+  }
+  .annot ul li::before {
+    content: '';
+    position: absolute;
+    left: 4px; top: 8px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--bolt-green);
+  }
+  .annot .highlight {
+    background: var(--yellow-tint);
+    border-left: 3px solid #d1a63f;
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    margin-top: 14px;
+  }
+  .annot .highlight strong { color: #8a6d1f; }
+
+  .intro-panel {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin: -40px auto 48px;
+    max-width: 1200px;
+    box-shadow: 0 20px 50px rgba(10, 37, 64, 0.08);
+    position: relative;
+    z-index: 2;
+  }
+  .intro-panel h2 { color: var(--bolt-navy); font-size: 26px; font-weight: 800; margin-bottom: 16px; }
+  .intro-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 28px; }
+  @media (max-width: 900px) { .intro-grid { grid-template-columns: 1fr 1fr; } }
+  .intro-card { padding: 20px; background: var(--cream); border-radius: 12px; }
+  .intro-card .num {
+    font-size: 42px;
+    font-weight: 900;
+    color: var(--bolt-blue);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .intro-card h4 { color: var(--bolt-navy); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+  .intro-card p { font-size: 13px; color: var(--muted); line-height: 1.4; }
+
+  .pd-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: var(--blue-tint);
+    color: var(--bolt-blue);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  .flow-summary {
+    background: linear-gradient(135deg, var(--bolt-navy) 0%, var(--bolt-blue) 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin: 40px 0 60px;
+  }
+  .flow-summary h2 {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  .flow-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    text-align: center;
+  }
+  @media (max-width: 800px) { .flow-stats { grid-template-columns: 1fr 1fr; } }
+  .stat .big {
+    font-size: 44px;
+    font-weight: 900;
+    display: block;
+    margin-bottom: 4px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--bolt-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat .label { font-size: 12px; opacity: 0.85; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+
+  /* VALIDATION BRIEF (cleaner style) */
+  .validation-panel {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .validation-panel h2 {
+    color: var(--bolt-navy);
+    font-size: 26px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .validation-panel > p.lead {
+    color: var(--muted);
+    font-size: 15px;
+    margin-bottom: 24px;
+    max-width: 760px;
+  }
+  .val-item {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+  }
+  .val-item:first-of-type { border-top: 0; padding-top: 0; }
+  .val-num {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--bolt-blue);
+    line-height: 1.2;
+  }
+  .val-item h4 {
+    color: var(--bolt-navy);
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .val-item p {
+    font-size: 14px;
+    color: #374151;
+  }
+
+  footer {
+    padding: 40px 32px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <div class="eyebrow">Bolt Pharmacy · Consultation Quiz Redesign · V3</div>
+  <h1>From 19 screens to 10</h1>
+  <p>Interactive mockups of every screen in the redesigned consultation flow. Clickable radios, checkboxes, and progressive disclosure. Cream background, Bolt identity, no contract-feel.</p>
+  <div class="badges">
+    <div class="badge">Mobile first · 89.6% of traffic</div>
+    <div class="badge green">Clinical data preserved</div>
+    <div class="badge">4-chapter progress indicator</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="intro-panel">
+    <h2>How to read this document</h2>
+    <p style="color:var(--muted); font-size:14.5px; max-width:800px;">Every screen below is a clickable mock of what the redesigned quiz looks like on mobile. On the right: what it replaces, what changed, and why it works. The phone frames are interactive — tick options, toggle progressive disclosure, see how grouping feels.</p>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <div class="num">10</div>
+        <h4>New steps</h4>
+        <p>Down from 19–22 today. 47% reduction in perceived length.</p>
+      </div>
+      <div class="intro-card">
+        <div class="num">4</div>
+        <h4>Chapters</h4>
+        <p>Start · About you · Your health · Finish up. Replaces "Q7 of 19."</p>
+      </div>
+      <div class="intro-card">
+        <div class="num">3</div>
+        <h4>Screens cut</h4>
+        <p>Intro page, acknowledgement page, and one of three repetitive condition screens.</p>
+      </div>
+      <div class="intro-card">
+        <div class="num">0</div>
+        <h4>Data lost</h4>
+        <p>Every clinical data point preserved at the granular level Gabriel requires.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <div class="inner">
+      <span class="label">Jump to:</span>
+      <a href="#step-1">1. Welcome</a>
+      <a href="#step-2">2. About you</a>
+      <a href="#step-3">3. Body</a>
+      <a href="#step-4">4. Safety</a>
+      <a href="#step-5">5. Health</a>
+      <a href="#step-6">6. Meds</a>
+      <a href="#step-7">7. History</a>
+      <a href="#step-8">8. Consent</a>
+      <a href="#step-9">9. Register</a>
+      <a href="#open-questions">→ Open questions</a>
+    </div>
+  </div>
+
+  <!-- CHAPTER 1 -->
+  <div class="chapter-banner" id="chapter-1">
+    <div class="chapter-num">1</div>
+    <div class="chapter-content">
+      <h2>Chapter 1 — Start</h2>
+      <p>Replaces the old intro page and disclaimer contract with a single friendly welcome.</p>
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="step-row" id="step-1">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 1 of 4 · Start</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg">
+              <div class="bolt-pill"></div>
+              <div class="bolt-text">bolt<small>pharmacy</small></div>
+            </div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Let's find the right treatment for you</h1>
+            <p class="screen-sub">3 minutes · Clinician-reviewed · 100% confidential</p>
+
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')">
+              <span class="tick"></span>
+              <div class="opt-body">I'll answer honestly<div class="opt-sub">Your clinician uses this to prescribe safely.</div></div>
+            </div>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')">
+              <span class="tick"></span>
+              <div class="opt-body">I'll let Bolt know if my health changes</div>
+            </div>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')">
+              <span class="tick"></span>
+              <div class="opt-body">This treatment is just for me</div>
+            </div>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')">
+              <span class="tick"></span>
+              <div class="opt-body">I'll only take one weight-loss med at a time</div>
+            </div>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')">
+              <span class="tick"></span>
+              <div class="opt-body">I understand this works best with healthy eating and activity</div>
+            </div>
+
+            <button class="cta">Got it — start my consultation</button>
+            <div class="cta-helper">By continuing, you confirm the statements above.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 1</div>
+      <h3>Welcome + lightweight consent</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old intro page (screen 1) + old Disclaimer contract page (screen 2). Two screens become one.</span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li>Cream background gives Bolt identity from the first second — not a generic white form.</li>
+        <li>The disclaimer content is <strong>kept verbatim in meaning</strong> but reframed as first-person commitments instead of legal bullets.</li>
+        <li>Pre-ticked checkboxes signal "this is light" — the user confirms by tapping the CTA.</li>
+        <li>The word "DISCLAIMER" is gone. So is the contract vibe.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>User research flagged "disclaimer fatigue: repetitive copy and disclaimer-like pages slowed users and decreased motivation." This pattern preserves the five commitments at the start of the flow, while removing the two heaviest psychological barriers on the first touchpoint.</p>
+
+      <div class="highlight"><strong>Gabriel:</strong> "We can remove this page as long as we're using the information here somewhere else." Done — five statements present, same meaning, lighter vehicle.</div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div class="chapter-banner">
+    <div class="chapter-num">2</div>
+    <div class="chapter-content">
+      <h2>Chapter 2 — About you</h2>
+      <p>Two tight screens covering demographics and body measurements.</p>
+    </div>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="step-row" id="step-2">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 2 of 4 · About you</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:40%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">A bit about you</h1>
+            <p class="screen-sub">Two quick questions to check eligibility and safety.</p>
+
+            <div class="field-label">Are you between 18 and 84?</div>
+            <div class="opt selected" onclick="toggleRadio(this)"><span class="tick"></span>Yes</div>
+            <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>No</div>
+
+            <div class="field-label" style="margin-top:20px">
+              Your biological sex
+              <span class="info-icon" title="Some meds aren't recommended in pregnancy or while breastfeeding.">i</span>
+            </div>
+            <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>Male</div>
+            <div class="opt selected" onclick="toggleRadio(this)"><span class="tick"></span>Female</div>
+
+            <button class="cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 2</div>
+      <h3>Age + biological sex</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 3 (age yes/no) + old screen 6 (biological sex). Two related questions, one screen.</span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li>Age range updated to 18–84 — the 74–84 band is eligible with clinician review, which today's 18–74 gate excludes.</li>
+        <li>Inline info icon covers the "why we ask" for biological sex without a subheading block.</li>
+        <li>Both questions are mandatory and take seconds — a single screen saves a tap with no loss.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Age and biological sex share a "demographics" mental frame. Grouping them removes a full tap+transition while making no answer harder. The tooltip handles the clinical rationale for sex without a full explainer paragraph.</p>
+
+      <div class="highlight"><strong>Gabriel:</strong> "Age question is a must… we updated to 84 as well. Between 74 and 84 it's a matter of clinical review. Biological sex, also important — we have some logic if they're a woman."</div>
+    </div>
+  </div>
+
+  <!-- STEP 3 -->
+  <div class="step-row" id="step-3">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 2 of 4 · About you</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Your measurements</h1>
+            <p class="screen-sub">We use these to check eligibility. Your clinician reviews the result after you submit.</p>
+
+            <div class="segmented">
+              <button class="active">Metric</button>
+              <button>Imperial</button>
+            </div>
+
+            <div class="field-row">
+              <div class="field-label">Height (cm)</div>
+              <input type="number" value="176" placeholder="176">
+            </div>
+            <div class="field-row">
+              <div class="field-label">Weight (kg)</div>
+              <input type="number" value="95" placeholder="95">
+            </div>
+
+            <div class="field-label">Your ethnic background</div>
+            <p style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Some backgrounds qualify at a lower BMI — medical research, not a judgement.</p>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')"><span class="tick"></span>White — British, Irish, any other White</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Asian — Bangladeshi, Chinese, Indian, Malaysian, Japanese</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Black — African, Caribbean, Black British</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Middle Eastern — Arab, Iranian</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Other</div>
+
+            <button class="cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 3</div>
+      <h3>Height, weight, ethnicity</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 5 (BMI) + old screen 7 (ethnicity). Two screens become one.</span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li>Height, weight, and ethnicity share a screen — they are the three inputs that together define BMI eligibility.</li>
+        <li>Ethnicity sits below the measurements with a short "why we ask" line, not as a separate subheading block.</li>
+        <li><strong>No mid-quiz BMI readout.</strong> The result is calculated silently and surfaced at submission — hard-stop signals stay at submission level where they belong.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Grouping the three inputs that jointly determine eligibility keeps the mental model coherent. The silent-calculation pattern respects the rule that eligibility signals must not be visible mid-quiz: a user who sees they're borderline today can't reverse-engineer their answers tomorrow.</p>
+
+      <div class="highlight"><strong>Gabriel:</strong> "We don't want them to know why we hard-stop them. Otherwise, they can just go back in the quiz and change the answers."</div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div class="chapter-banner">
+    <div class="chapter-num">3</div>
+    <div class="chapter-content">
+      <h2>Chapter 3 — Your health</h2>
+      <p>The biggest consolidation chapter. Four screens become three tight, well-grouped ones.</p>
+    </div>
+  </div>
+
+  <!-- STEP 4 -->
+  <div class="step-row" id="step-4">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 3 of 4 · Your health</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Any of these apply to you?</h1>
+            <p class="screen-sub">We ask to keep you safe. A clinician will review anything you tick.</p>
+
+            <div class="opt prominent selected" onclick="toggleNone(this, '#cond-groups')"><span class="tick"></span>None of these apply to me</div>
+
+            <div id="cond-groups" style="opacity:0.5;">
+              <div class="group-label blue">Allergies & reactions</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Hypersensitivity to active ingredients</div>
+
+              <div class="group-label blue">Heart & circulation</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Heart Failure (NYHA Class IV)</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Heart Failure (other)</div>
+
+              <div class="group-label blue">Digestion</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>History of pancreatitis</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Gastroparesis</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Active gallbladder / biliary disease</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Active IBD or in remission &lt;6 months</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Bariatric surgery &lt;12 months ago</div>
+
+              <div class="group-label blue">Other</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Type 1 diabetes</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Diabetic retinopathy</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Severe liver disease</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>CKD stage 5 (&lt;15ml/min)</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Active cancer</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Glaucoma</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Epilepsy</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Porphyria</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Personal / family history of thyroid cancer</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Suicidal thoughts / self-harm in last 12 months</div>
+            </div>
+
+            <button class="cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 4</div>
+      <h3>Safety-critical conditions</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 8 (one of three near-identical "Do you have any of the following conditions?" pages).</span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li><strong>Prominent "None of these apply"</strong> at the top — the majority with no conditions tap once and move on. Today they have to scan a flat list of 18 items first.</li>
+        <li><strong>Grouped by category</strong> — allergies, heart & circulation, digestion, other. Users scan by theme, not line-by-line.</li>
+        <li>Every condition is still a <strong>separate checkbox</strong>. The visual grouping changes perception, not the data model.</li>
+        <li>Copy reframed from clinical language to "we ask to keep you safe" — same meaning, friendlier tone.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Users with no conditions (the majority case) finish the screen in one tap. Users who do have conditions scan a categorised list rather than 18 flat items. Hard-stop rejection happens at submission — nothing here tells the user their tick blocked them.</p>
+
+      <div class="highlight"><strong>Gabriel:</strong> "These three questions are very important, but we can frame them in a different way if needed… we have to be granular here." Visual grouping only — data stays granular.</div>
+    </div>
+  </div>
+
+  <!-- STEP 5 -->
+  <div class="step-row" id="step-5">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 3 of 4 · Your health</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:68%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Anything else your clinician should know?</h1>
+            <p class="screen-sub">These don't stop treatment — some may qualify you at a lower BMI.</p>
+
+            <div class="group-label blue">Conditions your clinician will review</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Past or present eating disorder</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Bariatric surgery (any time)</div>
+
+            <div class="inline-toggle" id="t-cond-extra" onclick="toggleReveal('t-cond-extra', 'r-cond-extra')">
+              <div class="label">Anything else not listed?</div>
+              <div class="toggle-switch"></div>
+            </div>
+            <div class="reveal" id="r-cond-extra">
+              <textarea placeholder="Any other health condition your clinician should know about"></textarea>
+            </div>
+
+            <div class="group-label green" style="margin-top:20px">Conditions that may qualify you at a lower BMI</div>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')"><span class="tick"></span>Type 2 diabetes / pre-diabetes / insulin resistance</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>High blood pressure</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>High cholesterol or triglycerides</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Cardiovascular disease (heart attack, angina, coronary arterial)</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Atrial fibrillation</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Stroke or TIA</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Peripheral arterial disease</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Erectile dysfunction</div>
+
+            <div class="group-label" style="margin-top:20px; color: var(--bolt-navy);">Your main reasons for wanting to lose weight</div>
+            <p style="font-size:11.5px; color:var(--muted); margin-bottom:8px;">Select all that apply — this helps us tailor your eligibility.</p>
+            <div class="opt checkbox selected" onclick="this.classList.toggle('selected')"><span class="tick"></span>Improving my overall health</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Avoiding or managing a specific health condition</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Looking and feeling better</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Becoming more active</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Improving my mood and mental wellbeing</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Improving my sleep or energy levels</div>
+            <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Other</div>
+
+            <button class="cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 5</div>
+      <h3>Other conditions + weight-loss reasons</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 4 (motivations) + screen 9 (past/present conditions) + screen 10 (lower-BMI conditions) + screen 11 (any other health conditions open). <strong>Four screens become one.</strong></span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li><strong>Colour-coded groups</strong> — blue for clinician-review, green for lower-BMI eligibility. Users know the stakes of each tick before they make it.</li>
+        <li>The current quiz asks three near-identical "Do you have any of the following conditions?" pages in a row. Colour + section labels fix the "where am I?" confusion.</li>
+        <li><strong>Motivations question kept intact</strong> with all 6 options plus Other. It feeds lower-BMI eligibility logic — any non-Other answer can qualify a user at a lower threshold when combined with ethnicity and conditions, so all six need to stay capturable.</li>
+        <li>The open "anything else" text field is an <strong>inline toggle</strong> — users who want to add context can, users who don't never see a text area.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Three serial screens of condition-asking become one screen with three visually distinct blocks. This is where users currently feel the quiz's length most. The motivations question stays because its clinical function (BMI eligibility nudge) cannot be compressed without losing data on the 5 out of 6 answers that aren't "managing a specific health condition."</p>
+
+      <div class="highlight"><strong>Gabriel:</strong> "If they are white and they have some conditions OR reasons for wanting to lose weight, they might be eligible for this BMI criteria. If they say Other, they are not going to be eligible." The full question preserves that logic exactly.</div>
+    </div>
+  </div>
+
+  <!-- STEP 6 -->
+  <div class="step-row" id="step-6">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 3 of 4 · Your health</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Medications you take right now</h1>
+            <p class="screen-sub">Prescription, over-the-counter, or recreational. We check for interactions.</p>
+
+            <div class="opt prominent selected" onclick="toggleNone(this, '#meds-list')"><span class="tick"></span>I don't take any medications</div>
+
+            <div id="meds-list" style="opacity:0.5;">
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Insulin</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Oral contraceptives</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Sulfonylureas (gliclazide, glimepiride, glipizide)</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>DPP-4 (Sitagliptin, Linagliptin, Alogliptin)</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>SGLT-2 inhibitors (dapagliflozin, empagliflozin)</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Orlistat</div>
+              <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Others — Warfarin, Lithium, Digoxin, Theophylline, Amiodarone, Flecainide, Clozapine</div>
+            </div>
+
+            <div class="inline-toggle" id="t-meds-extra" onclick="toggleReveal('t-meds-extra', 'r-meds-extra')">
+              <div class="label">Taking something not listed? <span class="pd-tag">Progressive disclosure</span></div>
+              <div class="toggle-switch"></div>
+            </div>
+            <div class="reveal" id="r-meds-extra">
+              <textarea placeholder="Medication name(s) and what you take them for"></textarea>
+            </div>
+
+            <button class="cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 6</div>
+      <h3>Medications (current)</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 12 (structured medication list) + old screen 13 (other medications yes/no + open). Two screens become one.</span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li>Same structured list users see today — every hard-stop drug (insulin, sulfonylureas) remains as its own checkbox.</li>
+        <li><strong>Prominent "I don't take any"</strong> mirrors the pattern from Step 4 — one tap for users with nothing to declare.</li>
+        <li>The "other medications" open text is behind a <strong>toggle</strong>. No one sees a text field unless they need it.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Two separate screens for structured meds and free-text "other" becomes one. Progressive disclosure keeps the field hidden until a user needs it, so the default experience is a single clean checklist.</p>
+
+      <div class="highlight"><strong>Try the toggle</strong> on the mock. That's the progressive disclosure pattern — users who need the field get it on the same screen, not as an extra step.</div>
+    </div>
+  </div>
+
+  <!-- STEP 7 -->
+  <div class="step-row" id="step-7">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 3 of 4 · Your health</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:83%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Have you tried weight-loss medication before?</h1>
+            <p class="screen-sub">If so, we may be able to continue your treatment on the right dose.</p>
+
+            <div class="opt" onclick="toggleHistory(this, 0)"><span class="tick"></span>Wegovy</div>
+            <div class="opt" onclick="toggleHistory(this, 1)"><span class="tick"></span>Ozempic</div>
+            <div class="opt" onclick="toggleHistory(this, 2)"><span class="tick"></span>Saxenda</div>
+            <div class="opt" onclick="toggleHistory(this, 3)"><span class="tick"></span>Rybelsus</div>
+            <div class="opt selected" onclick="toggleHistory(this, 4)"><span class="tick"></span>Mounjaro</div>
+            <div class="opt" onclick="toggleHistory(this, 5)"><span class="tick"></span>None of these</div>
+
+            <div class="reveal open" id="r-history">
+              <div style="border-top: 1px dashed #c9cfd6; padding-top: 16px; margin-top: 16px;">
+                <div style="font-size:11px; color:var(--bolt-blue); font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;"><span class="pd-tag" style="margin-left:0">Progressive disclosure</span> Tell us a bit more</div>
+
+                <div class="field-row">
+                  <div class="field-label">Your weight when you started</div>
+                  <input type="number" value="110" placeholder="110">
+                </div>
+                <div class="field-row">
+                  <div class="field-label">When was your last dose?</div>
+                  <div class="opt selected" onclick="toggleRadio(this)"><span class="tick"></span>This week</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>1–2 weeks ago</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>1+ month ago</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>3+ months ago</div>
+                </div>
+                <div class="field-row">
+                  <div class="field-label">What dose were you on?</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>2.5 mg</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>5 mg</div>
+                  <div class="opt selected" onclick="toggleRadio(this)"><span class="tick"></span>7.5 mg</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>10 mg</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>12.5 mg</div>
+                  <div class="opt" onclick="toggleRadio(this)"><span class="tick"></span>15 mg</div>
+                </div>
+                <div class="field-row">
+                  <div class="field-label">Any side effects?</div>
+                  <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Nausea</div>
+                  <div class="opt checkbox selected" onclick="this.classList.toggle('selected')"><span class="tick"></span>Constipation</div>
+                  <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Fatigue</div>
+                  <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>Mood changes</div>
+                  <div class="opt checkbox" onclick="this.classList.toggle('selected')"><span class="tick"></span>None</div>
+                </div>
+              </div>
+            </div>
+
+            <button class="cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 7</div>
+      <h3>Weight-loss history (progressive disclosure)</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 14 (prior GLP-1) + screens 15, 16, 17 (four conditional follow-ups). <strong>Up to five screens become one.</strong></span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li>Users who have never tried GLP-1 treatment select "None of these" and the Next button advances. No follow-up screens imposed.</li>
+        <li>Users with history see the four follow-ups expand inline on the same screen. Still one step. All four clinical inputs captured.</li>
+        <li>Weight-at-start, last dose timing, current dose, and side effects — every data point needed for dose continuation is preserved.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Today's flow gives everyone the same multi-screen path regardless of whether they need it. This step branches invisibly: one answer for users with no history, an expanded panel for users who need to continue treatment. All four follow-ups land on the same screen, so there's no "how many more to go" effect.</p>
+
+      <div class="highlight"><strong>Try the radios</strong> — selecting a specific medication opens the follow-up panel. Selecting "None of these" closes it. This is the largest screen collapse in the whole redesign.</div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 4 -->
+  <div class="chapter-banner">
+    <div class="chapter-num">4</div>
+    <div class="chapter-content">
+      <h2>Chapter 4 — Finish up</h2>
+      <p>Optional note, explicit consent, and the final form. The acknowledgement contract page is gone.</p>
+    </div>
+  </div>
+
+  <!-- STEP 8 -->
+  <div class="step-row" id="step-8">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 4 of 4 · Finish up</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:92%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Almost done</h1>
+            <p class="screen-sub">Anything else you'd like your clinician to know?</p>
+
+            <textarea placeholder="Optional — anything you'd like us to factor in (skip if nothing)"></textarea>
+
+            <div style="background: var(--cream-darker); height:1px; margin: 22px 0 16px;"></div>
+
+            <div style="font-size:13px; font-weight:700; color:var(--bolt-navy); margin-bottom:10px;">By continuing, I confirm:</div>
+            <ul style="list-style:none; padding:0; margin-bottom:16px;">
+              <li style="font-size:12.5px; color:#374151; padding:4px 0 4px 22px; position:relative;">
+                <span style="position:absolute; left:0; top:4px; color:var(--bolt-green); font-weight:800;">✓</span>
+                I give permission for Bolt to share consultation info with my GP.
+              </li>
+              <li style="font-size:12.5px; color:#374151; padding:4px 0 4px 22px; position:relative;">
+                <span style="position:absolute; left:0; top:4px; color:var(--bolt-green); font-weight:800;">✓</span>
+                I understand I should follow the dose titration schedule.
+              </li>
+              <li style="font-size:12.5px; color:#374151; padding:4px 0 4px 22px; position:relative;">
+                <span style="position:absolute; left:0; top:4px; color:var(--bolt-green); font-weight:800;">✓</span>
+                I'll stop treatment 2 months before trying to conceive.
+              </li>
+              <li style="font-size:12.5px; color:#374151; padding:4px 0 4px 22px; position:relative;">
+                <span style="position:absolute; left:0; top:4px; color:var(--bolt-green); font-weight:800;">✓</span>
+                I'll contact Bolt if I notice sudden mood changes.
+              </li>
+            </ul>
+            <a href="#" style="font-size:12px; color:var(--bolt-blue); text-decoration:underline; font-weight:600;">View full terms →</a>
+
+            <div class="opt checkbox selected" style="margin-top:16px;" onclick="this.classList.toggle('selected'); document.getElementById('s8-cta').disabled = !this.classList.contains('selected');">
+              <span class="tick"></span>
+              <div class="opt-body" style="font-weight:600;">I agree to the above</div>
+            </div>
+
+            <button class="cta" id="s8-cta">Next</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 8</div>
+      <h3>Anything else + acknowledgement</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old screen 18 (anything else to share yes/no + open) + old screen 19 (full Acknowledgement Statement contract page). <strong>Two screens become one.</strong></span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li>The current acknowledgement page is a wall of legal bullets users tap "Next" on without reading. This redesign makes the consent <strong>explicit</strong>: a tick above the CTA is required.</li>
+        <li>The four commitments are shown in scannable format with green ticks. Full legal text available in a modal via "View full terms" link.</li>
+        <li>The "anything else?" optional text field shares the screen — users who skip it proceed in one tap.</li>
+      </ul>
+
+      <h4>Why it works</h4>
+      <p>Today the acknowledgement "consent" is just a Next tap, indistinguishable from every other Next tap in the quiz. The explicit tick pattern turns it into a real agreement moment while taking less visual space than a full page of bullets. Full terms stay one tap away via the modal link for users who want to read them.</p>
+
+      <div class="highlight"><strong>Gabriel:</strong> "It could be a page on the website — we can just have 'by clicking next you accept the acknowledgement statement.'" This design takes that same direction, with an explicit tick instead of an implicit next tap.</div>
+    </div>
+  </div>
+
+  <!-- STEP 9 -->
+  <div class="step-row" id="step-9">
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="app-header">
+            <div class="app-back">←</div>
+            <div class="progress-wrap">
+              <div class="progress-chapter">Step 4 of 4 · Finish up</div>
+              <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+            </div>
+          </div>
+          <div class="bolt-logo">
+            <div class="bolt-logo-svg"><div class="bolt-pill"></div><div class="bolt-text">bolt<small>pharmacy</small></div></div>
+          </div>
+          <div class="app-body">
+            <h1 class="screen-title">Where should we send your consultation results?</h1>
+            <p class="screen-sub">We'll email your clinician's review within 24 hours.</p>
+
+            <div class="field-grid">
+              <div class="field-row">
+                <div class="field-label">First name</div>
+                <input type="text" placeholder="John">
+              </div>
+              <div class="field-row">
+                <div class="field-label">Last name</div>
+                <input type="text" placeholder="Doe">
+              </div>
+            </div>
+            <div class="field-row">
+              <div class="field-label">Email</div>
+              <input type="email" placeholder="email@example.co.uk">
+            </div>
+            <div class="field-row">
+              <div class="field-label">Phone</div>
+              <input type="tel" placeholder="+44 7222 555 555">
+            </div>
+
+            <div class="opt checkbox" style="font-size:12px;" onclick="this.classList.toggle('selected')">
+              <span class="tick"></span>
+              <div class="opt-body">Occasional tips, offers and treatment updates</div>
+            </div>
+
+            <button class="cta">Review my consultation →</button>
+
+            <div class="trust-strip">
+              <div class="item">Clinician-reviewed</div>
+              <div class="item">Licensed UK pharmacy</div>
+              <div class="item">100% confidential</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="annot">
+      <div class="step-badge">Step 9</div>
+      <h3>Register</h3>
+      <div class="replaces"><span><strong>Replaces:</strong> Old registration page. Minor polish, no structural change.</span></div>
+
+      <h4>What's different</h4>
+      <ul>
+        <li><strong>Headline reframed</strong> from administrative ("Please Register as a New Patient") to value-delivering ("Where should we send your consultation results?"). Repositions the form as the pay-off, not a chore.</li>
+        <li>CTA copy: "Review my consultation" — again, progress framing.</li>
+        <li><strong>Trust strip below the CTA</strong> surfaces the reassurances users said they were looking for in interviews ("they looked for Trustpilot + licensed treatments").</li>
+        <li>Marketing consent checkbox is unchecked by default.</li>
+      </ul>
+
+      <h4>What didn't change</h4>
+      <ul>
+        <li>Same four fields.</li>
+        <li>Same validation.</li>
+        <li>Same submission path (to hard-stop handling or success page).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FLOW SUMMARY -->
+  <div class="flow-summary">
+    <h2>The shape of the redesign, in numbers</h2>
+    <div class="flow-stats">
+      <div class="stat"><span class="big">19 → 10</span><span class="label">Visible screens</span></div>
+      <div class="stat"><span class="big">4</span><span class="label">Chapters</span></div>
+      <div class="stat"><span class="big">4→1</span><span class="label">Biggest collapse (Step 5)</span></div>
+      <div class="stat"><span class="big">0</span><span class="label">Clinical data lost</span></div>
+    </div>
+    <p style="margin-top: 32px; text-align: center; font-size:14.5px; opacity:0.85; max-width: 720px; margin-left:auto; margin-right:auto;">Ship in three phases. Phase 1 (intro removal + disclaimer redesign + progress indicator + acknowledgement inline) touches zero clinical content. Phase 2 (consolidations + progressive disclosure). Phase 3 (full brand layer after data wins).</p>
+  </div>
+
+  <!-- OPEN QUESTIONS -->
+  <div class="validation-panel" id="open-questions">
+    <h2>Open questions for Gabriel</h2>
+    <p class="lead">Nine specific clarifications to lock in before engineering. None block Phase 1 (intro + disclaimer + progress + acknowledgement), but each affects Phase 2 decisions.</p>
+
+    <div class="val-item">
+      <div class="val-num">1</div>
+      <div>
+        <h4>The exact BMI-eligibility rule around motivations and conditions</h4>
+        <p>"White + (conditions OR reasons for losing weight) → BMI 26.5" was the rough summary. Which specific answers to the motivations question count as a qualifying "reason"? Any non-Other answer, or only specific ones? Confirms whether the motivations question can ever be compressed.</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">2</div>
+      <div>
+        <h4>Is any BMI feedback acceptable mid-quiz?</h4>
+        <p>This design calculates BMI silently and surfaces nothing at the question level. If a neutral readout ("we'll review after submission") is acceptable, we can add a reassurance moment back. Confirm the rule.</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">3</div>
+      <div>
+        <h4>Can age + biological sex share one screen?</h4>
+        <p>Both questions are mandatory. Combining them saves one step. Any clinical reason to keep them separate?</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">4</div>
+      <div>
+        <h4>Can height/weight + ethnicity share one screen?</h4>
+        <p>Ethnicity is sensitive. Giving it its own screen signals the "why we ask" framing explicitly. Any reason not to combine?</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">5</div>
+      <div>
+        <h4>Age duplication with pre-landing</h4>
+        <p>Age appears to be asked on pre-landing AND in the quiz. Confirm: is this real? Which one is the source of truth? Can one be removed?</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">6</div>
+      <div>
+        <h4>Condition groupings on Step 4</h4>
+        <p>Proposed groups: Allergies · Heart & circulation · Digestion · Other. Confirm these match how Bolt's clinicians think about these conditions.</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">7</div>
+      <div>
+        <h4>"Last dose" answer ranges on Step 7</h4>
+        <p>Proposed buckets: This week / 1–2 weeks / 1+ month / 3+ months. Confirm these are the meaningful thresholds for dose-continuation logic, or switch to a date picker.</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">8</div>
+      <div>
+        <h4>Explicit-tick consent pattern on Step 8</h4>
+        <p>The compliance owner should confirm an explicit tick above the CTA is acceptable. Gabriel's suggestion was "by clicking next you accept" — this goes one step stronger.</p>
+      </div>
+    </div>
+
+    <div class="val-item">
+      <div class="val-num">9</div>
+      <div>
+        <h4>Per-question drop-off data from Embeddables</h4>
+        <p>Pull the actual drop-off per current question. Phase 2 sequencing should follow the real data — the biggest friction screens get consolidated first.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  Bolt Pharmacy · Quiz Redesign Mockups V3 · Prepared by Bjarn Brunenberg · April 2026
+</footer>
+
+<script>
+  function toggleRadio(el) {
+    const parent = el.parentElement;
+    Array.from(parent.children).forEach(child => {
+      if (child.classList && child.classList.contains('opt') && !child.classList.contains('checkbox') && !child.classList.contains('prominent') && child !== el) {
+        child.classList.remove('selected');
+      }
+    });
+    el.classList.toggle('selected');
+  }
+
+  function toggleNone(el, targetSelector) {
+    el.classList.toggle('selected');
+    const target = document.querySelector(targetSelector);
+    if (!target) return;
+    if (el.classList.contains('selected')) {
+      target.style.opacity = '0.5';
+      target.querySelectorAll('.opt.selected').forEach(o => o.classList.remove('selected'));
+    } else {
+      target.style.opacity = '1';
+    }
+  }
+
+  function toggleReveal(toggleId, revealId) {
+    const t = document.getElementById(toggleId);
+    const r = document.getElementById(revealId);
+    t.classList.toggle('on');
+    r.classList.toggle('open');
+  }
+
+  function toggleHistory(el, idx) {
+    const parent = el.parentElement;
+    Array.from(parent.children).forEach(child => {
+      if (child.classList && child.classList.contains('opt')) {
+        child.classList.remove('selected');
+      }
+    });
+    el.classList.add('selected');
+    const reveal = document.getElementById('r-history');
+    if (idx === 5) {
+      reveal.classList.remove('open');
+    } else {
+      reveal.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>
